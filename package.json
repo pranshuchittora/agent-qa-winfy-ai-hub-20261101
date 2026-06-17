@@ -1,0 +1,13 @@
+{
+  "name": "ai-tools-hub-scripts",
+  "version": "1.0.0",
+  "description": "AI Tools Hub — 每日自动搜索+生成脚本",
+  "scripts": {
+    "generate": "node scripts/generate-index.js",
+    "fetch": "node scripts/fetch-new-tools.js",
+    "daily": "node scripts/generate-index.js && node scripts/fetch-new-tools.js"
+  },
+  "dependencies": {
+    "node-fetch": "^3.3.2"
+  }
+}
