@@ -1,29 +1,37 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="zh-CN">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>AI Tools Hub - 鍙戠幇鏈€濂界殑 AI 宸ュ叿</title>
-  <meta name="description" content="绮鹃€?42+ AI 宸ュ叿锛?1 澶у垎绫伙紝娑电洊 Agent 鎻掍欢涓?Skill 涓撳尯銆傛瘡鏃ユ洿鏂般€? />
+  <title>AI Tools Hub — 发现最好的 AI 工具</title>
+  <meta name="description" content="精选142+ AI 工具，11 大分类，涵盖 Agent 插件与 Skill 专区。每日更新。" />
   <meta name="robots" content="index,follow" />
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>馃</text></svg>" />
+  <link rel="manifest" href="manifest.json" />
+  <meta name="theme-color" content="#0f0f1a" />
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🤖</text></svg>" />
   <style>
+    /* Reset & Base */
     *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
     :root{--bg:#0f0f1a;--card:#1a1a2e;--card2:#16162a;--accent:#6c5ce7;--accent2:#a29bfe;--green:#00cec9;--orange:#fd79a8;--yellow:#ffeaa7;--text:#e8e8f0;--muted:#8888a8;--border:#2a2a45;--radius:14px;--shadow:0 4px 24px rgba(0,0,0,.4);--transition:.25s cubic-bezier(.4,0,.2,1)}
     html{scroll-behavior:smooth}
     body{background:var(--bg);color:var(--text);font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Microsoft YaHei',sans-serif;line-height:1.6;min-height:100vh}
     a{color:inherit;text-decoration:none}
+    ul{list-style:none}
+    /* Header */
     header{position:sticky;top:0;z-index:100;background:rgba(15,15,26,.85);backdrop-filter:blur(18px);border-bottom:1px solid var(--border);padding:0 24px}
     .header-inner{max-width:1280px;margin:0 auto;display:flex;align-items:center;gap:20px;height:64px}
     .logo{font-size:1.35rem;font-weight:800;background:linear-gradient(135deg,var(--accent),var(--green));-webkit-background-clip:text;-webkit-text-fill-color:transparent;white-space:nowrap}
     .header-right{margin-left:auto;display:flex;gap:12px;align-items:center}
+    /* Category Nav */
     .cat-nav{max-width:1280px;margin:0 auto;padding:16px 24px;display:flex;gap:8px;flex-wrap:wrap;border-bottom:1px solid var(--border);position:sticky;top:64px;z-index:99;background:rgba(15,15,26,.92);backdrop-filter:blur(12px)}
     .cat-btn{padding:6px 16px;border-radius:50px;border:1px solid var(--border);background:transparent;color:var(--muted);cursor:pointer;font-size:.85rem;transition:all .2s}
     .cat-btn:hover,.cat-btn.active{border-color:var(--accent);color:var(--text);background:rgba(108,92,231,.15)}
+    /* Main */
     main{max-width:1280px;margin:0 auto;padding:32px 24px 80px}
     .section{margin-bottom:64px}
     .section-title{font-size:1.5rem;font-weight:700;margin-bottom:8px;display:flex;align-items:center;gap:10px}
     .section-desc{color:var(--muted);font-size:.95rem;margin-bottom:24px}
+    /* Tool Grid */
     .tool-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(340px,1fr));gap:16px}
     .tool-card{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:20px;transition:transform var(--transition),box-shadow var(--transition);position:relative;overflow:hidden}
     .tool-card:hover{transform:translateY(-3px);box-shadow:var(--shadow);border-color:rgba(108,92,231,.3)}
@@ -47,6 +55,7 @@
     .visit-btn{font-size:.82rem;color:var(--accent2);font-weight:600;transition:color .2s}
     .visit-btn:hover{color:var(--green)}
     .new-banner{font-size:.65rem;background:linear-gradient(135deg,var(--orange),#e84393);color:#fff;padding:1px 7px;border-radius:4px;margin-left:6px;vertical-align:middle}
+    /* Featured */
     .featured-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:16px;margin-bottom:48px}
     .featured-card{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:24px;transition:transform var(--transition);cursor:pointer}
     .featured-card:hover{transform:translateY(-3px)}
@@ -54,2295 +63,2296 @@
     .featured-name{font-size:1.1rem;font-weight:700;margin-bottom:6px}
     .featured-desc{font-size:.82rem;color:var(--muted);line-height:1.6;margin-bottom:12px}
     .featured-link{font-size:.78rem;color:var(--green)}
+    /* Footer */
     footer{text-align:center;padding:40px 24px;border-top:1px solid var(--border);color:var(--muted);font-size:.85rem}
+    /* Responsive */
     @media(max-width:640px){.tool-grid{grid-template-columns:1fr}.featured-grid{grid-template-columns:1fr 1fr}}
   </style>
 </head>
 <body>
 <header>
   <div class="header-inner">
-    <div class="logo">馃 AI Tools Hub</div>
+    <div class="logo">🤖 AI Tools Hub</div>
     <div class="header-right">
       <a href="https://github.com/winfy-88/ai-tools-hub" target="_blank" style="font-size:.85rem;color:var(--muted)">GitHub</a>
-      <a href="#"><span>鎻愪氦鏂板伐鍏?/span></a>
+      <a href="#"><span data-translate="submit">提交新工具</span></a>
     </div>
   </div>
 </header>
+
+<!-- Category Nav -->
 <nav class="cat-nav" id="catNav">
-  <button class="cat-btn active" data-cat="all">馃幆 鍏ㄩ儴</button>
-<button class="cat-btn" data-cat="chat">馃挰 AI 鑱婂ぉ</button>
-<button class="cat-btn" data-cat="write">鉁嶏笍 AI 鍐欎綔</button>
-<button class="cat-btn" data-cat="image">馃帹 AI 鐢诲浘</button>
-<button class="cat-btn" data-cat="code">馃捇 AI 缂栫▼</button>
-<button class="cat-btn" data-cat="video">馃幀 AI 瑙嗛</button>
-<button class="cat-btn" data-cat="audio">馃幍 AI 闊抽</button>
-<button class="cat-btn" data-cat="data">馃搳 AI 鏁版嵁</button>
-<button class="cat-btn" data-cat="productivity">馃搧 AI 鍔炲叕</button>
-<button class="cat-btn" data-cat="search">馃攳 AI 鎼滅储</button>
-<button class="cat-btn" data-cat="agent">馃З Agent 鎻掍欢</button>
-<button class="cat-btn" data-cat="skill">馃 Skill 涓撳尯</button>
+  <button class="cat-btn active" data-cat="all">🔍 全部</button>
+<button class="cat-btn" data-cat="chat">💬 AI 聊天</button><button class="cat-btn" data-cat="write">✍️ AI 写作</button><button class="cat-btn" data-cat="image">🎨 AI 画图</button><button class="cat-btn" data-cat="code">💻 AI 编程</button><button class="cat-btn" data-cat="video">🎬 AI 视频</button><button class="cat-btn" data-cat="audio">🎵 AI 音频</button><button class="cat-btn" data-cat="data">📊 AI 数据</button><button class="cat-btn" data-cat="productivity">📁 AI 办公</button><button class="cat-btn" data-cat="search">🔍 AI 搜索</button><button class="cat-btn" data-cat="agent">🧩 Agent 插件</button><button class="cat-btn" data-cat="skill">🧠 Skill 专区</button>
 </nav>
+
 <main>
+
+  <!-- Featured -->
   <div class="featured-grid">
 
       <div class="featured-card" data-cat="chat">
-        <div class="featured-rank">No.1 鏈懆鐑棬</div>
+        <div class="featured-rank">No.1 本周热门</div>
         <div class="featured-name">ChatGPT</div>
-        <div class="featured-desc">OpenAI 鍑哄搧锛屾渶寮虹殑閫氱敤 AI 鍔╂墜銆傛敮鎸?GPT-4o銆佹枃浠朵笂浼犮€佽仈缃戞悳绱€佷唬鐮佽В閲婂櫒锛屽嚑涔庢棤鎵€涓嶈兘銆?/div>
-        <span class="featured-link">鈫?chatgpt.com</span>
+        <div class="featured-desc">OpenAI 出品，最强的通用 AI 助手。支持 GPT-4o、文件上传、联网搜索、代码解释器，几乎无所不能。</div>
+        <span class="featured-link">→ chatgpt.com</span>
       </div>
 
       <div class="featured-card" data-cat="image">
-        <div class="featured-rank">No.2 鐢诲浘涔嬬帇</div>
+        <div class="featured-rank">No.2 画图之王</div>
         <div class="featured-name">Midjourney</div>
-        <div class="featured-desc">鐩墠鑹烘湳鎰熸渶寮虹殑 AI 鐢诲浘宸ュ叿锛岄€傚悎璁捐甯堛€佽壓鏈銆佸垱鎰忓伐浣滆€咃紝鍑哄浘璐ㄩ噺鏃犲彲鎸戝墧銆?/div>
-        <span class="featured-link">鈫?midjourney.com</span>
+        <div class="featured-desc">目前艺术感最强的 AI 画图工具，适合设计师、艺术家、创意工作者，出图质量无可挑剔。</div>
+        <span class="featured-link">→ midjourney.com</span>
       </div>
 
       <div class="featured-card" data-cat="code">
-        <div class="featured-rank">No.3 绋嬪簭鍛樼殑 AI 鎼。</div>
+        <div class="featured-rank">No.3 程序员的 AI 搭档</div>
         <div class="featured-name">GitHub Copilot</div>
-        <div class="featured-desc">浣犵殑 AI 缁撳缂栫▼浼欎即锛屽疄鏃朵唬鐮佽ˉ鍏ㄣ€佸嚱鏁扮敓鎴愩€乥ug 淇锛屾敮鎸佸嚑涔庢墍鏈変富娴佽瑷€銆?/div>
-        <span class="featured-link">鈫?github.com/features/copilot</span>
+        <div class="featured-desc">你的 AI 结对编程伙伴，实时代码补全、函数生成、bug 修复，支持几乎所有主流语言。</div>
+        <span class="featured-link">→ github.com/features/copilot</span>
       </div>
 
       <div class="featured-card" data-cat="video">
-        <div class="featured-rank">No.4 瑙嗛鏂版槦</div>
+        <div class="featured-rank">No.4 视频新星</div>
         <div class="featured-name">Runway ML</div>
-        <div class="featured-desc">AI 瑙嗛缂栬緫 + 鐢熸垚鍙屽紩鎿庛€傛枃瀛楃敓鎴愯棰戙€佽棰戦鏍艰浆鎹€佹櫤鑳芥姞鍥撅紝褰辫绾ф晥鏋溿€?/div>
-        <span class="featured-link">鈫?runway.ml</span>
+        <div class="featured-desc">AI 视频编辑 + 生成双引擎。文字生成视频、视频风格转换、智能抠图，影视级效果。</div>
+        <span class="featured-link">→ runway.ml</span>
       </div>
 
       <div class="featured-card" data-cat="chat">
-        <div class="featured-rank">No.5 鍥戒骇榛戦┈</div>
+        <div class="featured-rank">No.5 国产黑马</div>
         <div class="featured-name">DeepSeek</div>
-        <div class="featured-desc">鍥戒骇寮€婧愬ぇ妯″瀷榛戦┈锛屾帹鐞嗚兘鍔涜秴寮猴紝浠锋牸鏋佷綆锛孷4 寮€婧愯纭呰胺闇囨儕銆?/div>
-        <span class="featured-link">鈫?chat.deepseek.com</span>
+        <div class="featured-desc">国产开源大模型黑马，推理能力超强，价格极低，V4 开源让硅谷震惊。</div>
+        <span class="featured-link">→ chat.deepseek.com</span>
       </div>
 
       <div class="featured-card" data-cat="agent">
-        <div class="featured-rank">No.6 鑷富 Agent</div>
+        <div class="featured-rank">No.6 自主 Agent</div>
         <div class="featured-name">Manus AI</div>
-        <div class="featured-desc">鑳界嫭绔嬪畬鎴愬鏉備换鍔￠摼鐨?AI Agent锛岃瑾変负 AI 鐗?AutoGPT锛岃嚜涓昏鍒?鎵ц鑳藉姏瓒呭己銆?/div>
-        <span class="featured-link">鈫?manus.ai</span>
+        <div class="featured-desc">能独立完成复杂任务链的 AI Agent，被誉为 AI 版 AutoGPT，自主规划+执行能力超强。</div>
+        <span class="featured-link">→ manus.ai</span>
       </div>
 
       <div class="featured-card" data-cat="audio">
-        <div class="featured-rank">No.7 澹伴煶榄旀湳甯?/div>
+        <div class="featured-rank">No.7 声音魔术师</div>
         <div class="featured-name">ElevenLabs</div>
-        <div class="featured-desc">AI 璇煶鍏嬮殕澶╄姳鏉匡紝澹伴煶鍑犱箮鍜岀湡浜轰竴妯′竴鏍凤紝鏀寔瀹炴椂璇煶鍏嬮殕锛岃惀閿€/鏈夊０涔︾鍣ㄣ€?/div>
-        <span class="featured-link">鈫?elevenlabs.io</span>
+        <div class="featured-desc">AI 语音克隆天花板，声音几乎和真人一模一样，支持实时语音克隆，营销/有声书神器。</div>
+        <span class="featured-link">→ elevenlabs.io</span>
       </div>
 
       <div class="featured-card" data-cat="code">
-        <div class="featured-rank">No.8 AI IDE 闇镐富</div>
+        <div class="featured-rank">No.8 AI IDE 霸主</div>
         <div class="featured-name">Cursor</div>
-        <div class="featured-desc">AI 鍘熺敓浠ｇ爜缂栬緫鍣紝AI 閲嶆瀯銆佽亰澶╁啓浠ｇ爜銆佺悊瑙ｆ暣涓」鐩紝鍓嶇/鍚庣鍏ㄦ爤閫氬悆銆?/div>
-        <span class="featured-link">鈫?cursor.sh</span>
+        <div class="featured-desc">AI 原生代码编辑器，AI 重构、聊天写代码、理解整个项目，前端/后端全栈通吃。</div>
+        <span class="featured-link">→ cursor.sh</span>
       </div>
   </div>
 
+
   <section class="section" data-section="chat">
-    <div class="section-title">馃挰 AI 鑱婂ぉ</div>
-    <p class="section-desc">鏅鸿兘瀵硅瘽銆侀棶绛斻€佸姪鎵嬧€斺€斾綘鐨?24/7 AI 浼欎即</p>
+    <div class="section-title">💬 AI 聊天</div>
+    <p class="section-desc">智能对话、问答、助手——你的 24/7 AI 伙伴</p>
     <div class="tool-grid">
-      <div class="tool-card" data-cat="chat">
+      <div class="tool-card" data-cat="chat" data-name="chatgpt">
         <div class="card-top">
-          <div class="tool-icon" style="background:linear-gradient(135deg,#6c5ce7,#a29bfe)">馃</div>
+          <div class="tool-icon" style="background:linear-gradient(135deg,#6c5ce7,#a29bfe)">🤖</div>
           <div class="card-info">
             <div class="tool-name">ChatGPT</div>
-            <div class="tool-tagline">OpenAI 鍑哄搧锛岄€氱敤 AI 鍔╂墜澶╄姳鏉匡紝GPT-4o 澶氭ā鎬侊紝鍑犱箮鏃犳墍涓嶈兘</div>
+            <div class="tool-tagline">OpenAI 出品，通用 AI 助手天花板，GPT-4o 多模态，几乎无所不能</div>
           </div>
         </div>
-        <div class="card-tags"><span class="tag">鐑棬</span><span class="tag">Freemium</span></div>
+        <div class="card-tags"><span class="tag">热门</span><span class="tag tag-freemium">Freemium</span></div>
         <div class="card-footer">
-          <span class="pricing freemium">鍏嶈垂鐗堝彲鐢?/span>
-          <a href="https://chatgpt.com" target="_blank" class="visit-btn">绔嬪嵆浣跨敤 鈫?/a>
+          <span class="pricing freemium">免费版可用</span>
+          <a href="https://chatgpt.com" target="_blank" class="visit-btn">立即使用 →</a>
         </div>
       </div>
 
-      <div class="tool-card" data-cat="chat">
+      <div class="tool-card" data-cat="chat" data-name="claude">
         <div class="card-top">
-          <div class="tool-icon" style="background:linear-gradient(135deg,#6c5ce7,#a29bfe)">馃</div>
+          <div class="tool-icon" style="background:linear-gradient(135deg,#6c5ce7,#a29bfe)">🤖</div>
           <div class="card-info">
             <div class="tool-name">Claude</div>
-            <div class="tool-tagline">Anthropic 鍑哄搧锛?00K 涓婁笅鏂囷紝鍐欎綔鍜屽垎鏋愯兘鍔涜秴寮?/div>
+            <div class="tool-tagline">Anthropic 出品，200K 上下文，写作和分析能力超强</div>
           </div>
         </div>
-        <div class="card-tags"><span class="tag">鐑棬</span></div>
+        <div class="card-tags"><span class="tag">热门</span></div>
         <div class="card-footer">
-          <span class="pricing freemium">鍏嶈垂鐗堝彲鐢?/span>
-          <a href="https://claude.ai" target="_blank" class="visit-btn">绔嬪嵆浣跨敤 鈫?/a>
+          <span class="pricing freemium">免费版可用</span>
+          <a href="https://claude.ai" target="_blank" class="visit-btn">立即使用 →</a>
         </div>
       </div>
 
-      <div class="tool-card" data-cat="chat">
+      <div class="tool-card" data-cat="chat" data-name="gemini">
         <div class="card-top">
-          <div class="tool-icon" style="background:linear-gradient(135deg,#6c5ce7,#a29bfe)">馃</div>
+          <div class="tool-icon" style="background:linear-gradient(135deg,#6c5ce7,#a29bfe)">🤖</div>
           <div class="card-info">
             <div class="tool-name">Gemini</div>
-            <div class="tool-tagline">Google 鍏嶈垂 AI 鍔╂墜锛孏emini 2.5 鎬ц兘鐐歌锛屾繁搴﹂泦鎴?Google 鍏ㄥ妗?/div>
+            <div class="tool-tagline">Google 免费 AI 助手，Gemini 2.5 性能炸裂，深度集成 Google 全家桶</div>
           </div>
         </div>
-        <div class="card-tags"><span class="tag">鍏嶈垂</span><span class="tag">璋锋瓕</span></div>
+        <div class="card-tags"><span class="tag">免费</span><span class="tag">谷歌</span></div>
         <div class="card-footer">
-          <span class="pricing free">瀹屽叏鍏嶈垂</span>
-          <a href="https://gemini.google.com" target="_blank" class="visit-btn">绔嬪嵆浣跨敤 鈫?/a>
+          <span class="pricing free">完全免费</span>
+          <a href="https://gemini.google.com" target="_blank" class="visit-btn">立即使用 →</a>
         </div>
       </div>
 
-      <div class="tool-card" data-cat="chat">
+      <div class="tool-card" data-cat="chat" data-name="perplexity">
         <div class="card-top">
-          <div class="tool-icon" style="background:linear-gradient(135deg,#6c5ce7,#a29bfe)">馃</div>
+          <div class="tool-icon" style="background:linear-gradient(135deg,#6c5ce7,#a29bfe)">🤖</div>
           <div class="card-info">
             <div class="tool-name">Perplexity</div>
-            <div class="tool-tagline">AI 鎼滅储寮曟搸鍏堥┍锛岀粰鍑虹粨鏋勫寲绛旀 + 寮曠敤鏉ユ簮锛屽仛鐮旂┒鐨勭鍣?/div>
+            <div class="tool-tagline">AI 搜索引擎先驱，给出结构化答案 + 引用来源，做研究的神器</div>
           </div>
         </div>
-        <div class="card-tags"><span class="tag">鐑棬</span></div>
+        <div class="card-tags"><span class="tag">热门</span></div>
         <div class="card-footer">
-          <span class="pricing freemium">鍏嶈垂鐗堝彲鐢?/span>
-          <a href="https://www.perplexity.ai" target="_blank" class="visit-btn">绔嬪嵆浣跨敤 鈫?/a>
+          <span class="pricing freemium">免费版可用</span>
+          <a href="https://www.perplexity.ai" target="_blank" class="visit-btn">立即使用 →</a>
         </div>
       </div>
 
-      <div class="tool-card" data-cat="chat">
+      <div class="tool-card" data-cat="chat" data-name="grok">
         <div class="card-top">
-          <div class="tool-icon" style="background:linear-gradient(135deg,#6c5ce7,#a29bfe)">馃</div>
+          <div class="tool-icon" style="background:linear-gradient(135deg,#6c5ce7,#a29bfe)">🤖</div>
           <div class="card-info">
             <div class="tool-name">Grok</div>
-            <div class="tool-tagline">xAI 鍑哄搧锛屽疄鏃惰仈缃戯紝鏁㈣鐪熻瘽锛屽菇榛樻劅鎷夋弧锛屾敮鎸佸浘鐗囧垎鏋?/div>
+            <div class="tool-tagline">xAI 出品，实时联网，敢说真话，幽默感拉满，支持图片分析</div>
           </div>
         </div>
-        <div class="card-tags"><span class="tag">椹柉鍏?/span></div>
+        <div class="card-tags"><span class="tag">马斯克</span></div>
         <div class="card-footer">
-          <span class="pricing paid">浠樿垂</span>
-          <a href="https://grok.x.ai" target="_blank" class="visit-btn">绔嬪嵆浣跨敤 鈫?/a>
+          <span class="pricing paid">付费</span>
+          <a href="https://grok.x.ai" target="_blank" class="visit-btn">立即使用 →</a>
         </div>
       </div>
 
-      <div class="tool-card" data-cat="chat">
+      <div class="tool-card" data-cat="chat" data-name="deepseek">
         <div class="card-top">
-          <div class="tool-icon" style="background:linear-gradient(135deg,#6c5ce7,#a29bfe)">馃</div>
+          <div class="tool-icon" style="background:linear-gradient(135deg,#6c5ce7,#a29bfe)">🤖</div>
           <div class="card-info">
             <div class="tool-name">DeepSeek</div>
-            <div class="tool-tagline">鍥戒骇寮€婧愭ā鍨嬶紝鎺ㄧ悊鑳藉姏瓒呭己锛孷4 寮€婧愭渶寮猴紝浠锋牸鏋佷綆</div>
+            <div class="tool-tagline">国产开源模型，推理能力超强，V4 开源最强，价格极低</div>
           </div>
         </div>
-        <div class="card-tags"><span class="tag">鍥戒骇</span><span class="tag">鐑棬</span></div>
+        <div class="card-tags"><span class="tag">国产</span><span class="tag">热门</span></div>
         <div class="card-footer">
-          <span class="pricing freemium">鍏嶈垂鐗堝彲鐢?/span>
-          <a href="https://chat.deepseek.com" target="_blank" class="visit-btn">绔嬪嵆浣跨敤 鈫?/a>
+          <span class="pricing freemium">免费版可用</span>
+          <a href="https://chat.deepseek.com" target="_blank" class="visit-btn">立即使用 →</a>
         </div>
       </div>
 
-      <div class="tool-card" data-cat="chat">
+      <div class="tool-card" data-cat="chat" data-name="豆包">
         <div class="card-top">
-          <div class="tool-icon" style="background:linear-gradient(135deg,#6c5ce7,#a29bfe)">馃</div>
+          <div class="tool-icon" style="background:linear-gradient(135deg,#6c5ce7,#a29bfe)">🤖</div>
           <div class="card-info">
-            <div class="tool-name">璞嗗寘</div>
-            <div class="tool-tagline">瀛楄妭璺冲姩 AI 鍔╂墜锛屽厤璐逛腑鏂囧璇濓紝闆嗘垚澶存潯绯荤敓鎬?/div>
+            <div class="tool-name">豆包</div>
+            <div class="tool-tagline">字节跳动 AI 助手，免费中文对话，集成头条系生态</div>
           </div>
         </div>
-        <div class="card-tags"><span class="tag">鍥戒骇</span><span class="tag">鍏嶈垂</span></div>
+        <div class="card-tags"><span class="tag">国产</span><span class="tag">免费</span></div>
         <div class="card-footer">
-          <span class="pricing free">瀹屽叏鍏嶈垂</span>
-          <a href="https://www.doubao.com" target="_blank" class="visit-btn">绔嬪嵆浣跨敤 鈫?/a>
+          <span class="pricing free">完全免费</span>
+          <a href="https://www.doubao.com" target="_blank" class="visit-btn">立即使用 →</a>
         </div>
       </div>
 
-      <div class="tool-card" data-cat="chat">
+      <div class="tool-card" data-cat="chat" data-name="通义千问">
         <div class="card-top">
-          <div class="tool-icon" style="background:linear-gradient(135deg,#6c5ce7,#a29bfe)">馃</div>
+          <div class="tool-icon" style="background:linear-gradient(135deg,#6c5ce7,#a29bfe)">🤖</div>
           <div class="card-info">
-            <div class="tool-name">閫氫箟鍗冮棶</div>
-            <div class="tool-tagline">闃块噷浜?AI 鍔╂墜锛屼腑鏂囩悊瑙ｈ兘鍔涘己锛屼紒涓氱骇 API 绋冲畾</div>
+            <div class="tool-name">通义千问</div>
+            <div class="tool-tagline">阿里云 AI 助手，中文理解能力强，企业级 API 稳定</div>
           </div>
         </div>
-        <div class="card-tags"><span class="tag">鍥戒骇</span></div>
+        <div class="card-tags"><span class="tag">国产</span></div>
         <div class="card-footer">
-          <span class="pricing freemium">鍏嶈垂鐗堝彲鐢?/span>
-          <a href="https://tongyi.aliyun.com" target="_blank" class="visit-btn">绔嬪嵆浣跨敤 鈫?/a>
+          <span class="pricing freemium">免费版可用</span>
+          <a href="https://tongyi.aliyun.com" target="_blank" class="visit-btn">立即使用 →</a>
         </div>
       </div>
 
-      <div class="tool-card" data-cat="chat">
+      <div class="tool-card" data-cat="chat" data-name="文心一言">
         <div class="card-top">
-          <div class="tool-icon" style="background:linear-gradient(135deg,#6c5ce7,#a29bfe)">馃</div>
+          <div class="tool-icon" style="background:linear-gradient(135deg,#6c5ce7,#a29bfe)">🤖</div>
           <div class="card-info">
-            <div class="tool-name">鏂囧績涓€瑷€</div>
-            <div class="tool-tagline">鐧惧害鍑哄搧锛屼腑鏂囪涔夌悊瑙ｅ己锛屼笌鐧惧害鐢熸€佹繁搴︾粨鍚?/div>
+            <div class="tool-name">文心一言</div>
+            <div class="tool-tagline">百度出品，中文语义理解强，与百度生态深度结合</div>
           </div>
         </div>
-        <div class="card-tags"><span class="tag">鍥戒骇</span></div>
+        <div class="card-tags"><span class="tag">国产</span></div>
         <div class="card-footer">
-          <span class="pricing freemium">鍏嶈垂鐗堝彲鐢?/span>
-          <a href="https://yiyan.baidu.com" target="_blank" class="visit-btn">绔嬪嵆浣跨敤 鈫?/a>
+          <span class="pricing freemium">免费版可用</span>
+          <a href="https://yiyan.baidu.com" target="_blank" class="visit-btn">立即使用 →</a>
         </div>
       </div>
 
-      <div class="tool-card" data-cat="chat">
+      <div class="tool-card" data-cat="chat" data-name="poe">
         <div class="card-top">
-          <div class="tool-icon" style="background:linear-gradient(135deg,#6c5ce7,#a29bfe)">馃</div>
+          <div class="tool-icon" style="background:linear-gradient(135deg,#6c5ce7,#a29bfe)">🤖</div>
           <div class="card-info">
             <div class="tool-name">Poe</div>
-            <div class="tool-tagline">澶氭ā鍨嬭仛鍚堝钩鍙帮紝涓€閿垏鎹?GPT/Claude/Gemini锛屾寜鏈堜粯璐逛笉闄愰噺</div>
+            <div class="tool-tagline">多模型聚合平台，一键切换 GPT/Claude/Gemini，按月付费不限量</div>
           </div>
         </div>
-        <div class="card-tags"><span class="tag">鑱氬悎</span></div>
+        <div class="card-tags"><span class="tag">聚合</span></div>
         <div class="card-footer">
-          <span class="pricing freemium">Freemium</span>
-          <a href="https://poe.com" target="_blank" class="visit-btn">绔嬪嵆浣跨敤 鈫?/a>
+          <span class="pricing paid">Freemium</span>
+          <a href="https://poe.com" target="_blank" class="visit-btn">立即使用 →</a>
         </div>
       </div>
 
-      <div class="tool-card" data-cat="chat">
+      <div class="tool-card" data-cat="chat" data-name="huggingchat">
         <div class="card-top">
-          <div class="tool-icon" style="background:linear-gradient(135deg,#6c5ce7,#a29bfe)">馃</div>
+          <div class="tool-icon" style="background:linear-gradient(135deg,#6c5ce7,#a29bfe)">🤖</div>
           <div class="card-info">
             <div class="tool-name">HuggingChat</div>
-            <div class="tool-tagline">Hugging Face 寮€婧?AI 鑱婂ぉ锛屾敮鎸佹湰鍦伴儴缃诧紝寮€婧愮ぞ鍖洪閫?/div>
+            <div class="tool-tagline">Hugging Face 开源 AI 聊天，支持本地部署，开源社区首选</div>
           </div>
         </div>
-        <div class="card-tags"><span class="tag">寮€婧?/span></div>
+        <div class="card-tags"><span class="tag">开源</span></div>
         <div class="card-footer">
-          <span class="pricing free">瀹屽叏鍏嶈垂</span>
-          <a href="https://huggingface.co/chat" target="_blank" class="visit-btn">绔嬪嵆浣跨敤 鈫?/a>
+          <span class="pricing free">完全免费</span>
+          <a href="https://huggingface.co/chat" target="_blank" class="visit-btn">立即使用 →</a>
         </div>
       </div>
 
-      <div class="tool-card" data-cat="chat">
+      <div class="tool-card" data-cat="chat" data-name="step">
         <div class="card-top">
-          <div class="tool-icon" style="background:linear-gradient(135deg,#6c5ce7,#a29bfe)">馃</div>
+          <div class="tool-icon" style="background:linear-gradient(135deg,#6c5ce7,#a29bfe)">🤖</div>
           <div class="card-info">
             <div class="tool-name">Step <span class="new-banner">NEW</span></div>
-            <div class="tool-tagline">闃惰穬鏄熻景鍑哄搧锛屼腑鏂囩悊瑙?瑙嗚鎺ㄧ悊鑳藉姏寮猴紝鍥戒骇澶фā鍨嬫柊閿?/div>
+            <div class="tool-tagline">阶跃星辰出品，中文理解+视觉推理能力强，国产大模型新锐</div>
           </div>
         </div>
-        <div class="card-tags"><span class="tag">鍥戒骇</span><span class="tag">鏂颁笂</span></div>
+        <div class="card-tags"><span class="tag tag-new">新上线</span><span class="tag tag-new">新上线</span></div>
         <div class="card-footer">
-          <span class="pricing freemium">鍏嶈垂鐗堝彲鐢?/span>
-          <a href="https://step.stepfun.com" target="_blank" class="visit-btn">绔嬪嵆浣跨敤 鈫?/a>
+          <span class="pricing freemium">免费版可用</span>
+          <a href="https://step.stepfun.com" target="_blank" class="visit-btn">立即使用 →</a>
         </div>
       </div>
 
-      <div class="tool-card" data-cat="chat">
+      <div class="tool-card" data-cat="chat" data-name="kimi">
         <div class="card-top">
-          <div class="tool-icon" style="background:linear-gradient(135deg,#6c5ce7,#a29bfe)">馃</div>
+          <div class="tool-icon" style="background:linear-gradient(135deg,#6c5ce7,#a29bfe)">🤖</div>
           <div class="card-info">
             <div class="tool-name">Kimi <span class="new-banner">NEW</span></div>
-            <div class="tool-tagline">鏈堜箣鏆楅潰 AI 鍔╂墜锛岃秴闀夸笂涓嬫枃 200 涓囧瓧绗︼紝璇婚暱鏂囨。绁炲櫒</div>
+            <div class="tool-tagline">月之暗面 AI 助手，超长上下文 200 万字符，读长文档神器</div>
           </div>
         </div>
-        <div class="card-tags"><span class="tag">鍥戒骇</span><span class="tag">闀夸笂涓嬫枃</span></div>
+        <div class="card-tags"><span class="tag tag-new">新上线</span><span class="tag tag-new">新上线</span></div>
         <div class="card-footer">
-          <span class="pricing freemium">鍏嶈垂鐗堝彲鐢?/span>
-          <a href="https://kimi.moonshot.cn" target="_blank" class="visit-btn">绔嬪嵆浣跨敤 鈫?/a>
+          <span class="pricing freemium">免费版可用</span>
+          <a href="https://kimi.moonshot.cn" target="_blank" class="visit-btn">立即使用 →</a>
         </div>
       </div>
 
-      <div class="tool-card" data-cat="chat">
+      <div class="tool-card" data-cat="chat" data-name="qwen-chat">
         <div class="card-top">
-          <div class="tool-icon" style="background:linear-gradient(135deg,#6c5ce7,#a29bfe)">馃</div>
+          <div class="tool-icon" style="background:linear-gradient(135deg,#6c5ce7,#a29bfe)">🤖</div>
           <div class="card-info">
             <div class="tool-name">Qwen Chat <span class="new-banner">NEW</span></div>
-            <div class="tool-tagline">闃块噷閫氫箟鍗冮棶鑱婂ぉ鐗堬紝瀹屽叏鍏嶈垂锛屽妯℃€佹敮鎸佸浘鐗?鏂囨。</div>
+            <div class="tool-tagline">阿里通义千问聊天版，完全免费，多模态支持图片/文档</div>
           </div>
         </div>
-        <div class="card-tags"><span class="tag">鍥戒骇</span><span class="tag">鍏嶈垂</span></div>
+        <div class="card-tags"><span class="tag tag-new">新上线</span><span class="tag tag-new">新上线</span></div>
         <div class="card-footer">
-          <span class="pricing free">瀹屽叏鍏嶈垂</span>
-          <a href="https://chat.qwen.ai" target="_blank" class="visit-btn">绔嬪嵆浣跨敤 鈫?/a>
+          <span class="pricing free">完全免费</span>
+          <a href="https://chat.qwen.ai" target="_blank" class="visit-btn">立即使用 →</a>
         </div>
       </div>
     </div>
   </section>
 
   <section class="section" data-section="write">
-    <div class="section-title">鉁嶏笍 AI 鍐欎綔</div>
-    <p class="section-desc">鏂囨鐢熸垚銆佸唴瀹瑰垱浣溿€佹鼎鑹叉敼鍐欌€斺€斿啓浣滄晥鐜囩炕鍗佸€?/p>
+    <div class="section-title">✍️ AI 写作</div>
+    <p class="section-desc">文案生成、内容创作、润色改写——写作效率翻十倍</p>
     <div class="tool-grid">
-      <div class="tool-card" data-cat="write">
+      <div class="tool-card" data-cat="write" data-name="copy-ai">
         <div class="card-top">
-          <div class="tool-icon" style="background:linear-gradient(135deg,#6c5ce7,#a29bfe)">馃</div>
+          <div class="tool-icon" style="background:linear-gradient(135deg,#6c5ce7,#a29bfe)">🤖</div>
           <div class="card-info">
             <div class="tool-name">Copy AI</div>
-            <div class="tool-tagline">钀ラ攢鏂囨绁炲櫒锛屼竴閿敓鎴愬箍鍛婅銆佺ぞ濯掑笘銆侀偖浠舵ā鏉裤€丼EO 鍐呭</div>
+            <div class="tool-tagline">营销文案神器，一键生成广告语、社媒帖、邮件模板、SEO 内容</div>
           </div>
         </div>
-        <div class="card-tags"><span class="tag">钀ラ攢</span><span class="tag">鐑棬</span></div>
+        <div class="card-tags"><span class="tag">营销</span><span class="tag">热门</span></div>
         <div class="card-footer">
-          <span class="pricing freemium">Freemium</span>
-          <a href="https://www.copy.ai" target="_blank" class="visit-btn">绔嬪嵆浣跨敤 鈫?/a>
+          <span class="pricing paid">Freemium</span>
+          <a href="https://www.copy.ai" target="_blank" class="visit-btn">立即使用 →</a>
         </div>
       </div>
 
-      <div class="tool-card" data-cat="write">
+      <div class="tool-card" data-cat="write" data-name="jasper">
         <div class="card-top">
-          <div class="tool-icon" style="background:linear-gradient(135deg,#6c5ce7,#a29bfe)">馃</div>
+          <div class="tool-icon" style="background:linear-gradient(135deg,#6c5ce7,#a29bfe)">🤖</div>
           <div class="card-info">
             <div class="tool-name">Jasper</div>
-            <div class="tool-tagline">浼佷笟绾?AI 鏂囨骞冲彴锛屽搧鐗屾枃妗堟壒閲忕敓鎴愶紝鍥㈤槦鍗忎綔鍒╁櫒</div>
+            <div class="tool-tagline">企业级 AI 文案平台，品牌文案批量生成，团队协作利器</div>
           </div>
         </div>
-        <div class="card-tags"><span class="tag">浼佷笟</span></div>
+        <div class="card-tags"><span class="tag">企业</span></div>
         <div class="card-footer">
-          <span class="pricing paid">浠樿垂</span>
-          <a href="https://www.jasper.ai" target="_blank" class="visit-btn">绔嬪嵆浣跨敤 鈫?/a>
+          <span class="pricing paid">付费</span>
+          <a href="https://www.jasper.ai" target="_blank" class="visit-btn">立即使用 →</a>
         </div>
       </div>
 
-      <div class="tool-card" data-cat="write">
+      <div class="tool-card" data-cat="write" data-name="notion-ai">
         <div class="card-top">
-          <div class="tool-icon" style="background:linear-gradient(135deg,#6c5ce7,#a29bfe)">馃</div>
+          <div class="tool-icon" style="background:linear-gradient(135deg,#6c5ce7,#a29bfe)">🤖</div>
           <div class="card-info">
             <div class="tool-name">Notion AI</div>
-            <div class="tool-tagline">绗旇 AI 鍖栵紝鐩存帴鍦?Notion 閲屽啓銆佹敼銆佹€荤粨銆佺炕璇?/div>
+            <div class="tool-tagline">笔记 AI 化，直接在 Notion 里写、改、总结、翻译</div>
           </div>
         </div>
-        <div class="card-tags"><span class="tag">绗旇</span></div>
+        <div class="card-tags"><span class="tag">笔记</span></div>
         <div class="card-footer">
-          <span class="pricing paid">浠樿垂</span>
-          <a href="https://www.notion.so/product/ai" target="_blank" class="visit-btn">绔嬪嵆浣跨敤 鈫?/a>
+          <span class="pricing paid">付费</span>
+          <a href="https://www.notion.so/product/ai" target="_blank" class="visit-btn">立即使用 →</a>
         </div>
       </div>
 
-      <div class="tool-card" data-cat="write">
+      <div class="tool-card" data-cat="write" data-name="writesonic">
         <div class="card-top">
-          <div class="tool-icon" style="background:linear-gradient(135deg,#6c5ce7,#a29bfe)">馃</div>
+          <div class="tool-icon" style="background:linear-gradient(135deg,#6c5ce7,#a29bfe)">🤖</div>
           <div class="card-info">
             <div class="tool-name">Writesonic</div>
-            <div class="tool-tagline">闀挎枃鍐欎綔 AI锛屽崥瀹?骞垮憡/钀藉湴椤靛叏濂楀唴瀹硅嚜鍔ㄧ敓鎴?/div>
+            <div class="tool-tagline">长文写作 AI，博客/广告/落地页全套内容自动生成</div>
           </div>
         </div>
-        <div class="card-tags"><span class="tag">闀挎枃</span></div>
+        <div class="card-tags"><span class="tag">长文</span></div>
         <div class="card-footer">
-          <span class="pricing freemium">Freemium</span>
-          <a href="https://writesonic.com" target="_blank" class="visit-btn">绔嬪嵆浣跨敤 鈫?/a>
+          <span class="pricing paid">Freemium</span>
+          <a href="https://writesonic.com" target="_blank" class="visit-btn">立即使用 →</a>
         </div>
       </div>
 
-      <div class="tool-card" data-cat="write">
+      <div class="tool-card" data-cat="write" data-name="quillbot">
         <div class="card-top">
-          <div class="tool-icon" style="background:linear-gradient(135deg,#6c5ce7,#a29bfe)">馃</div>
+          <div class="tool-icon" style="background:linear-gradient(135deg,#6c5ce7,#a29bfe)">🤖</div>
           <div class="card-info">
             <div class="tool-name">QuillBot</div>
-            <div class="tool-tagline">AI 鏀瑰啓娑﹁壊绁炲櫒锛屽鏈鏂囥€佽嫳鏂囧啓浣溿€乸araphrasing 蹇呭</div>
+            <div class="tool-tagline">AI 改写润色神器，学术论文、英文写作、paraphrasing 必备</div>
           </div>
         </div>
-        <div class="card-tags"><span class="tag">娑﹁壊</span><span class="tag">瀛︽湳</span></div>
+        <div class="card-tags"><span class="tag">润色</span><span class="tag">学术</span></div>
         <div class="card-footer">
-          <span class="pricing freemium">Freemium</span>
-          <a href="https://quillbot.com" target="_blank" class="visit-btn">绔嬪嵆浣跨敤 鈫?/a>
+          <span class="pricing paid">Freemium</span>
+          <a href="https://quillbot.com" target="_blank" class="visit-btn">立即使用 →</a>
         </div>
       </div>
 
-      <div class="tool-card" data-cat="write">
+      <div class="tool-card" data-cat="write" data-name="wordtune">
         <div class="card-top">
-          <div class="tool-icon" style="background:linear-gradient(135deg,#6c5ce7,#a29bfe)">馃</div>
+          <div class="tool-icon" style="background:linear-gradient(135deg,#6c5ce7,#a29bfe)">🤖</div>
           <div class="card-info">
             <div class="tool-name">Wordtune</div>
-            <div class="tool-tagline">瀹炴椂鏀瑰啓寤鸿锛岃浣犵殑鍙ュ瓙鏇村湴閬撱€佹洿鏈夊姏</div>
+            <div class="tool-tagline">实时改写建议，让你的句子更地道、更有力</div>
           </div>
         </div>
-        <div class="card-tags"><span class="tag">鏀瑰啓</span></div>
+        <div class="card-tags"><span class="tag">改写</span></div>
         <div class="card-footer">
-          <span class="pricing freemium">Freemium</span>
-          <a href="https://www.wordtune.com" target="_blank" class="visit-btn">绔嬪嵆浣跨敤 鈫?/a>
+          <span class="pricing paid">Freemium</span>
+          <a href="https://www.wordtune.com" target="_blank" class="visit-btn">立即使用 →</a>
         </div>
       </div>
 
-      <div class="tool-card" data-cat="write">
+      <div class="tool-card" data-cat="write" data-name="rytr">
         <div class="card-top">
-          <div class="tool-icon" style="background:linear-gradient(135deg,#6c5ce7,#a29bfe)">馃</div>
+          <div class="tool-icon" style="background:linear-gradient(135deg,#6c5ce7,#a29bfe)">🤖</div>
           <div class="card-info">
             <div class="tool-name">Rytr</div>
-            <div class="tool-tagline">澶氬満鏅枃妗堢敓鎴愶紝鍗氬/绀惧獟/閭欢/骞垮憡鍏ㄨ鐩?/div>
+            <div class="tool-tagline">多场景文案生成，博客/社媒/邮件/广告全覆盖</div>
           </div>
         </div>
-        <div class="card-tags"><span class="tag">澶氬満鏅?/span></div>
+        <div class="card-tags"><span class="tag">多场景</span></div>
         <div class="card-footer">
-          <span class="pricing freemium">鍏嶈垂鐗堝彲鐢?/span>
-          <a href="https://rytr.me" target="_blank" class="visit-btn">绔嬪嵆浣跨敤 鈫?/a>
+          <span class="pricing freemium">免费版可用</span>
+          <a href="https://rytr.me" target="_blank" class="visit-btn">立即使用 →</a>
         </div>
       </div>
 
-      <div class="tool-card" data-cat="write">
+      <div class="tool-card" data-cat="write" data-name="sudowrite">
         <div class="card-top">
-          <div class="tool-icon" style="background:linear-gradient(135deg,#6c5ce7,#a29bfe)">馃</div>
+          <div class="tool-icon" style="background:linear-gradient(135deg,#6c5ce7,#a29bfe)">🤖</div>
           <div class="card-info">
             <div class="tool-name">Sudowrite</div>
-            <div class="tool-tagline">灏忚/鏁呬簨鍒涗綔 AI锛屼笓涓哄啓浣滆€呰璁★紝鎯呰妭缁啓瓒呰嚜鐒?/div>
+            <div class="tool-tagline">小说/故事创作 AI，专为写作者设计，情节续写超自然</div>
           </div>
         </div>
-        <div class="card-tags"><span class="tag">灏忚</span><span class="tag">鍒涙剰</span></div>
+        <div class="card-tags"><span class="tag">小说</span><span class="tag">创意</span></div>
         <div class="card-footer">
-          <span class="pricing paid">浠樿垂</span>
-          <a href="https://www.sudowrite.com" target="_blank" class="visit-btn">绔嬪嵆浣跨敤 鈫?/a>
+          <span class="pricing paid">付费</span>
+          <a href="https://www.sudowrite.com" target="_blank" class="visit-btn">立即使用 →</a>
         </div>
       </div>
 
-      <div class="tool-card" data-cat="write">
+      <div class="tool-card" data-cat="write" data-name="grammarly">
         <div class="card-top">
-          <div class="tool-icon" style="background:linear-gradient(135deg,#6c5ce7,#a29bfe)">馃</div>
+          <div class="tool-icon" style="background:linear-gradient(135deg,#6c5ce7,#a29bfe)">🤖</div>
           <div class="card-info">
             <div class="tool-name">Grammarly <span class="new-banner">NEW</span></div>
-            <div class="tool-tagline">AI 璇硶妫€鏌?鍐欎綔娑﹁壊锛屽疄鏃剁籂閿欙紝鏀寔 30+ 璇█锛屽鐢熷繀澶?/div>
+            <div class="tool-tagline">AI 语法检查+写作润色，实时纠错，支持 30+ 语言，学生必备</div>
           </div>
         </div>
-        <div class="card-tags"><span class="tag">娑﹁壊</span><span class="tag">鐑棬</span></div>
+        <div class="card-tags"><span class="tag tag-new">新上线</span><span class="tag tag-new">新上线</span></div>
         <div class="card-footer">
-          <span class="pricing freemium">Freemium</span>
-          <a href="https://www.grammarly.com" target="_blank" class="visit-btn">绔嬪嵆浣跨敤 鈫?/a>
+          <span class="pricing paid">Freemium</span>
+          <a href="https://www.grammarly.com" target="_blank" class="visit-btn">立即使用 →</a>
         </div>
       </div>
 
-      <div class="tool-card" data-cat="write">
+      <div class="tool-card" data-cat="write" data-name="writer.com">
         <div class="card-top">
-          <div class="tool-icon" style="background:linear-gradient(135deg,#6c5ce7,#a29bfe)">馃</div>
+          <div class="tool-icon" style="background:linear-gradient(135deg,#6c5ce7,#a29bfe)">🤖</div>
           <div class="card-info">
             <div class="tool-name">Writer.com <span class="new-banner">NEW</span></div>
-            <div class="tool-tagline">浼佷笟绾?AI 鍐欎綔骞冲彴锛屽搧鐗岃姘斿畾鍒讹紝Team 鍗忎綔鍐欓暱鏂?鎶ュ憡/鍚堝悓</div>
+            <div class="tool-tagline">企业级 AI 写作平台，品牌语气定制，Team 协作写长文/报告/合同</div>
           </div>
         </div>
-        <div class="card-tags"><span class="tag">浼佷笟</span><span class="tag">鍐欎綔</span></div>
+        <div class="card-tags"><span class="tag tag-new">新上线</span><span class="tag tag-new">新上线</span></div>
         <div class="card-footer">
-          <span class="pricing freemium">鍏嶈垂鐗堝彲鐢?/span>
-          <a href="https://writer.com" target="_blank" class="visit-btn">绔嬪嵆浣跨敤 鈫?/a>
+          <span class="pricing freemium">免费版可用</span>
+          <a href="https://writer.com" target="_blank" class="visit-btn">立即使用 →</a>
         </div>
       </div>
 
-      <div class="tool-card" data-cat="write">
+      <div class="tool-card" data-cat="write" data-name="anyword">
         <div class="card-top">
-          <div class="tool-icon" style="background:linear-gradient(135deg,#6c5ce7,#a29bfe)">馃</div>
+          <div class="tool-icon" style="background:linear-gradient(135deg,#6c5ce7,#a29bfe)">🤖</div>
           <div class="card-info">
             <div class="tool-name">Anyword <span class="new-banner">NEW</span></div>
-            <div class="tool-tagline">AI 鏂囨鎬ц兘棰勬祴锛屽摢涓爣棰?鏂囨杞寲鐜囨洿楂橈紵鐢ㄦ暟鎹璇?/div>
+            <div class="tool-tagline">AI 文案性能预测，哪个标题/文案转化率更高？用数据说话</div>
           </div>
         </div>
-        <div class="card-tags"><span class="tag">钀ラ攢</span><span class="tag">鏁版嵁椹卞姩</span></div>
+        <div class="card-tags"><span class="tag tag-new">新上线</span><span class="tag tag-new">新上线</span></div>
         <div class="card-footer">
-          <span class="pricing freemium">Freemium</span>
-          <a href="https://anyword.com" target="_blank" class="visit-btn">绔嬪嵆浣跨敤 鈫?/a>
+          <span class="pricing paid">Freemium</span>
+          <a href="https://anyword.com" target="_blank" class="visit-btn">立即使用 →</a>
         </div>
       </div>
 
-      <div class="tool-card" data-cat="write">
+      <div class="tool-card" data-cat="write" data-name="lavender-ai">
         <div class="card-top">
-          <div class="tool-icon" style="background:linear-gradient(135deg,#6c5ce7,#a29bfe)">馃</div>
+          <div class="tool-icon" style="background:linear-gradient(135deg,#6c5ce7,#a29bfe)">🤖</div>
           <div class="card-info">
             <div class="tool-name">Lavender AI <span class="new-banner">NEW</span></div>
-            <div class="tool-tagline">AI 閭欢鍐欎綔鍔╂墜锛岃嚜鍔ㄨ瘎鍒?鏀瑰啓寤鸿锛岄攢鍞偖浠剁殑绉樺瘑姝﹀櫒</div>
+            <div class="tool-tagline">AI 邮件写作助手，自动评分+改写建议，销售邮件的秘密武器</div>
           </div>
         </div>
-        <div class="card-tags"><span class="tag">閭欢</span><span class="tag">閿€鍞?/span></div>
+        <div class="card-tags"><span class="tag tag-new">新上线</span><span class="tag tag-new">新上线</span></div>
         <div class="card-footer">
-          <span class="pricing freemium">Freemium</span>
-          <a href="https://www.lavender.ai" target="_blank" class="visit-btn">绔嬪嵆浣跨敤 鈫?/a>
+          <span class="pricing paid">Freemium</span>
+          <a href="https://www.lavender.ai" target="_blank" class="visit-btn">立即使用 →</a>
         </div>
       </div>
 
-      <div class="tool-card" data-cat="write">
+      <div class="tool-card" data-cat="write" data-name="jenni-ai">
         <div class="card-top">
-          <div class="tool-icon" style="background:linear-gradient(135deg,#6c5ce7,#a29bfe)">馃</div>
+          <div class="tool-icon" style="background:linear-gradient(135deg,#6c5ce7,#a29bfe)">🤖</div>
           <div class="card-info">
             <div class="tool-name">Jenni AI <span class="new-banner">NEW</span></div>
-            <div class="tool-tagline">AI 瀛︽湳璁烘枃鍐欎綔绁炲櫒锛岃嚜鍔ㄥ紩鐢?鏌ラ噸+娑﹁壊锛岀爺绌剁敓蹇呭</div>
+            <div class="tool-tagline">AI 学术论文写作神器，自动引用+查重+润色，研究生必备</div>
           </div>
         </div>
-        <div class="card-tags"><span class="tag">瀛︽湳</span><span class="tag">璁烘枃</span></div>
+        <div class="card-tags"><span class="tag tag-new">新上线</span><span class="tag tag-new">新上线</span></div>
         <div class="card-footer">
-          <span class="pricing freemium">鍏嶈垂鐗堝彲鐢?/span>
-          <a href="https://jenni.ai" target="_blank" class="visit-btn">绔嬪嵆浣跨敤 鈫?/a>
+          <span class="pricing freemium">免费版可用</span>
+          <a href="https://jenni.ai" target="_blank" class="visit-btn">立即使用 →</a>
         </div>
       </div>
 
-      <div class="tool-card" data-cat="write">
+      <div class="tool-card" data-cat="write" data-name="postwise">
         <div class="card-top">
-          <div class="tool-icon" style="background:linear-gradient(135deg,#6c5ce7,#a29bfe)">馃</div>
+          <div class="tool-icon" style="background:linear-gradient(135deg,#6c5ce7,#a29bfe)">🤖</div>
           <div class="card-info">
             <div class="tool-name">Postwise <span class="new-banner">NEW</span></div>
-            <div class="tool-tagline">AI Twitter/X 甯栧瓙鐢熸垚鍣紝涓€閿垎娆炬帹鏂囷紝 viral 鏂囨宸ュ巶</div>
+            <div class="tool-tagline">AI Twitter/X 帖子生成器，一键爆款推文， viral 文案工厂</div>
           </div>
         </div>
-        <div class="card-tags"><span class="tag">绀惧獟</span><span class="tag">Twitter</span></div>
+        <div class="card-tags"><span class="tag tag-new">新上线</span><span class="tag tag-new">新上线</span></div>
         <div class="card-footer">
-          <span class="pricing freemium">Freemium</span>
-          <a href="https://postwise.ai" target="_blank" class="visit-btn">绔嬪嵆浣跨敤 鈫?/a>
+          <span class="pricing paid">Freemium</span>
+          <a href="https://postwise.ai" target="_blank" class="visit-btn">立即使用 →</a>
         </div>
       </div>
     </div>
   </section>
 
   <section class="section" data-section="image">
-    <div class="section-title">馃帹 AI 鐢诲浘</div>
-    <p class="section-desc">鏂囧瓧鐢熸垚鍥剧墖銆佸浘鐗囩紪杈戙€佽璁＄礌鏉愨€斺€旇瑙夊垱浣?AI 鍖?/p>
+    <div class="section-title">🎨 AI 画图</div>
+    <p class="section-desc">文字生成图片、图片编辑、设计素材——视觉创作 AI 化</p>
     <div class="tool-grid">
-      <div class="tool-card" data-cat="image">
+      <div class="tool-card" data-cat="image" data-name="midjourney">
         <div class="card-top">
-          <div class="tool-icon" style="background:linear-gradient(135deg,#6c5ce7,#a29bfe)">馃</div>
+          <div class="tool-icon" style="background:linear-gradient(135deg,#6c5ce7,#a29bfe)">🤖</div>
           <div class="card-info">
             <div class="tool-name">Midjourney</div>
-            <div class="tool-tagline">鐩墠鑹烘湳鎰熸渶寮虹殑 AI 鐢诲浘宸ュ叿锛岄€傚悎璁捐甯堛€佽壓鏈銆佸垱鎰忓伐浣滆€?/div>
+            <div class="tool-tagline">目前艺术感最强的 AI 画图工具，适合设计师、艺术家、创意工作者</div>
           </div>
         </div>
-        <div class="card-tags"><span class="tag">鐑棬</span><span class="tag">鑹烘湳</span></div>
+        <div class="card-tags"><span class="tag">热门</span><span class="tag">艺术</span></div>
         <div class="card-footer">
-          <span class="pricing paid">浠樿垂</span>
-          <a href="https://www.midjourney.com" target="_blank" class="visit-btn">绔嬪嵆浣跨敤 鈫?/a>
+          <span class="pricing paid">付费</span>
+          <a href="https://www.midjourney.com" target="_blank" class="visit-btn">立即使用 →</a>
         </div>
       </div>
 
-      <div class="tool-card" data-cat="image">
+      <div class="tool-card" data-cat="image" data-name="dall-e-3">
         <div class="card-top">
-          <div class="tool-icon" style="background:linear-gradient(135deg,#6c5ce7,#a29bfe)">馃</div>
+          <div class="tool-icon" style="background:linear-gradient(135deg,#6c5ce7,#a29bfe)">🤖</div>
           <div class="card-info">
             <div class="tool-name">DALL-E 3</div>
-            <div class="tool-tagline">OpenAI 鍑哄搧锛孋hatGPT 鍐呯疆锛岀簿鍑嗙悊瑙ｅ鏉傛彁绀鸿瘝</div>
+            <div class="tool-tagline">OpenAI 出品，ChatGPT 内置，精准理解复杂提示词</div>
           </div>
         </div>
         <div class="card-tags"><span class="tag">OpenAI</span></div>
         <div class="card-footer">
-          <span class="pricing paid">浠樿垂</span>
-          <a href="https://openai.com/dall-e-3" target="_blank" class="visit-btn">绔嬪嵆浣跨敤 鈫?/a>
+          <span class="pricing paid">付费</span>
+          <a href="https://openai.com/dall-e-3" target="_blank" class="visit-btn">立即使用 →</a>
         </div>
       </div>
 
-      <div class="tool-card" data-cat="image">
+      <div class="tool-card" data-cat="image" data-name="stable-diffusion">
         <div class="card-top">
-          <div class="tool-icon" style="background:linear-gradient(135deg,#6c5ce7,#a29bfe)">馃</div>
+          <div class="tool-icon" style="background:linear-gradient(135deg,#6c5ce7,#a29bfe)">🤖</div>
           <div class="card-info">
             <div class="tool-name">Stable Diffusion</div>
-            <div class="tool-tagline">寮€婧愬厤璐癸紝鏈湴閮ㄧ讲锛屽彲瀹氬埗璁粌锛岀敾鍥惧厷棣栭€?/div>
+            <div class="tool-tagline">开源免费，本地部署，可定制训练，画图党首选</div>
           </div>
         </div>
-        <div class="card-tags"><span class="tag">寮€婧?/span><span class="tag">鍏嶈垂</span></div>
+        <div class="card-tags"><span class="tag">开源</span><span class="tag">免费</span></div>
         <div class="card-footer">
-          <span class="pricing free">瀹屽叏鍏嶈垂</span>
-          <a href="https://stability.ai" target="_blank" class="visit-btn">绔嬪嵆浣跨敤 鈫?/a>
+          <span class="pricing free">完全免费</span>
+          <a href="https://stability.ai" target="_blank" class="visit-btn">立即使用 →</a>
         </div>
       </div>
 
-      <div class="tool-card" data-cat="image">
+      <div class="tool-card" data-cat="image" data-name="leonardo-ai">
         <div class="card-top">
-          <div class="tool-icon" style="background:linear-gradient(135deg,#6c5ce7,#a29bfe)">馃</div>
+          <div class="tool-icon" style="background:linear-gradient(135deg,#6c5ce7,#a29bfe)">🤖</div>
           <div class="card-info">
             <div class="tool-name">Leonardo AI</div>
-            <div class="tool-tagline">娓告垙绱犳潗 AI 鐢诲浘涓撳锛岃鑹?鍦烘櫙/閬撳叿涓€閿敓鎴?/div>
+            <div class="tool-tagline">游戏素材 AI 画图专家，角色/场景/道具一键生成</div>
           </div>
         </div>
-        <div class="card-tags"><span class="tag">娓告垙</span><span class="tag">绱犳潗</span></div>
+        <div class="card-tags"><span class="tag">游戏</span><span class="tag">素材</span></div>
         <div class="card-footer">
-          <span class="pricing freemium">Freemium</span>
-          <a href="https://leonardo.ai" target="_blank" class="visit-btn">绔嬪嵆浣跨敤 鈫?/a>
+          <span class="pricing paid">Freemium</span>
+          <a href="https://leonardo.ai" target="_blank" class="visit-btn">立即使用 →</a>
         </div>
       </div>
 
-      <div class="tool-card" data-cat="image">
+      <div class="tool-card" data-cat="image" data-name="dall-e">
         <div class="card-top">
-          <div class="tool-icon" style="background:linear-gradient(135deg,#6c5ce7,#a29bfe)">馃</div>
+          <div class="tool-icon" style="background:linear-gradient(135deg,#6c5ce7,#a29bfe)">🤖</div>
           <div class="card-info">
             <div class="tool-name">DALL-E</div>
-            <div class="tool-tagline">OpenAI 鐢诲浘榧荤锛屾彁绀鸿瘝鐞嗚В鍔涘己锛屼笌 ChatGPT 鏃犵紳琛旀帴</div>
+            <div class="tool-tagline">OpenAI 画图鼻祖，提示词理解力强，与 ChatGPT 无缝衔接</div>
           </div>
         </div>
         <div class="card-tags"><span class="tag">OpenAI</span></div>
         <div class="card-footer">
-          <span class="pricing paid">浠樿垂</span>
-          <a href="https://openai.com/dall-e" target="_blank" class="visit-btn">绔嬪嵆浣跨敤 鈫?/a>
+          <span class="pricing paid">付费</span>
+          <a href="https://openai.com/dall-e" target="_blank" class="visit-btn">立即使用 →</a>
         </div>
       </div>
 
-      <div class="tool-card" data-cat="image">
+      <div class="tool-card" data-cat="image" data-name="ideogram">
         <div class="card-top">
-          <div class="tool-icon" style="background:linear-gradient(135deg,#6c5ce7,#a29bfe)">馃</div>
+          <div class="tool-icon" style="background:linear-gradient(135deg,#6c5ce7,#a29bfe)">🤖</div>
           <div class="card-info">
             <div class="tool-name">Ideogram</div>
-            <div class="tool-tagline">鏂囧瓧鐢熸垚鍥剧墖+鑷姩鍔犳枃瀛楋紝璁捐娴锋姤/灏侀潰绁炲櫒</div>
+            <div class="tool-tagline">文字生成图片+自动加文字，设计海报/封面神器</div>
           </div>
         </div>
-        <div class="card-tags"><span class="tag">鏂囧瓧娓叉煋</span></div>
+        <div class="card-tags"><span class="tag">文字渲染</span></div>
         <div class="card-footer">
-          <span class="pricing freemium">鍏嶈垂鐗堝彲鐢?/span>
-          <a href="https://ideogram.ai" target="_blank" class="visit-btn">绔嬪嵆浣跨敤 鈫?/a>
+          <span class="pricing freemium">免费版可用</span>
+          <a href="https://ideogram.ai" target="_blank" class="visit-btn">立即使用 →</a>
         </div>
       </div>
 
-      <div class="tool-card" data-cat="image">
+      <div class="tool-card" data-cat="image" data-name="flux">
         <div class="card-top">
-          <div class="tool-icon" style="background:linear-gradient(135deg,#6c5ce7,#a29bfe)">馃</div>
+          <div class="tool-icon" style="background:linear-gradient(135deg,#6c5ce7,#a29bfe)">🤖</div>
           <div class="card-info">
             <div class="tool-name">Flux</div>
-            <div class="tool-tagline">寮€婧愮敾鍥炬ā鍨嬫柊鐜嬭€咃紝鐢昏川鎯婅壋锛屽疄鏃剁敓鍥鹃€熷害瓒呭揩</div>
+            <div class="tool-tagline">开源画图模型新王者，画质惊艳，实时生图速度超快</div>
           </div>
         </div>
-        <div class="card-tags"><span class="tag">寮€婧?/span><span class="tag">鐑棬</span></div>
+        <div class="card-tags"><span class="tag">开源</span><span class="tag">热门</span></div>
         <div class="card-footer">
-          <span class="pricing freemium">鍏嶈垂鐗堝彲鐢?/span>
-          <a href="https://blackforestlabs.ai" target="_blank" class="visit-btn">绔嬪嵆浣跨敤 鈫?/a>
+          <span class="pricing freemium">免费版可用</span>
+          <a href="https://blackforestlabs.ai" target="_blank" class="visit-btn">立即使用 →</a>
         </div>
       </div>
 
-      <div class="tool-card" data-cat="image">
+      <div class="tool-card" data-cat="image" data-name="recraft">
         <div class="card-top">
-          <div class="tool-icon" style="background:linear-gradient(135deg,#6c5ce7,#a29bfe)">馃</div>
+          <div class="tool-icon" style="background:linear-gradient(135deg,#6c5ce7,#a29bfe)">🤖</div>
           <div class="card-info">
             <div class="tool-name">Recraft</div>
-            <div class="tool-tagline">鐭㈤噺鍥?AI 鐢熸垚锛屾敮鎸?SVG 瀵煎嚭锛岃璁″笀宸ヤ綔娴佺鍣?/div>
+            <div class="tool-tagline">矢量图 AI 生成，支持 SVG 导出，设计师工作流神器</div>
           </div>
         </div>
-        <div class="card-tags"><span class="tag">鐭㈤噺鍥?/span></div>
+        <div class="card-tags"><span class="tag">矢量图</span></div>
         <div class="card-footer">
-          <span class="pricing freemium">鍏嶈垂鐗堝彲鐢?/span>
-          <a href="https://www.recraft.ai" target="_blank" class="visit-btn">绔嬪嵆浣跨敤 鈫?/a>
+          <span class="pricing freemium">免费版可用</span>
+          <a href="https://www.recraft.ai" target="_blank" class="visit-btn">立即使用 →</a>
         </div>
       </div>
 
-      <div class="tool-card" data-cat="image">
+      <div class="tool-card" data-cat="image" data-name="文心一格">
         <div class="card-top">
-          <div class="tool-icon" style="background:linear-gradient(135deg,#6c5ce7,#a29bfe)">馃</div>
+          <div class="tool-icon" style="background:linear-gradient(135deg,#6c5ce7,#a29bfe)">🤖</div>
           <div class="card-info">
-            <div class="tool-name">鏂囧績涓€鏍?/div>
-            <div class="tool-tagline">鐧惧害 AI 鐢诲浘锛屼腑鏂囨彁绀鸿瘝鍙嬪ソ锛屽厤璐归搴﹀鐢?/div>
+            <div class="tool-name">文心一格</div>
+            <div class="tool-tagline">百度 AI 画图，中文提示词友好，免费额度够用</div>
           </div>
         </div>
-        <div class="card-tags"><span class="tag">鍥戒骇</span><span class="tag">鍏嶈垂</span></div>
+        <div class="card-tags"><span class="tag">国产</span><span class="tag">免费</span></div>
         <div class="card-footer">
-          <span class="pricing freemium">鍏嶈垂鐗堝彲鐢?/span>
-          <a href="https://yige.baidu.com" target="_blank" class="visit-btn">绔嬪嵆浣跨敤 鈫?/a>
+          <span class="pricing freemium">免费版可用</span>
+          <a href="https://yige.baidu.com" target="_blank" class="visit-btn">立即使用 →</a>
         </div>
       </div>
 
-      <div class="tool-card" data-cat="image">
+      <div class="tool-card" data-cat="image" data-name="通义万相">
         <div class="card-top">
-          <div class="tool-icon" style="background:linear-gradient(135deg,#6c5ce7,#a29bfe)">馃</div>
+          <div class="tool-icon" style="background:linear-gradient(135deg,#6c5ce7,#a29bfe)">🤖</div>
           <div class="card-info">
-            <div class="tool-name">閫氫箟涓囩浉</div>
-            <div class="tool-tagline">闃块噷浜?AI 鐢诲浘锛屾敮鎸佹枃鐢熷浘/鍥剧敓鍥撅紝涓枃浣撻獙浼樼</div>
+            <div class="tool-name">通义万相</div>
+            <div class="tool-tagline">阿里云 AI 画图，支持文生图/图生图，中文体验优秀</div>
           </div>
         </div>
-        <div class="card-tags"><span class="tag">鍥戒骇</span></div>
+        <div class="card-tags"><span class="tag">国产</span></div>
         <div class="card-footer">
-          <span class="pricing freemium">鍏嶈垂鐗堝彲鐢?/span>
-          <a href="https://tongyi.aliyun.com/wanxiang" target="_blank" class="visit-btn">绔嬪嵆浣跨敤 鈫?/a>
+          <span class="pricing freemium">免费版可用</span>
+          <a href="https://tongyi.aliyun.com/wanxiang" target="_blank" class="visit-btn">立即使用 →</a>
         </div>
       </div>
 
-      <div class="tool-card" data-cat="image">
+      <div class="tool-card" data-cat="image" data-name="comfyui">
         <div class="card-top">
-          <div class="tool-icon" style="background:linear-gradient(135deg,#6c5ce7,#a29bfe)">馃</div>
+          <div class="tool-icon" style="background:linear-gradient(135deg,#6c5ce7,#a29bfe)">🤖</div>
           <div class="card-info">
             <div class="tool-name">ComfyUI <span class="new-banner">NEW</span></div>
-            <div class="tool-tagline">鑺傜偣寮?AI 鐢诲浘宸ヤ綔娴侊紝鐏垫椿鎷兼帴妯″瀷/LoRA/ControlNet锛岃繘闃剁帺瀹跺繀澶?/div>
+            <div class="tool-tagline">节点式 AI 画图工作流，灵活拼接模型/LoRA/ControlNet，进阶玩家必备</div>
           </div>
         </div>
-        <div class="card-tags"><span class="tag">寮€婧?/span><span class="tag">宸ヤ綔娴?/span></div>
+        <div class="card-tags"><span class="tag tag-new">新上线</span><span class="tag tag-new">新上线</span></div>
         <div class="card-footer">
-          <span class="pricing free">瀹屽叏鍏嶈垂</span>
-          <a href="https://comfyui.org" target="_blank" class="visit-btn">绔嬪嵆浣跨敤 鈫?/a>
+          <span class="pricing free">完全免费</span>
+          <a href="https://comfyui.org" target="_blank" class="visit-btn">立即使用 →</a>
         </div>
       </div>
 
-      <div class="tool-card" data-cat="image">
+      <div class="tool-card" data-cat="image" data-name="canva-ai">
         <div class="card-top">
-          <div class="tool-icon" style="background:linear-gradient(135deg,#6c5ce7,#a29bfe)">馃</div>
+          <div class="tool-icon" style="background:linear-gradient(135deg,#6c5ce7,#a29bfe)">🤖</div>
           <div class="card-info">
             <div class="tool-name">Canva AI <span class="new-banner">NEW</span></div>
-            <div class="tool-tagline">Canva 鍐呯疆 Magic Design锛屾枃瀛楃鍑鸿璁″浘锛岄浂鍩虹绉掑仛绀惧獟娴锋姤</div>
+            <div class="tool-tagline">Canva 内置 Magic Design，文字秒出设计图，零基础秒做社媒海报</div>
           </div>
         </div>
-        <div class="card-tags"><span class="tag">璁捐</span><span class="tag">鍏嶈垂</span></div>
+        <div class="card-tags"><span class="tag tag-new">新上线</span><span class="tag tag-new">新上线</span></div>
         <div class="card-footer">
-          <span class="pricing freemium">鍏嶈垂鐗堝彲鐢?/span>
-          <a href="https://www.canva.com/ai-image-generator" target="_blank" class="visit-btn">绔嬪嵆浣跨敤 鈫?/a>
+          <span class="pricing freemium">免费版可用</span>
+          <a href="https://www.canva.com/ai-image-generator" target="_blank" class="visit-btn">立即使用 →</a>
         </div>
       </div>
 
-      <div class="tool-card" data-cat="image">
+      <div class="tool-card" data-cat="image" data-name="tome-ai">
         <div class="card-top">
-          <div class="tool-icon" style="background:linear-gradient(135deg,#6c5ce7,#a29bfe)">馃</div>
+          <div class="tool-icon" style="background:linear-gradient(135deg,#6c5ce7,#a29bfe)">🤖</div>
           <div class="card-info">
             <div class="tool-name">Tome AI <span class="new-banner">NEW</span></div>
-            <div class="tool-tagline">AI 鍙欎簨鐢诲浘 + 婕旂ず鐢熸垚锛屾枃瀛楄緭鍏ヨ嚜鍔ㄦ帓鐗堟垚绮剧編鏁呬簨</div>
+            <div class="tool-tagline">AI 叙事画图 + 演示生成，文字输入自动排版成精美故事</div>
           </div>
         </div>
-        <div class="card-tags"><span class="tag">鍙欎簨</span><span class="tag">PPT</span></div>
+        <div class="card-tags"><span class="tag tag-new">新上线</span><span class="tag tag-new">新上线</span></div>
         <div class="card-footer">
-          <span class="pricing freemium">鍏嶈垂鐗堝彲鐢?/span>
-          <a href="https://tome.app" target="_blank" class="visit-btn">绔嬪嵆浣跨敤 鈫?/a>
+          <span class="pricing freemium">免费版可用</span>
+          <a href="https://tome.app" target="_blank" class="visit-btn">立即使用 →</a>
         </div>
       </div>
 
-      <div class="tool-card" data-cat="image">
+      <div class="tool-card" data-cat="image" data-name="framer-ai">
         <div class="card-top">
-          <div class="tool-icon" style="background:linear-gradient(135deg,#6c5ce7,#a29bfe)">馃</div>
+          <div class="tool-icon" style="background:linear-gradient(135deg,#6c5ce7,#a29bfe)">🤖</div>
           <div class="card-info">
             <div class="tool-name">Framer AI <span class="new-banner">NEW</span></div>
-            <div class="tool-tagline">AI 涓€閿敓鎴愬畬鏁寸綉绔?UI 璁捐鍥撅紝瑙嗚鎯婅壋锛岃璁″笀鏁堢巼绁炲櫒</div>
+            <div class="tool-tagline">AI 一键生成完整网站 UI 设计图，视觉惊艳，设计师效率神器</div>
           </div>
         </div>
-        <div class="card-tags"><span class="tag">UI璁捐</span><span class="tag">鐑棬</span></div>
+        <div class="card-tags"><span class="tag tag-new">新上线</span><span class="tag tag-new">新上线</span></div>
         <div class="card-footer">
-          <span class="pricing freemium">鍏嶈垂鐗堝彲鐢?/span>
-          <a href="https://www.framer.com/ai" target="_blank" class="visit-btn">绔嬪嵆浣跨敤 鈫?/a>
+          <span class="pricing freemium">免费版可用</span>
+          <a href="https://www.framer.com/ai" target="_blank" class="visit-btn">立即使用 →</a>
         </div>
       </div>
 
-      <div class="tool-card" data-cat="image">
+      <div class="tool-card" data-cat="image" data-name="adobe-firefly">
         <div class="card-top">
-          <div class="tool-icon" style="background:linear-gradient(135deg,#6c5ce7,#a29bfe)">馃</div>
+          <div class="tool-icon" style="background:linear-gradient(135deg,#6c5ce7,#a29bfe)">🤖</div>
           <div class="card-info">
             <div class="tool-name">Adobe Firefly <span class="new-banner">NEW</span></div>
-            <div class="tool-tagline">Adobe 鍟嗙敤绾?AI 鐢诲浘锛屼笌 PS/AI/PR 鏃犵紳闆嗘垚锛屼紒涓氱増鏉冨畨鍏?/div>
+            <div class="tool-tagline">Adobe 商用级 AI 画图，与 PS/AI/PR 无缝集成，企业版权安全</div>
           </div>
         </div>
-        <div class="card-tags"><span class="tag">Adobe</span><span class="tag">鍟嗙敤</span></div>
+        <div class="card-tags"><span class="tag tag-new">新上线</span><span class="tag tag-new">新上线</span></div>
         <div class="card-footer">
-          <span class="pricing paid">浠樿垂</span>
-          <a href="https://firefly.adobe.com" target="_blank" class="visit-btn">绔嬪嵆浣跨敤 鈫?/a>
+          <span class="pricing paid">付费</span>
+          <a href="https://firefly.adobe.com" target="_blank" class="visit-btn">立即使用 →</a>
         </div>
       </div>
     </div>
   </section>
 
   <section class="section" data-section="code">
-    <div class="section-title">馃捇 AI 缂栫▼</div>
-    <p class="section-desc">AI 缁撳缂栫▼銆佷唬鐮佺敓鎴愩€佽嚜鍔ㄩ噸鏋勨€斺€旂▼搴忓憳鏁堢巼绁炲櫒</p>
+    <div class="section-title">💻 AI 编程</div>
+    <p class="section-desc">AI 结对编程、代码生成、自动重构——程序员效率神器</p>
     <div class="tool-grid">
-      <div class="tool-card" data-cat="code">
+      <div class="tool-card" data-cat="code" data-name="github-copilot">
         <div class="card-top">
-          <div class="tool-icon" style="background:linear-gradient(135deg,#6c5ce7,#a29bfe)">馃</div>
+          <div class="tool-icon" style="background:linear-gradient(135deg,#6c5ce7,#a29bfe)">🤖</div>
           <div class="card-info">
             <div class="tool-name">GitHub Copilot</div>
-            <div class="tool-tagline">浣犵殑 AI 缁撳缂栫▼浼欎即锛屽疄鏃朵唬鐮佽ˉ鍏ㄣ€佸嚱鏁扮敓鎴愩€乥ug 淇</div>
+            <div class="tool-tagline">你的 AI 结对编程伙伴，实时代码补全、函数生成、bug 修复</div>
           </div>
         </div>
-        <div class="card-tags"><span class="tag">鐑棬</span><span class="tag">寰蒋</span></div>
+        <div class="card-tags"><span class="tag">热门</span><span class="tag">微软</span></div>
         <div class="card-footer">
-          <span class="pricing paid">浠樿垂</span>
-          <a href="https://github.com/features/copilot" target="_blank" class="visit-btn">绔嬪嵆浣跨敤 鈫?/a>
+          <span class="pricing paid">付费</span>
+          <a href="https://github.com/features/copilot" target="_blank" class="visit-btn">立即使用 →</a>
         </div>
       </div>
 
-      <div class="tool-card" data-cat="code">
+      <div class="tool-card" data-cat="code" data-name="cursor">
         <div class="card-top">
-          <div class="tool-icon" style="background:linear-gradient(135deg,#6c5ce7,#a29bfe)">馃</div>
+          <div class="tool-icon" style="background:linear-gradient(135deg,#6c5ce7,#a29bfe)">🤖</div>
           <div class="card-info">
             <div class="tool-name">Cursor</div>
-            <div class="tool-tagline">AI 鍘熺敓浠ｇ爜缂栬緫鍣紝AI 閲嶆瀯銆佽亰澶╁啓浠ｇ爜銆佺悊瑙ｆ暣涓」鐩?/div>
+            <div class="tool-tagline">AI 原生代码编辑器，AI 重构、聊天写代码、理解整个项目</div>
           </div>
         </div>
-        <div class="card-tags"><span class="tag">鐑棬</span></div>
+        <div class="card-tags"><span class="tag">热门</span></div>
         <div class="card-footer">
-          <span class="pricing freemium">Freemium</span>
-          <a href="https://cursor.sh" target="_blank" class="visit-btn">绔嬪嵆浣跨敤 鈫?/a>
+          <span class="pricing paid">Freemium</span>
+          <a href="https://cursor.sh" target="_blank" class="visit-btn">立即使用 →</a>
         </div>
       </div>
 
-      <div class="tool-card" data-cat="code">
+      <div class="tool-card" data-cat="code" data-name="aider">
         <div class="card-top">
-          <div class="tool-icon" style="background:linear-gradient(135deg,#6c5ce7,#a29bfe)">馃</div>
+          <div class="tool-icon" style="background:linear-gradient(135deg,#6c5ce7,#a29bfe)">🤖</div>
           <div class="card-info">
             <div class="tool-name">Aider</div>
-            <div class="tool-tagline">缁堢 AI 缂栫▼锛屽鏂囦欢缂栬緫 + Git 闆嗘垚锛岄€傚悎鍛戒护琛岀埍濂借€?/div>
+            <div class="tool-tagline">终端 AI 编程，多文件编辑 + Git 集成，适合命令行爱好者</div>
           </div>
         </div>
-        <div class="card-tags"><span class="tag">缁堢</span></div>
+        <div class="card-tags"><span class="tag">终端</span></div>
         <div class="card-footer">
-          <span class="pricing freemium">鍏嶈垂鐗堝彲鐢?/span>
-          <a href="https://aider.chat" target="_blank" class="visit-btn">绔嬪嵆浣跨敤 鈫?/a>
+          <span class="pricing freemium">免费版可用</span>
+          <a href="https://aider.chat" target="_blank" class="visit-btn">立即使用 →</a>
         </div>
       </div>
 
-      <div class="tool-card" data-cat="code">
+      <div class="tool-card" data-cat="code" data-name="continue">
         <div class="card-top">
-          <div class="tool-icon" style="background:linear-gradient(135deg,#6c5ce7,#a29bfe)">馃</div>
+          <div class="tool-icon" style="background:linear-gradient(135deg,#6c5ce7,#a29bfe)">🤖</div>
           <div class="card-info">
             <div class="tool-name">Continue</div>
-            <div class="tool-tagline">寮€婧?AI 缂栫▼鎻掍欢锛孷S Code/JetBrains 閫氱敤锛岃嚜閫変换鎰忔ā鍨?/div>
+            <div class="tool-tagline">开源 AI 编程插件，VS Code/JetBrains 通用，自选任意模型</div>
           </div>
         </div>
-        <div class="card-tags"><span class="tag">寮€婧?/span><span class="tag">鍏嶈垂</span></div>
+        <div class="card-tags"><span class="tag">开源</span><span class="tag">免费</span></div>
         <div class="card-footer">
-          <span class="pricing free">瀹屽叏鍏嶈垂</span>
-          <a href="https://continue.dev" target="_blank" class="visit-btn">绔嬪嵆浣跨敤 鈫?/a>
+          <span class="pricing free">完全免费</span>
+          <a href="https://continue.dev" target="_blank" class="visit-btn">立即使用 →</a>
         </div>
       </div>
 
-      <div class="tool-card" data-cat="code">
+      <div class="tool-card" data-cat="code" data-name="codeium">
         <div class="card-top">
-          <div class="tool-icon" style="background:linear-gradient(135deg,#6c5ce7,#a29bfe)">馃</div>
+          <div class="tool-icon" style="background:linear-gradient(135deg,#6c5ce7,#a29bfe)">🤖</div>
           <div class="card-info">
             <div class="tool-name">Codeium</div>
-            <div class="tool-tagline">Copilot 鍏嶈垂鏇夸唬锛屼釜浜虹増瀹屽叏鍏嶈垂锛岄€熷害鏋佸揩</div>
+            <div class="tool-tagline">Copilot 免费替代，个人版完全免费，速度极快</div>
           </div>
         </div>
-        <div class="card-tags"><span class="tag">鍏嶈垂</span><span class="tag">Copilot鏇夸唬</span></div>
+        <div class="card-tags"><span class="tag">免费</span><span class="tag">Copilot替代</span></div>
         <div class="card-footer">
-          <span class="pricing free">瀹屽叏鍏嶈垂</span>
-          <a href="https://codeium.com" target="_blank" class="visit-btn">绔嬪嵆浣跨敤 鈫?/a>
+          <span class="pricing free">完全免费</span>
+          <a href="https://codeium.com" target="_blank" class="visit-btn">立即使用 →</a>
         </div>
       </div>
 
-      <div class="tool-card" data-cat="code">
+      <div class="tool-card" data-cat="code" data-name="tabnine">
         <div class="card-top">
-          <div class="tool-icon" style="background:linear-gradient(135deg,#6c5ce7,#a29bfe)">馃</div>
+          <div class="tool-icon" style="background:linear-gradient(135deg,#6c5ce7,#a29bfe)">🤖</div>
           <div class="card-info">
             <div class="tool-name">Tabnine</div>
-            <div class="tool-tagline">AI 浠ｇ爜琛ュ叏锛屾敮鎸佹湰鍦版ā鍨嬶紝浼佷笟绉佹湁鍖栭儴缃?/div>
+            <div class="tool-tagline">AI 代码补全，支持本地模型，企业私有化部署</div>
           </div>
         </div>
-        <div class="card-tags"><span class="tag">浼佷笟</span><span class="tag">闅愮</span></div>
+        <div class="card-tags"><span class="tag">企业</span><span class="tag">隐私</span></div>
         <div class="card-footer">
-          <span class="pricing freemium">Freemium</span>
-          <a href="https://tabnine.com" target="_blank" class="visit-btn">绔嬪嵆浣跨敤 鈫?/a>
+          <span class="pricing paid">Freemium</span>
+          <a href="https://tabnine.com" target="_blank" class="visit-btn">立即使用 →</a>
         </div>
       </div>
 
-      <div class="tool-card" data-cat="code">
+      <div class="tool-card" data-cat="code" data-name="replit">
         <div class="card-top">
-          <div class="tool-icon" style="background:linear-gradient(135deg,#6c5ce7,#a29bfe)">馃</div>
+          <div class="tool-icon" style="background:linear-gradient(135deg,#6c5ce7,#a29bfe)">🤖</div>
           <div class="card-info">
             <div class="tool-name">Replit</div>
-            <div class="tool-tagline">娴忚鍣ㄥ啓浠ｇ爜 + AI锛屽湪绾?IDE + Ghostwriter锛岃竟瀛﹁竟鍐?/div>
+            <div class="tool-tagline">浏览器写代码 + AI，在线 IDE + Ghostwriter，边学边写</div>
           </div>
         </div>
-        <div class="card-tags"><span class="tag">鍦ㄧ嚎IDE</span></div>
+        <div class="card-tags"><span class="tag">在线IDE</span></div>
         <div class="card-footer">
-          <span class="pricing freemium">Freemium</span>
-          <a href="https://replit.com" target="_blank" class="visit-btn">绔嬪嵆浣跨敤 鈫?/a>
+          <span class="pricing paid">Freemium</span>
+          <a href="https://replit.com" target="_blank" class="visit-btn">立即使用 →</a>
         </div>
       </div>
 
-      <div class="tool-card" data-cat="code">
+      <div class="tool-card" data-cat="code" data-name="bolt">
         <div class="card-top">
-          <div class="tool-icon" style="background:linear-gradient(135deg,#6c5ce7,#a29bfe)">馃</div>
+          <div class="tool-icon" style="background:linear-gradient(135deg,#6c5ce7,#a29bfe)">🤖</div>
           <div class="card-info">
             <div class="tool-name">Bolt</div>
-            <div class="tool-tagline">涓€鍙ヨ瘽鐢熸垚瀹屾暣 Web 搴旂敤锛屽叏鏍堜唬鐮佽嚜鍔ㄧ敓鎴愶紝鏃犻渶缁忛獙</div>
+            <div class="tool-tagline">一句话生成完整 Web 应用，全栈代码自动生成，无需经验</div>
           </div>
         </div>
-        <div class="card-tags"><span class="tag">鍏ㄦ爤</span><span class="tag">鐑棬</span></div>
+        <div class="card-tags"><span class="tag">全栈</span><span class="tag">热门</span></div>
         <div class="card-footer">
-          <span class="pricing freemium">鍏嶈垂鐗堝彲鐢?/span>
-          <a href="https://bolt.new" target="_blank" class="visit-btn">绔嬪嵆浣跨敤 鈫?/a>
+          <span class="pricing freemium">免费版可用</span>
+          <a href="https://bolt.new" target="_blank" class="visit-btn">立即使用 →</a>
         </div>
       </div>
 
-      <div class="tool-card" data-cat="code">
+      <div class="tool-card" data-cat="code" data-name="windsurf">
         <div class="card-top">
-          <div class="tool-icon" style="background:linear-gradient(135deg,#6c5ce7,#a29bfe)">馃</div>
+          <div class="tool-icon" style="background:linear-gradient(135deg,#6c5ce7,#a29bfe)">🤖</div>
           <div class="card-info">
             <div class="tool-name">Windsurf</div>
-            <div class="tool-tagline">AI 瓒呯紪绋嬶紝鑳界悊瑙ｄ綘鐨勬暣涓唬鐮佸簱锛岀粰寤鸿鑰屼笉鏄ˉ鍏?/div>
+            <div class="tool-tagline">AI 超编程，能理解你的整个代码库，给建议而不是补全</div>
           </div>
         </div>
-        <div class="card-tags"><span class="tag">AI缂栬緫鍣?/span></div>
+        <div class="card-tags"><span class="tag">AI编辑器</span></div>
         <div class="card-footer">
-          <span class="pricing freemium">Freemium</span>
-          <a href="https://windsurf.com" target="_blank" class="visit-btn">绔嬪嵆浣跨敤 鈫?/a>
+          <span class="pricing paid">Freemium</span>
+          <a href="https://windsurf.com" target="_blank" class="visit-btn">立即使用 →</a>
         </div>
       </div>
 
-      <div class="tool-card" data-cat="code">
+      <div class="tool-card" data-cat="code" data-name="cline">
         <div class="card-top">
-          <div class="tool-icon" style="background:linear-gradient(135deg,#6c5ce7,#a29bfe)">馃</div>
+          <div class="tool-icon" style="background:linear-gradient(135deg,#6c5ce7,#a29bfe)">🤖</div>
           <div class="card-info">
             <div class="tool-name">Cline <span class="new-banner">NEW</span></div>
-            <div class="tool-tagline">VS Code 寮€婧?AI 缂栫▼鎻掍欢锛屾敮鎸?GPT-4o/Claude/Gemini锛屽厤璐瑰己澶?/div>
+            <div class="tool-tagline">VS Code 开源 AI 编程插件，支持 GPT-4o/Claude/Gemini，免费强大</div>
           </div>
         </div>
-        <div class="card-tags"><span class="tag">寮€婧?/span><span class="tag">鍏嶈垂</span></div>
+        <div class="card-tags"><span class="tag tag-new">新上线</span><span class="tag tag-new">新上线</span></div>
         <div class="card-footer">
-          <span class="pricing free">瀹屽叏鍏嶈垂</span>
-          <a href="https://github.com/cline/cline" target="_blank" class="visit-btn">绔嬪嵆浣跨敤 鈫?/a>
+          <span class="pricing free">完全免费</span>
+          <a href="https://github.com/cline/cline" target="_blank" class="visit-btn">立即使用 →</a>
         </div>
       </div>
 
-      <div class="tool-card" data-cat="code">
+      <div class="tool-card" data-cat="code" data-name="claude-code">
         <div class="card-top">
-          <div class="tool-icon" style="background:linear-gradient(135deg,#6c5ce7,#a29bfe)">馃</div>
+          <div class="tool-icon" style="background:linear-gradient(135deg,#6c5ce7,#a29bfe)">🤖</div>
           <div class="card-info">
             <div class="tool-name">Claude Code <span class="new-banner">NEW</span></div>
-            <div class="tool-tagline">Anthropic 缁堢 AI 宸ョ▼甯堬紝璇绘噦鏁翠釜浠ｇ爜搴擄紝涓€琛屾寚浠ゆ敼鍏ㄩ」鐩?/div>
+            <div class="tool-tagline">Anthropic 终端 AI 工程师，读懂整个代码库，一行指令改全项目</div>
           </div>
         </div>
-        <div class="card-tags"><span class="tag">Anthropic</span><span class="tag">缁堢</span></div>
+        <div class="card-tags"><span class="tag tag-new">新上线</span><span class="tag tag-new">新上线</span></div>
         <div class="card-footer">
-          <span class="pricing paid">浠樿垂</span>
-          <a href="https://claude.ai/claude-code" target="_blank" class="visit-btn">绔嬪嵆浣跨敤 鈫?/a>
+          <span class="pricing paid">付费</span>
+          <a href="https://claude.ai/claude-code" target="_blank" class="visit-btn">立即使用 →</a>
         </div>
       </div>
 
-      <div class="tool-card" data-cat="code">
+      <div class="tool-card" data-cat="code" data-name="v0-by-vercel">
         <div class="card-top">
-          <div class="tool-icon" style="background:linear-gradient(135deg,#6c5ce7,#a29bfe)">馃</div>
+          <div class="tool-icon" style="background:linear-gradient(135deg,#6c5ce7,#a29bfe)">🤖</div>
           <div class="card-info">
             <div class="tool-name">v0 by Vercel <span class="new-banner">NEW</span></div>
-            <div class="tool-tagline">Vercel 鍑哄搧锛屼竴鍙ヨ瘽鐢熸垚 React 缁勪欢锛孉I 鍓嶇寮€鍙戦€熷害缈诲€?/div>
+            <div class="tool-tagline">Vercel 出品，一句话生成 React 组件，AI 前端开发速度翻倍</div>
           </div>
         </div>
-        <div class="card-tags"><span class="tag">鍓嶇</span><span class="tag">Vercel</span></div>
+        <div class="card-tags"><span class="tag tag-new">新上线</span><span class="tag tag-new">新上线</span></div>
         <div class="card-footer">
-          <span class="pricing freemium">鍏嶈垂鐗堝彲鐢?/span>
-          <a href="https://v0.dev" target="_blank" class="visit-btn">绔嬪嵆浣跨敤 鈫?/a>
+          <span class="pricing freemium">免费版可用</span>
+          <a href="https://v0.dev" target="_blank" class="visit-btn">立即使用 →</a>
         </div>
       </div>
 
-      <div class="tool-card" data-cat="code">
+      <div class="tool-card" data-cat="code" data-name="amazon-codewhisperer">
         <div class="card-top">
-          <div class="tool-icon" style="background:linear-gradient(135deg,#6c5ce7,#a29bfe)">馃</div>
+          <div class="tool-icon" style="background:linear-gradient(135deg,#6c5ce7,#a29bfe)">🤖</div>
           <div class="card-info">
             <div class="tool-name">Amazon CodeWhisperer <span class="new-banner">NEW</span></div>
-            <div class="tool-tagline">AWS 鍏嶈垂 AI 缂栫▼鍔╂墜锛屽唴缃畨鍏ㄦ壂鎻忥紝浼佷笟瀹夊叏鍚堣棣栭€?/div>
+            <div class="tool-tagline">AWS 免费 AI 编程助手，内置安全扫描，企业安全合规首选</div>
           </div>
         </div>
-        <div class="card-tags"><span class="tag">AWS</span><span class="tag">鍏嶈垂</span></div>
+        <div class="card-tags"><span class="tag tag-new">新上线</span><span class="tag tag-new">新上线</span></div>
         <div class="card-footer">
-          <span class="pricing free">瀹屽叏鍏嶈垂</span>
-          <a href="https://aws.amazon.com/codewhisperer" target="_blank" class="visit-btn">绔嬪嵆浣跨敤 鈫?/a>
+          <span class="pricing free">完全免费</span>
+          <a href="https://aws.amazon.com/codewhisperer" target="_blank" class="visit-btn">立即使用 →</a>
         </div>
       </div>
 
-      <div class="tool-card" data-cat="code">
+      <div class="tool-card" data-cat="code" data-name="devin">
         <div class="card-top">
-          <div class="tool-icon" style="background:linear-gradient(135deg,#6c5ce7,#a29bfe)">馃</div>
+          <div class="tool-icon" style="background:linear-gradient(135deg,#6c5ce7,#a29bfe)">🤖</div>
           <div class="card-info">
             <div class="tool-name">Devin <span class="new-banner">NEW</span></div>
-            <div class="tool-tagline">Cognition 鍑哄搧 AI 杞欢宸ョ▼甯堬紝鑳界嫭绔嬪畬鎴愬紑鍙戜换鍔＄殑鍏ㄦ爤 Agent</div>
+            <div class="tool-tagline">Cognition 出品 AI 软件工程师，能独立完成开发任务的全栈 Agent</div>
           </div>
         </div>
-        <div class="card-tags"><span class="tag">鍏ㄦ爤</span><span class="tag">Agent</span></div>
+        <div class="card-tags"><span class="tag tag-new">新上线</span><span class="tag tag-new">新上线</span></div>
         <div class="card-footer">
-          <span class="pricing paid">浠樿垂</span>
-          <a href="https://www.cognition.ai" target="_blank" class="visit-btn">绔嬪嵆浣跨敤 鈫?/a>
+          <span class="pricing paid">付费</span>
+          <a href="https://www.cognition.ai" target="_blank" class="visit-btn">立即使用 →</a>
         </div>
       </div>
     </div>
   </section>
 
   <section class="section" data-section="video">
-    <div class="section-title">馃幀 AI 瑙嗛</div>
-    <p class="section-desc">鏂囧瓧鐢熸垚瑙嗛銆佹暟瀛椾汉銆佽棰戣В璇淬€佺煭鍓у墽鏈€斺€斿奖瑙嗙骇鏁堟灉瑙︽墜鍙強</p>
+    <div class="section-title">🎬 AI 视频</div>
+    <p class="section-desc">文字生成视频、数字人、视频解说、短剧剧本——影视级效果触手可及</p>
     <div class="tool-grid">
-      <div class="tool-card" data-cat="video">
+      <div class="tool-card" data-cat="video" data-name="runway-ml">
         <div class="card-top">
-          <div class="tool-icon" style="background:linear-gradient(135deg,#6c5ce7,#a29bfe)">馃</div>
+          <div class="tool-icon" style="background:linear-gradient(135deg,#6c5ce7,#a29bfe)">🤖</div>
           <div class="card-info">
             <div class="tool-name">Runway ML</div>
-            <div class="tool-tagline">Gen-3 瑙嗛鐢熸垚澶╄姳鏉匡紝鏂囧瓧/鍥剧墖杞棰戯紝瑙嗛缂栬緫涓€鏁村</div>
+            <div class="tool-tagline">Gen-3 视频生成天花板，文字/图片转视频，视频编辑一整套</div>
           </div>
         </div>
-        <div class="card-tags"><span class="tag">鐑棬</span><span class="tag">浠樿垂</span></div>
+        <div class="card-tags"><span class="tag">热门</span><span class="tag">付费</span></div>
         <div class="card-footer">
-          <span class="pricing paid">浠樿垂</span>
-          <a href="https://runway.ml" target="_blank" class="visit-btn">绔嬪嵆浣跨敤 鈫?/a>
+          <span class="pricing paid">付费</span>
+          <a href="https://runway.ml" target="_blank" class="visit-btn">立即使用 →</a>
         </div>
       </div>
 
-      <div class="tool-card" data-cat="video">
+      <div class="tool-card" data-cat="video" data-name="sora">
         <div class="card-top">
-          <div class="tool-icon" style="background:linear-gradient(135deg,#6c5ce7,#a29bfe)">馃</div>
+          <div class="tool-icon" style="background:linear-gradient(135deg,#6c5ce7,#a29bfe)">🤖</div>
           <div class="card-info">
             <div class="tool-name">Sora</div>
-            <div class="tool-tagline">OpenAI 鏂囩敓瑙嗛缁堟瀬褰㈡€侊紝60绉掕繛璐棰戯紝鐗╃悊涓栫晫妯℃嫙鑳藉姏鎯婁汉</div>
+            <div class="tool-tagline">OpenAI 文生视频终极形态，60秒连贯视频，物理世界模拟能力惊人</div>
           </div>
         </div>
-        <div class="card-tags"><span class="tag">鐑棬</span><span class="tag">OpenAI</span></div>
+        <div class="card-tags"><span class="tag">热门</span><span class="tag">OpenAI</span></div>
         <div class="card-footer">
-          <span class="pricing paid">浠樿垂</span>
-          <a href="https://openai.com/sora" target="_blank" class="visit-btn">绔嬪嵆浣跨敤 鈫?/a>
+          <span class="pricing paid">付费</span>
+          <a href="https://openai.com/sora" target="_blank" class="visit-btn">立即使用 →</a>
         </div>
       </div>
 
-      <div class="tool-card" data-cat="video">
+      <div class="tool-card" data-cat="video" data-name="pika">
         <div class="card-top">
-          <div class="tool-icon" style="background:linear-gradient(135deg,#6c5ce7,#a29bfe)">馃</div>
+          <div class="tool-icon" style="background:linear-gradient(135deg,#6c5ce7,#a29bfe)">🤖</div>
           <div class="card-info">
             <div class="tool-name">Pika</div>
-            <div class="tool-tagline">涓€閿敓鎴?AI 瑙嗛锛屾敮鎸侀鏍煎寲銆佽鑹蹭竴鑷存€с€?Lip-sync</div>
+            <div class="tool-tagline">一键生成 AI 视频，支持风格化、角色一致性、 Lip-sync</div>
           </div>
         </div>
-        <div class="card-tags"><span class="tag">鐑棬</span></div>
+        <div class="card-tags"><span class="tag">热门</span></div>
         <div class="card-footer">
-          <span class="pricing freemium">鍏嶈垂鐗堝彲鐢?/span>
-          <a href="https://pika.art" target="_blank" class="visit-btn">绔嬪嵆浣跨敤 鈫?/a>
+          <span class="pricing freemium">免费版可用</span>
+          <a href="https://pika.art" target="_blank" class="visit-btn">立即使用 →</a>
         </div>
       </div>
 
-      <div class="tool-card" data-cat="video">
+      <div class="tool-card" data-cat="video" data-name="heygen">
         <div class="card-top">
-          <div class="tool-icon" style="background:linear-gradient(135deg,#6c5ce7,#a29bfe)">馃</div>
+          <div class="tool-icon" style="background:linear-gradient(135deg,#6c5ce7,#a29bfe)">🤖</div>
           <div class="card-info">
             <div class="tool-name">HeyGen</div>
-            <div class="tool-tagline">AI 鏁板瓧浜鸿棰戯紝鎹㈣劯/鍏嬮殕璇煶/澶氳瑷€鍙ｆ挱锛岃惀閿€绁炲櫒</div>
+            <div class="tool-tagline">AI 数字人视频，换脸/克隆语音/多语言口播，营销神器</div>
           </div>
         </div>
-        <div class="card-tags"><span class="tag">鏁板瓧浜?/span><span class="tag">鐑棬</span></div>
+        <div class="card-tags"><span class="tag">数字人</span><span class="tag">热门</span></div>
         <div class="card-footer">
-          <span class="pricing freemium">Freemium</span>
-          <a href="https://www.heygen.com" target="_blank" class="visit-btn">绔嬪嵆浣跨敤 鈫?/a>
+          <span class="pricing paid">Freemium</span>
+          <a href="https://www.heygen.com" target="_blank" class="visit-btn">立即使用 →</a>
         </div>
       </div>
 
-      <div class="tool-card" data-cat="video">
+      <div class="tool-card" data-cat="video" data-name="luma-ai">
         <div class="card-top">
-          <div class="tool-icon" style="background:linear-gradient(135deg,#6c5ce7,#a29bfe)">馃</div>
+          <div class="tool-icon" style="background:linear-gradient(135deg,#6c5ce7,#a29bfe)">🤖</div>
           <div class="card-info">
             <div class="tool-name">Luma AI</div>
-            <div class="tool-tagline">鏂囧瓧/鍥剧墖鐢熸垚 3D 瑙嗛锛孌ream Machine 鏁堟灉闇囨捈</div>
+            <div class="tool-tagline">文字/图片生成 3D 视频，Dream Machine 效果震撼</div>
           </div>
         </div>
-        <div class="card-tags"><span class="tag">3D</span><span class="tag">瑙嗛</span></div>
+        <div class="card-tags"><span class="tag">3D</span><span class="tag">视频</span></div>
         <div class="card-footer">
-          <span class="pricing freemium">鍏嶈垂鐗堝彲鐢?/span>
-          <a href="https://lumalabs.ai" target="_blank" class="visit-btn">绔嬪嵆浣跨敤 鈫?/a>
+          <span class="pricing freemium">免费版可用</span>
+          <a href="https://lumalabs.ai" target="_blank" class="visit-btn">立即使用 →</a>
         </div>
       </div>
 
-      <div class="tool-card" data-cat="video">
+      <div class="tool-card" data-cat="video" data-name="kaiber">
         <div class="card-top">
-          <div class="tool-icon" style="background:linear-gradient(135deg,#6c5ce7,#a29bfe)">馃</div>
+          <div class="tool-icon" style="background:linear-gradient(135deg,#6c5ce7,#a29bfe)">🤖</div>
           <div class="card-info">
             <div class="tool-name">Kaiber</div>
-            <div class="tool-tagline">AI 闊充箰瑙嗛 MV锛岃闈欐€佸浘鐗囧姩璧锋潵锛岄€傚悎闊充箰浜?/div>
+            <div class="tool-tagline">AI 音乐视频 MV，让静态图片动起来，适合音乐人</div>
           </div>
         </div>
-        <div class="card-tags"><span class="tag">闊充箰瑙嗛</span></div>
+        <div class="card-tags"><span class="tag">音乐视频</span></div>
         <div class="card-footer">
-          <span class="pricing paid">浠樿垂</span>
-          <a href="https://kaiber.ai" target="_blank" class="visit-btn">绔嬪嵆浣跨敤 鈫?/a>
+          <span class="pricing paid">付费</span>
+          <a href="https://kaiber.ai" target="_blank" class="visit-btn">立即使用 →</a>
         </div>
       </div>
 
-      <div class="tool-card" data-cat="video">
+      <div class="tool-card" data-cat="video" data-name="synthesia">
         <div class="card-top">
-          <div class="tool-icon" style="background:linear-gradient(135deg,#6c5ce7,#a29bfe)">馃</div>
+          <div class="tool-icon" style="background:linear-gradient(135deg,#6c5ce7,#a29bfe)">🤖</div>
           <div class="card-info">
             <div class="tool-name">Synthesia</div>
-            <div class="tool-tagline">浼佷笟绾?AI 瑙嗛鐢熸垚锛屾暟瀛椾汉鎾姤锛屾敮鎸?120+ 璇█</div>
+            <div class="tool-tagline">企业级 AI 视频生成，数字人播报，支持 120+ 语言</div>
           </div>
         </div>
-        <div class="card-tags"><span class="tag">浼佷笟</span><span class="tag">鏁板瓧浜?/span></div>
+        <div class="card-tags"><span class="tag">企业</span><span class="tag">数字人</span></div>
         <div class="card-footer">
-          <span class="pricing paid">浠樿垂</span>
-          <a href="https://www.synthesia.io" target="_blank" class="visit-btn">绔嬪嵆浣跨敤 鈫?/a>
+          <span class="pricing paid">付费</span>
+          <a href="https://www.synthesia.io" target="_blank" class="visit-btn">立即使用 →</a>
         </div>
       </div>
 
-      <div class="tool-card" data-cat="video">
+      <div class="tool-card" data-cat="video" data-name="剪映">
         <div class="card-top">
-          <div class="tool-icon" style="background:linear-gradient(135deg,#6c5ce7,#a29bfe)">馃</div>
+          <div class="tool-icon" style="background:linear-gradient(135deg,#6c5ce7,#a29bfe)">🤖</div>
           <div class="card-info">
-            <div class="tool-name">鍓槧</div>
-            <div class="tool-tagline">鍓槧 AI 鐗堬紝鑷姩瀛楀箷銆丄I 閰嶉煶銆佹櫤鑳藉壀杈戯紝鍏嶈垂澶熺敤</div>
+            <div class="tool-name">剪映</div>
+            <div class="tool-tagline">剪映 AI 版，自动字幕、AI 配音、智能剪辑，免费够用</div>
           </div>
         </div>
-        <div class="card-tags"><span class="tag">鍏嶈垂</span><span class="tag">鍥戒骇</span></div>
+        <div class="card-tags"><span class="tag">免费</span><span class="tag">国产</span></div>
         <div class="card-footer">
-          <span class="pricing free">瀹屽叏鍏嶈垂</span>
-          <a href="https://www.capcut.com" target="_blank" class="visit-btn">绔嬪嵆浣跨敤 鈫?/a>
+          <span class="pricing free">完全免费</span>
+          <a href="https://www.capcut.com" target="_blank" class="visit-btn">立即使用 →</a>
         </div>
       </div>
 
-      <div class="tool-card" data-cat="video">
+      <div class="tool-card" data-cat="video" data-name="narratoai">
         <div class="card-top">
-          <div class="tool-icon" style="background:linear-gradient(135deg,#6c5ce7,#a29bfe)">馃</div>
+          <div class="tool-icon" style="background:linear-gradient(135deg,#6c5ce7,#a29bfe)">🤖</div>
           <div class="card-info">
             <div class="tool-name">NarratoAI <span class="new-banner">NEW</span></div>
-            <div class="tool-tagline">AI涓€閿В璇?鑷姩鍓緫瑙嗛锛屾敮鎸佺煭鍓цВ璇?褰辫瑙ｈ/绾綍鐗囷紝TTS+瀛楀箷+鐢婚潰鐞嗚В鍏ㄨ嚜鍔?/div>
+            <div class="tool-tagline">AI一键解说+自动剪辑视频，支持短剧解说/影视解说/纪录片，TTS+字幕+画面理解全自动</div>
           </div>
         </div>
-        <div class="card-tags"><span class="tag">寮€婧?/span><span class="tag">鐑棬</span><span class="tag">瑙嗛瑙ｈ</span></div>
+        <div class="card-tags"><span class="tag tag-new">新上线</span><span class="tag tag-new">新上线</span><span class="tag tag-new">新上线</span></div>
         <div class="card-footer">
-          <span class="pricing free">瀹屽叏鍏嶈垂</span>
-          <a href="https://github.com/linyqh/NarratoAI" target="_blank" class="visit-btn">绔嬪嵆浣跨敤 鈫?/a>
+          <span class="pricing free">完全免费</span>
+          <a href="https://github.com/linyqh/NarratoAI" target="_blank" class="visit-btn">立即使用 →</a>
         </div>
       </div>
 
-      <div class="tool-card" data-cat="video">
+      <div class="tool-card" data-cat="video" data-name="storyplay">
         <div class="card-top">
-          <div class="tool-icon" style="background:linear-gradient(135deg,#6c5ce7,#a29bfe)">馃</div>
+          <div class="tool-icon" style="background:linear-gradient(135deg,#6c5ce7,#a29bfe)">🤖</div>
           <div class="card-info">
             <div class="tool-name">StoryPlay <span class="new-banner">NEW</span></div>
-            <div class="tool-tagline">AI鐭墽鍓ф湰鍒涗綔骞冲彴锛屼粠鐏垫劅鍒板ぇ绾插埌鍓ф湰鍒版鼎鑹插埌瑙嗛锛岀煭鍓х紪鍓у叏娴佺▼AI杈呭姪</div>
+            <div class="tool-tagline">AI短剧剧本创作平台，从灵感到大纲到剧本到润色到视频，短剧编剧全流程AI辅助</div>
           </div>
         </div>
-        <div class="card-tags"><span class="tag">鐭墽</span><span class="tag">鍓ф湰</span></div>
+        <div class="card-tags"><span class="tag tag-new">新上线</span><span class="tag tag-new">新上线</span></div>
         <div class="card-footer">
-          <span class="pricing paid">鍏嶈垂璇曠敤</span>
-          <a href="https://storyplay.cn" target="_blank" class="visit-btn">绔嬪嵆浣跨敤 鈫?/a>
+          <span class="pricing freemium">免费试用</span>
+          <a href="https://storyplay.cn" target="_blank" class="visit-btn">立即使用 →</a>
         </div>
       </div>
 
-      <div class="tool-card" data-cat="video">
+      <div class="tool-card" data-cat="video" data-name="magiclight-ai">
         <div class="card-top">
-          <div class="tool-icon" style="background:linear-gradient(135deg,#6c5ce7,#a29bfe)">馃</div>
+          <div class="tool-icon" style="background:linear-gradient(135deg,#6c5ce7,#a29bfe)">🤖</div>
           <div class="card-info">
             <div class="tool-name">Magiclight AI <span class="new-banner">NEW</span></div>
-            <div class="tool-tagline">AI鐭墽+鐢靛奖涓€閿敓鎴愶紝鍓ф湰鍒扮敾闈㈠埌閰嶉煶鍒伴厤涔愬埌瀵煎嚭鎴愮墖锛岀數褰辩骇鍝佽川杈撳嚭</div>
+            <div class="tool-tagline">AI短剧+电影一键生成，剧本到画面到配音到配乐到导出成片，电影级品质输出</div>
           </div>
         </div>
-        <div class="card-tags"><span class="tag">鐭墽</span><span class="tag">鐢靛奖</span></div>
+        <div class="card-tags"><span class="tag tag-new">新上线</span><span class="tag tag-new">新上线</span></div>
         <div class="card-footer">
-          <span class="pricing paid">鍏嶈垂璇曠敤</span>
-          <a href="https://magiclight.ai" target="_blank" class="visit-btn">绔嬪嵆浣跨敤 鈫?/a>
+          <span class="pricing freemium">免费试用</span>
+          <a href="https://magiclight.ai" target="_blank" class="visit-btn">立即使用 →</a>
         </div>
       </div>
 
-      <div class="tool-card" data-cat="video">
+      <div class="tool-card" data-cat="video" data-name="可灵-ai">
         <div class="card-top">
-          <div class="tool-icon" style="background:linear-gradient(135deg,#6c5ce7,#a29bfe)">馃</div>
+          <div class="tool-icon" style="background:linear-gradient(135deg,#6c5ce7,#a29bfe)">🤖</div>
           <div class="card-info">
-            <div class="tool-name">鍙伒 AI <span class="new-banner">NEW</span></div>
-            <div class="tool-tagline">蹇墜 AI 瑙嗛鐢熸垚锛屾敮鎸佹枃鐢熻棰?鍥剧敓瑙嗛/瑙嗛缁啓锛屽浗浜ф渶寮?Sora 绔炲搧</div>
+            <div class="tool-name">可灵 AI <span class="new-banner">NEW</span></div>
+            <div class="tool-tagline">快手 AI 视频生成，支持文生视频/图生视频/视频续写，国产最强 Sora 竞品</div>
           </div>
         </div>
-        <div class="card-tags"><span class="tag">鍥戒骇</span><span class="tag">鐑棬</span></div>
+        <div class="card-tags"><span class="tag tag-new">新上线</span><span class="tag tag-new">新上线</span></div>
         <div class="card-footer">
-          <span class="pricing freemium">鍏嶈垂鐗堝彲鐢?/span>
-          <a href="https://klingai.com" target="_blank" class="visit-btn">绔嬪嵆浣跨敤 鈫?/a>
+          <span class="pricing freemium">免费版可用</span>
+          <a href="https://klingai.com" target="_blank" class="visit-btn">立即使用 →</a>
         </div>
       </div>
 
-      <div class="tool-card" data-cat="video">
+      <div class="tool-card" data-cat="video" data-name="即梦-ai">
         <div class="card-top">
-          <div class="tool-icon" style="background:linear-gradient(135deg,#6c5ce7,#a29bfe)">馃</div>
+          <div class="tool-icon" style="background:linear-gradient(135deg,#6c5ce7,#a29bfe)">🤖</div>
           <div class="card-info">
-            <div class="tool-name">鍗虫ⅵ AI <span class="new-banner">NEW</span></div>
-            <div class="tool-tagline">瀛楄妭璺冲姩 AI 瑙嗛/鐢诲浘锛岀簿鍑嗕腑鏂囩悊瑙ｏ紝鍏嶈垂棰濆害澶?/div>
+            <div class="tool-name">即梦 AI <span class="new-banner">NEW</span></div>
+            <div class="tool-tagline">字节跳动 AI 视频/画图，精准中文理解，免费额度大</div>
           </div>
         </div>
-        <div class="card-tags"><span class="tag">鍥戒骇</span><span class="tag">鍏嶈垂</span></div>
+        <div class="card-tags"><span class="tag tag-new">新上线</span><span class="tag tag-new">新上线</span></div>
         <div class="card-footer">
-          <span class="pricing freemium">鍏嶈垂鐗堝彲鐢?/span>
-          <a href="https://jimeng.jianying.com" target="_blank" class="visit-btn">绔嬪嵆浣跨敤 鈫?/a>
+          <span class="pricing freemium">免费版可用</span>
+          <a href="https://jimeng.jianying.com" target="_blank" class="visit-btn">立即使用 →</a>
         </div>
       </div>
 
-      <div class="tool-card" data-cat="video">
+      <div class="tool-card" data-cat="video" data-name="viggle-ai">
         <div class="card-top">
-          <div class="tool-icon" style="background:linear-gradient(135deg,#6c5ce7,#a29bfe)">馃</div>
+          <div class="tool-icon" style="background:linear-gradient(135deg,#6c5ce7,#a29bfe)">🤖</div>
           <div class="card-info">
             <div class="tool-name">Viggle AI <span class="new-banner">NEW</span></div>
-            <div class="tool-tagline">AI 瑙嗛瑙掕壊鍔ㄧ敾鍖栵紝璁╅潤鎬佺収鐗囪烦璧疯垶鏉ワ紝TikTok 鐖嗘绁炲櫒</div>
+            <div class="tool-tagline">AI 视频角色动画化，让静态照片跳起舞来，TikTok 爆款神器</div>
           </div>
         </div>
-        <div class="card-tags"><span class="tag">瑙掕壊鍔ㄧ敾</span><span class="tag">鐑棬</span></div>
+        <div class="card-tags"><span class="tag tag-new">新上线</span><span class="tag tag-new">新上线</span></div>
         <div class="card-footer">
-          <span class="pricing freemium">鍏嶈垂鐗堝彲鐢?/span>
-          <a href="https://viggle.ai" target="_blank" class="visit-btn">绔嬪嵆浣跨敤 鈫?/a>
+          <span class="pricing freemium">免费版可用</span>
+          <a href="https://viggle.ai" target="_blank" class="visit-btn">立即使用 →</a>
         </div>
       </div>
 
-      <div class="tool-card" data-cat="video">
+      <div class="tool-card" data-cat="video" data-name="morphic-studio">
         <div class="card-top">
-          <div class="tool-icon" style="background:linear-gradient(135deg,#6c5ce7,#a29bfe)">馃</div>
+          <div class="tool-icon" style="background:linear-gradient(135deg,#6c5ce7,#a29bfe)">🤖</div>
           <div class="card-info">
             <div class="tool-name">Morphic Studio <span class="new-banner">NEW</span></div>
-            <div class="tool-tagline">AI 瑙嗛杞姩鐢婚鏍硷紝涓€閿數褰辨劅婊ら暅锛屾棤闇€鎵嬪姩璋冨弬</div>
+            <div class="tool-tagline">AI 视频转动画风格，一键电影感滤镜，无需手动调参</div>
           </div>
         </div>
-        <div class="card-tags"><span class="tag">瑙嗛杞姩鐢?/span><span class="tag">鍏嶈垂</span></div>
+        <div class="card-tags"><span class="tag tag-new">新上线</span><span class="tag tag-new">新上线</span></div>
         <div class="card-footer">
-          <span class="pricing freemium">鍏嶈垂鐗堝彲鐢?/span>
-          <a href="https://morphicstudio.com" target="_blank" class="visit-btn">绔嬪嵆浣跨敤 鈫?/a>
+          <span class="pricing freemium">免费版可用</span>
+          <a href="https://morphicstudio.com" target="_blank" class="visit-btn">立即使用 →</a>
         </div>
       </div>
     </div>
   </section>
 
   <section class="section" data-section="audio">
-    <div class="section-title">馃幍 AI 闊抽</div>
-    <p class="section-desc">AI 閰嶉煶銆侀煶涔愮敓鎴愩€佽闊冲厠闅嗏€斺€旈煶棰戝垱浣滃叏闈?AI 鍖?/p>
+    <div class="section-title">🎵 AI 音频</div>
+    <p class="section-desc">AI 配音、音乐生成、语音克隆——音频创作全面 AI 化</p>
     <div class="tool-grid">
-      <div class="tool-card" data-cat="audio">
+      <div class="tool-card" data-cat="audio" data-name="elevenlabs">
         <div class="card-top">
-          <div class="tool-icon" style="background:linear-gradient(135deg,#6c5ce7,#a29bfe)">馃</div>
+          <div class="tool-icon" style="background:linear-gradient(135deg,#6c5ce7,#a29bfe)">🤖</div>
           <div class="card-info">
             <div class="tool-name">ElevenLabs</div>
-            <div class="tool-tagline">AI 璇煶鍏嬮殕澶╄姳鏉匡紝澹伴煶鍑犱箮鍜岀湡浜轰竴妯′竴鏍?/div>
+            <div class="tool-tagline">AI 语音克隆天花板，声音几乎和真人一模一样</div>
           </div>
         </div>
-        <div class="card-tags"><span class="tag">鐑棬</span><span class="tag">璇煶鍏嬮殕</span></div>
+        <div class="card-tags"><span class="tag">热门</span><span class="tag">语音克隆</span></div>
         <div class="card-footer">
-          <span class="pricing freemium">Freemium</span>
-          <a href="https://elevenlabs.io" target="_blank" class="visit-btn">绔嬪嵆浣跨敤 鈫?/a>
+          <span class="pricing paid">Freemium</span>
+          <a href="https://elevenlabs.io" target="_blank" class="visit-btn">立即使用 →</a>
         </div>
       </div>
 
-      <div class="tool-card" data-cat="audio">
+      <div class="tool-card" data-cat="audio" data-name="suno">
         <div class="card-top">
-          <div class="tool-icon" style="background:linear-gradient(135deg,#6c5ce7,#a29bfe)">馃</div>
+          <div class="tool-icon" style="background:linear-gradient(135deg,#6c5ce7,#a29bfe)">🤖</div>
           <div class="card-info">
             <div class="tool-name">Suno</div>
-            <div class="tool-tagline">涓€鍙ヨ瘽鐢熸垚瀹屾暣姝屾洸锛屾瓕璇?鏃嬪緥+缂栨洸+娣烽煶鍏ㄨ嚜鍔?/div>
+            <div class="tool-tagline">一句话生成完整歌曲，歌词+旋律+编曲+混音全自动</div>
           </div>
         </div>
-        <div class="card-tags"><span class="tag">鐑棬</span><span class="tag">闊充箰鐢熸垚</span></div>
+        <div class="card-tags"><span class="tag">热门</span><span class="tag">音乐生成</span></div>
         <div class="card-footer">
-          <span class="pricing freemium">鍏嶈垂鐗堝彲鐢?/span>
-          <a href="https://suno.ai" target="_blank" class="visit-btn">绔嬪嵆浣跨敤 鈫?/a>
+          <span class="pricing freemium">免费版可用</span>
+          <a href="https://suno.ai" target="_blank" class="visit-btn">立即使用 →</a>
         </div>
       </div>
 
-      <div class="tool-card" data-cat="audio">
+      <div class="tool-card" data-cat="audio" data-name="murf-ai">
         <div class="card-top">
-          <div class="tool-icon" style="background:linear-gradient(135deg,#6c5ce7,#a29bfe)">馃</div>
+          <div class="tool-icon" style="background:linear-gradient(135deg,#6c5ce7,#a29bfe)">🤖</div>
           <div class="card-info">
             <div class="tool-name">Murf AI</div>
-            <div class="tool-tagline">涓撲笟绾?AI 閰嶉煶锛?20+ 澹伴煶/20+ 璇█锛岄€傚悎浼佷笟瑙嗛</div>
+            <div class="tool-tagline">专业级 AI 配音，120+ 声音/20+ 语言，适合企业视频</div>
           </div>
         </div>
-        <div class="card-tags"><span class="tag">閰嶉煶</span></div>
+        <div class="card-tags"><span class="tag">配音</span></div>
         <div class="card-footer">
-          <span class="pricing paid">浠樿垂</span>
-          <a href="https://murf.ai" target="_blank" class="visit-btn">绔嬪嵆浣跨敤 鈫?/a>
+          <span class="pricing paid">付费</span>
+          <a href="https://murf.ai" target="_blank" class="visit-btn">立即使用 →</a>
         </div>
       </div>
 
-      <div class="tool-card" data-cat="audio">
+      <div class="tool-card" data-cat="audio" data-name="play.ht">
         <div class="card-top">
-          <div class="tool-icon" style="background:linear-gradient(135deg,#6c5ce7,#a29bfe)">馃</div>
+          <div class="tool-icon" style="background:linear-gradient(135deg,#6c5ce7,#a29bfe)">🤖</div>
           <div class="card-info">
             <div class="tool-name">Play.ht</div>
-            <div class="tool-tagline">瓒呯湡瀹?AI 璇煶鍚堟垚锛屽璇█澶氳鑹诧紝閫傚悎鎾鍜屾湁澹颁功</div>
+            <div class="tool-tagline">超真实 AI 语音合成，多语言多角色，适合播客和有声书</div>
           </div>
         </div>
-        <div class="card-tags"><span class="tag">璇煶鍚堟垚</span></div>
+        <div class="card-tags"><span class="tag">语音合成</span></div>
         <div class="card-footer">
-          <span class="pricing freemium">Freemium</span>
-          <a href="https://play.ht" target="_blank" class="visit-btn">绔嬪嵆浣跨敤 鈫?/a>
+          <span class="pricing paid">Freemium</span>
+          <a href="https://play.ht" target="_blank" class="visit-btn">立即使用 →</a>
         </div>
       </div>
 
-      <div class="tool-card" data-cat="audio">
+      <div class="tool-card" data-cat="audio" data-name="resemble-ai">
         <div class="card-top">
-          <div class="tool-icon" style="background:linear-gradient(135deg,#6c5ce7,#a29bfe)">馃</div>
+          <div class="tool-icon" style="background:linear-gradient(135deg,#6c5ce7,#a29bfe)">🤖</div>
           <div class="card-info">
             <div class="tool-name">Resemble AI</div>
-            <div class="tool-tagline">璇煶鍏嬮殕+瀹炴椂 AI 璇煶锛屾父鎴忓拰褰辫绾ф晥鏋?/div>
+            <div class="tool-tagline">语音克隆+实时 AI 语音，游戏和影视级效果</div>
           </div>
         </div>
-        <div class="card-tags"><span class="tag">璇煶鍏嬮殕</span></div>
+        <div class="card-tags"><span class="tag">语音克隆</span></div>
         <div class="card-footer">
-          <span class="pricing freemium">Freemium</span>
-          <a href="https://www.resemble.ai" target="_blank" class="visit-btn">绔嬪嵆浣跨敤 鈫?/a>
+          <span class="pricing paid">Freemium</span>
+          <a href="https://www.resemble.ai" target="_blank" class="visit-btn">立即使用 →</a>
         </div>
       </div>
 
-      <div class="tool-card" data-cat="audio">
+      <div class="tool-card" data-cat="audio" data-name="audiostack">
         <div class="card-top">
-          <div class="tool-icon" style="background:linear-gradient(135deg,#6c5ce7,#a29bfe)">馃</div>
+          <div class="tool-icon" style="background:linear-gradient(135deg,#6c5ce7,#a29bfe)">🤖</div>
           <div class="card-info">
             <div class="tool-name">Audiostack</div>
-            <div class="tool-tagline">AI 闊抽鍚庢湡鍒朵綔骞冲彴锛屾贩闊炽€侀煶鏁堛€侀檷鍣竴閿悶瀹?/div>
+            <div class="tool-tagline">AI 音频后期制作平台，混音、音效、降噪一键搞定</div>
           </div>
         </div>
-        <div class="card-tags"><span class="tag">闊抽鍚庢湡</span></div>
+        <div class="card-tags"><span class="tag">音频后期</span></div>
         <div class="card-footer">
-          <span class="pricing paid">鍏嶈垂璇曠敤</span>
-          <a href="https://www.audiostack.co" target="_blank" class="visit-btn">绔嬪嵆浣跨敤 鈫?/a>
+          <span class="pricing freemium">免费试用</span>
+          <a href="https://www.audiostack.co" target="_blank" class="visit-btn">立即使用 →</a>
         </div>
       </div>
 
-      <div class="tool-card" data-cat="audio">
+      <div class="tool-card" data-cat="audio" data-name="descript">
         <div class="card-top">
-          <div class="tool-icon" style="background:linear-gradient(135deg,#6c5ce7,#a29bfe)">馃</div>
+          <div class="tool-icon" style="background:linear-gradient(135deg,#6c5ce7,#a29bfe)">🤖</div>
           <div class="card-info">
             <div class="tool-name">Descript <span class="new-banner">NEW</span></div>
-            <div class="tool-tagline">AI 闊宠棰戝壀杈戠鍣紝鏂囧瓧鍒犻煶杞紝鑷姩瀛楀箷+闄嶅櫔+娣烽煶涓€鏉￠緳</div>
+            <div class="tool-tagline">AI 音视频剪辑神器，文字删音轨，自动字幕+降噪+混音一条龙</div>
           </div>
         </div>
-        <div class="card-tags"><span class="tag">鍓緫</span><span class="tag">鐑棬</span></div>
+        <div class="card-tags"><span class="tag tag-new">新上线</span><span class="tag tag-new">新上线</span></div>
         <div class="card-footer">
-          <span class="pricing freemium">Freemium</span>
-          <a href="https://www.descript.com" target="_blank" class="visit-btn">绔嬪嵆浣跨敤 鈫?/a>
+          <span class="pricing paid">Freemium</span>
+          <a href="https://www.descript.com" target="_blank" class="visit-btn">立即使用 →</a>
         </div>
       </div>
 
-      <div class="tool-card" data-cat="audio">
+      <div class="tool-card" data-cat="audio" data-name="voicemod">
         <div class="card-top">
-          <div class="tool-icon" style="background:linear-gradient(135deg,#6c5ce7,#a29bfe)">馃</div>
+          <div class="tool-icon" style="background:linear-gradient(135deg,#6c5ce7,#a29bfe)">🤖</div>
           <div class="card-info">
             <div class="tool-name">Voicemod <span class="new-banner">NEW</span></div>
-            <div class="tool-tagline">AI 瀹炴椂鍙樺０鍣紝鐩存挱/娓告垙璇煶鍗虫椂鍒囨崲锛屾捣閲忛煶鏁堝寘</div>
+            <div class="tool-tagline">AI 实时变声器，直播/游戏语音即时切换，海量音效包</div>
           </div>
         </div>
-        <div class="card-tags"><span class="tag">瀹炴椂鍙樺０</span><span class="tag">娓告垙</span></div>
+        <div class="card-tags"><span class="tag tag-new">新上线</span><span class="tag tag-new">新上线</span></div>
         <div class="card-footer">
-          <span class="pricing freemium">Freemium</span>
-          <a href="https://www.voicemod.net" target="_blank" class="visit-btn">绔嬪嵆浣跨敤 鈫?/a>
+          <span class="pricing paid">Freemium</span>
+          <a href="https://www.voicemod.net" target="_blank" class="visit-btn">立即使用 →</a>
         </div>
       </div>
 
-      <div class="tool-card" data-cat="audio">
+      <div class="tool-card" data-cat="audio" data-name="fish-audio">
         <div class="card-top">
-          <div class="tool-icon" style="background:linear-gradient(135deg,#6c5ce7,#a29bfe)">馃</div>
+          <div class="tool-icon" style="background:linear-gradient(135deg,#6c5ce7,#a29bfe)">🤖</div>
           <div class="card-info">
             <div class="tool-name">Fish Audio <span class="new-banner">NEW</span></div>
-            <div class="tool-tagline">鍥戒骇寮€婧?TTS 寮曟搸锛屾敮鎸佷腑鑻辨枃璇煶鍏嬮殕锛屽０闊宠嚜鐒跺害閫艰繎 ElevenLabs</div>
+            <div class="tool-tagline">国产开源 TTS 引擎，支持中英文语音克隆，声音自然度逼近 ElevenLabs</div>
           </div>
         </div>
-        <div class="card-tags"><span class="tag">鍥戒骇</span><span class="tag">寮€婧?/span><span class="tag">TTS</span></div>
+        <div class="card-tags"><span class="tag tag-new">新上线</span><span class="tag tag-new">新上线</span><span class="tag tag-new">新上线</span></div>
         <div class="card-footer">
-          <span class="pricing free">瀹屽叏鍏嶈垂</span>
-          <a href="https://fish.audio" target="_blank" class="visit-btn">绔嬪嵆浣跨敤 鈫?/a>
+          <span class="pricing free">完全免费</span>
+          <a href="https://fish.audio" target="_blank" class="visit-btn">立即使用 →</a>
         </div>
       </div>
 
-      <div class="tool-card" data-cat="audio">
+      <div class="tool-card" data-cat="audio" data-name="bark">
         <div class="card-top">
-          <div class="tool-icon" style="background:linear-gradient(135deg,#6c5ce7,#a29bfe)">馃</div>
+          <div class="tool-icon" style="background:linear-gradient(135deg,#6c5ce7,#a29bfe)">🤖</div>
           <div class="card-info">
             <div class="tool-name">Bark <span class="new-banner">NEW</span></div>
-            <div class="tool-tagline">寮€婧?AI 璇煶鍚堟垚锛屾敮鎸佸璇█+闊充箰+闊虫晥锛屾湰鍦伴儴缃叉棤闄愮敤</div>
+            <div class="tool-tagline">开源 AI 语音合成，支持多语言+音乐+音效，本地部署无限用</div>
           </div>
         </div>
-        <div class="card-tags"><span class="tag">寮€婧?/span><span class="tag">鍏嶈垂</span></div>
+        <div class="card-tags"><span class="tag tag-new">新上线</span><span class="tag tag-new">新上线</span></div>
         <div class="card-footer">
-          <span class="pricing free">瀹屽叏鍏嶈垂</span>
-          <a href="https://github.com/suno-ai/bark" target="_blank" class="visit-btn">绔嬪嵆浣跨敤 鈫?/a>
+          <span class="pricing free">完全免费</span>
+          <a href="https://github.com/suno-ai/bark" target="_blank" class="visit-btn">立即使用 →</a>
         </div>
       </div>
 
-      <div class="tool-card" data-cat="audio">
+      <div class="tool-card" data-cat="audio" data-name="uberduck">
         <div class="card-top">
-          <div class="tool-icon" style="background:linear-gradient(135deg,#6c5ce7,#a29bfe)">馃</div>
+          <div class="tool-icon" style="background:linear-gradient(135deg,#6c5ce7,#a29bfe)">🤖</div>
           <div class="card-info">
             <div class="tool-name">Uberduck <span class="new-banner">NEW</span></div>
-            <div class="tool-tagline">AI 闊充箰+璇煶鍚堟垚骞冲彴锛屾敮鎸佽嚜瀹氫箟澹伴煶妯″瀷锛孴ikTok 鐑棬閰嶄箰绁炲櫒</div>
+            <div class="tool-tagline">AI 音乐+语音合成平台，支持自定义声音模型，TikTok 热门配乐神器</div>
           </div>
         </div>
-        <div class="card-tags"><span class="tag">闊充箰</span><span class="tag">璇煶</span></div>
+        <div class="card-tags"><span class="tag tag-new">新上线</span><span class="tag tag-new">新上线</span></div>
         <div class="card-footer">
-          <span class="pricing freemium">Freemium</span>
-          <a href="https://uberduck.ai" target="_blank" class="visit-btn">绔嬪嵆浣跨敤 鈫?/a>
+          <span class="pricing paid">Freemium</span>
+          <a href="https://uberduck.ai" target="_blank" class="visit-btn">立即使用 →</a>
         </div>
       </div>
     </div>
   </section>
 
   <section class="section" data-section="data">
-    <div class="section-title">馃搳 AI 鏁版嵁</div>
-    <p class="section-desc">鏁版嵁鍒嗘瀽銆佸彲瑙嗗寲銆丅I鈥斺€旇鏁版嵁鑷繁璇磋瘽</p>
+    <div class="section-title">📊 AI 数据</div>
+    <p class="section-desc">数据分析、可视化、BI——让数据自己说话</p>
     <div class="tool-grid">
-      <div class="tool-card" data-cat="data">
+      <div class="tool-card" data-cat="data" data-name="julius-ai">
         <div class="card-top">
-          <div class="tool-icon" style="background:linear-gradient(135deg,#6c5ce7,#a29bfe)">馃</div>
+          <div class="tool-icon" style="background:linear-gradient(135deg,#6c5ce7,#a29bfe)">🤖</div>
           <div class="card-info">
             <div class="tool-name">Julius AI</div>
-            <div class="tool-tagline">鑷劧璇█鍒嗘瀽鏁版嵁锛屼笂浼?Excel/CSV 绉掑嚭鍥捐〃鍜岀粨璁?/div>
+            <div class="tool-tagline">自然语言分析数据，上传 Excel/CSV 秒出图表和结论</div>
           </div>
         </div>
-        <div class="card-tags"><span class="tag">鑷劧璇█</span></div>
+        <div class="card-tags"><span class="tag">自然语言</span></div>
         <div class="card-footer">
-          <span class="pricing freemium">鍏嶈垂鐗堝彲鐢?/span>
-          <a href="https://julius.ai" target="_blank" class="visit-btn">绔嬪嵆浣跨敤 鈫?/a>
+          <span class="pricing freemium">免费版可用</span>
+          <a href="https://julius.ai" target="_blank" class="visit-btn">立即使用 →</a>
         </div>
       </div>
 
-      <div class="tool-card" data-cat="data">
+      <div class="tool-card" data-cat="data" data-name="chatcsv">
         <div class="card-top">
-          <div class="tool-icon" style="background:linear-gradient(135deg,#6c5ce7,#a29bfe)">馃</div>
+          <div class="tool-icon" style="background:linear-gradient(135deg,#6c5ce7,#a29bfe)">🤖</div>
           <div class="card-info">
             <div class="tool-name">ChatCSV</div>
-            <div class="tool-tagline">鐢ㄥ璇濇柟寮忓垎鏋?CSV 鏁版嵁锛岄浂浠ｇ爜鏁版嵁娲炲療</div>
+            <div class="tool-tagline">用对话方式分析 CSV 数据，零代码数据洞察</div>
           </div>
         </div>
-        <div class="card-tags"><span class="tag">闆朵唬鐮?/span></div>
+        <div class="card-tags"><span class="tag">零代码</span></div>
         <div class="card-footer">
-          <span class="pricing freemium">Freemium</span>
-          <a href="https://chatcsv.net" target="_blank" class="visit-btn">绔嬪嵆浣跨敤 鈫?/a>
+          <span class="pricing paid">Freemium</span>
+          <a href="https://chatcsv.net" target="_blank" class="visit-btn">立即使用 →</a>
         </div>
       </div>
 
-      <div class="tool-card" data-cat="data">
+      <div class="tool-card" data-cat="data" data-name="tableau-ai">
         <div class="card-top">
-          <div class="tool-icon" style="background:linear-gradient(135deg,#6c5ce7,#a29bfe)">馃</div>
+          <div class="tool-icon" style="background:linear-gradient(135deg,#6c5ce7,#a29bfe)">🤖</div>
           <div class="card-info">
             <div class="tool-name">Tableau AI</div>
-            <div class="tool-tagline">Tableau 鍐呯疆 AI 鍒嗘瀽锛岃嚜鐒惰瑷€鐢熸垚鍥捐〃鍜屾礊瀵?/div>
+            <div class="tool-tagline">Tableau 内置 AI 分析，自然语言生成图表和洞察</div>
           </div>
         </div>
         <div class="card-tags"><span class="tag">BI</span></div>
         <div class="card-footer">
-          <span class="pricing paid">浠樿垂</span>
-          <a href="https://www.tableau.com/ai" target="_blank" class="visit-btn">绔嬪嵆浣跨敤 鈫?/a>
+          <span class="pricing paid">付费</span>
+          <a href="https://www.tableau.com/ai" target="_blank" class="visit-btn">立即使用 →</a>
         </div>
       </div>
 
-      <div class="tool-card" data-cat="data">
+      <div class="tool-card" data-cat="data" data-name="rows">
         <div class="card-top">
-          <div class="tool-icon" style="background:linear-gradient(135deg,#6c5ce7,#a29bfe)">馃</div>
+          <div class="tool-icon" style="background:linear-gradient(135deg,#6c5ce7,#a29bfe)">🤖</div>
           <div class="card-info">
             <div class="tool-name">Rows</div>
-            <div class="tool-tagline">AI 鐢靛瓙琛ㄦ牸锛岃嚜鍔ㄨ绠楀叕寮?鍙鍖栵紝姣?Excel 鑱槑 10 鍊?/div>
+            <div class="tool-tagline">AI 电子表格，自动计算公式+可视化，比 Excel 聪明 10 倍</div>
           </div>
         </div>
-        <div class="card-tags"><span class="tag">鐢靛瓙琛ㄦ牸</span></div>
+        <div class="card-tags"><span class="tag">电子表格</span></div>
         <div class="card-footer">
-          <span class="pricing freemium">鍏嶈垂鐗堝彲鐢?/span>
-          <a href="https://rows.com" target="_blank" class="visit-btn">绔嬪嵆浣跨敤 鈫?/a>
+          <span class="pricing freemium">免费版可用</span>
+          <a href="https://rows.com" target="_blank" class="visit-btn">立即使用 →</a>
         </div>
       </div>
 
-      <div class="tool-card" data-cat="data">
+      <div class="tool-card" data-cat="data" data-name="hex">
         <div class="card-top">
-          <div class="tool-icon" style="background:linear-gradient(135deg,#6c5ce7,#a29bfe)">馃</div>
+          <div class="tool-icon" style="background:linear-gradient(135deg,#6c5ce7,#a29bfe)">🤖</div>
           <div class="card-info">
             <div class="tool-name">Hex</div>
-            <div class="tool-tagline">AI 鏁版嵁绗旇鏈紝Python+SQL+鍙鍖栵紝鏁版嵁绉戝瀹剁殑鏂板疇</div>
+            <div class="tool-tagline">AI 数据笔记本，Python+SQL+可视化，数据科学家的新宠</div>
           </div>
         </div>
-        <div class="card-tags"><span class="tag">鏁版嵁绉戝</span></div>
+        <div class="card-tags"><span class="tag">数据科学</span></div>
         <div class="card-footer">
-          <span class="pricing freemium">Freemium</span>
-          <a href="https://hex.tech" target="_blank" class="visit-btn">绔嬪嵆浣跨敤 鈫?/a>
+          <span class="pricing paid">Freemium</span>
+          <a href="https://hex.tech" target="_blank" class="visit-btn">立即使用 →</a>
         </div>
       </div>
 
-      <div class="tool-card" data-cat="data">
+      <div class="tool-card" data-cat="data" data-name="thoughtspot">
         <div class="card-top">
-          <div class="tool-icon" style="background:linear-gradient(135deg,#6c5ce7,#a29bfe)">馃</div>
+          <div class="tool-icon" style="background:linear-gradient(135deg,#6c5ce7,#a29bfe)">🤖</div>
           <div class="card-info">
             <div class="tool-name">ThoughtSpot</div>
-            <div class="tool-tagline">AI 椹卞姩鐨勬悳绱㈠紡 BI 骞冲彴锛屼笟鍔′汉鍛樼鏌ュ垎鏋?/div>
+            <div class="tool-tagline">AI 驱动的搜索式 BI 平台，业务人员秒查分析</div>
           </div>
         </div>
-        <div class="card-tags"><span class="tag">BI</span><span class="tag">浼佷笟</span></div>
+        <div class="card-tags"><span class="tag">BI</span><span class="tag">企业</span></div>
         <div class="card-footer">
-          <span class="pricing paid">浠樿垂</span>
-          <a href="https://www.thoughtspot.com" target="_blank" class="visit-btn">绔嬪嵆浣跨敤 鈫?/a>
+          <span class="pricing paid">付费</span>
+          <a href="https://www.thoughtspot.com" target="_blank" class="visit-btn">立即使用 →</a>
         </div>
       </div>
 
-      <div class="tool-card" data-cat="data">
+      <div class="tool-card" data-cat="data" data-name="mode-ai">
         <div class="card-top">
-          <div class="tool-icon" style="background:linear-gradient(135deg,#6c5ce7,#a29bfe)">馃</div>
+          <div class="tool-icon" style="background:linear-gradient(135deg,#6c5ce7,#a29bfe)">🤖</div>
           <div class="card-info">
             <div class="tool-name">Mode AI <span class="new-banner">NEW</span></div>
-            <div class="tool-tagline">AI 鏁版嵁鍒嗘瀽鍗忎綔骞冲彴锛孲QL+Python+鍙鍖栵紝鍥㈤槦鏁版嵁鍗忎綔绁炲櫒</div>
+            <div class="tool-tagline">AI 数据分析协作平台，SQL+Python+可视化，团队数据协作神器</div>
           </div>
         </div>
-        <div class="card-tags"><span class="tag">鍗忎綔</span><span class="tag">SQL</span></div>
+        <div class="card-tags"><span class="tag tag-new">新上线</span><span class="tag tag-new">新上线</span></div>
         <div class="card-footer">
-          <span class="pricing freemium">Freemium</span>
-          <a href="https://mode.com" target="_blank" class="visit-btn">绔嬪嵆浣跨敤 鈫?/a>
+          <span class="pricing paid">Freemium</span>
+          <a href="https://mode.com" target="_blank" class="visit-btn">立即使用 →</a>
         </div>
       </div>
 
-      <div class="tool-card" data-cat="data">
+      <div class="tool-card" data-cat="data" data-name="chartai">
         <div class="card-top">
-          <div class="tool-icon" style="background:linear-gradient(135deg,#6c5ce7,#a29bfe)">馃</div>
+          <div class="tool-icon" style="background:linear-gradient(135deg,#6c5ce7,#a29bfe)">🤖</div>
           <div class="card-info">
             <div class="tool-name">ChartAI <span class="new-banner">NEW</span></div>
-            <div class="tool-tagline">AI 涓€鍙ヨ瘽鐢熸垚鏁版嵁鍥捐〃锛屼笂浼犳暟鎹嚜鍔ㄦ帹鑽愭渶浣冲彲瑙嗗寲鏂规</div>
+            <div class="tool-tagline">AI 一句话生成数据图表，上传数据自动推荐最佳可视化方案</div>
           </div>
         </div>
-        <div class="card-tags"><span class="tag">鍙鍖?/span><span class="tag">鍥捐〃</span></div>
+        <div class="card-tags"><span class="tag tag-new">新上线</span><span class="tag tag-new">新上线</span></div>
         <div class="card-footer">
-          <span class="pricing freemium">Freemium</span>
-          <a href="https://chartai.dev" target="_blank" class="visit-btn">绔嬪嵆浣跨敤 鈫?/a>
+          <span class="pricing paid">Freemium</span>
+          <a href="https://chartai.dev" target="_blank" class="visit-btn">立即使用 →</a>
         </div>
       </div>
 
-      <div class="tool-card" data-cat="data">
+      <div class="tool-card" data-cat="data" data-name="explo">
         <div class="card-top">
-          <div class="tool-icon" style="background:linear-gradient(135deg,#6c5ce7,#a29bfe)">馃</div>
+          <div class="tool-icon" style="background:linear-gradient(135deg,#6c5ce7,#a29bfe)">🤖</div>
           <div class="card-info">
             <div class="tool-name">Explo <span class="new-banner">NEW</span></div>
-            <div class="tool-tagline">AI 鏁版嵁鍒嗘瀽 + 鍟嗕笟娲炲療锛岃嚜鐒惰瑷€鏌ヨ鏁版嵁搴擄紝闆?SQL 涔熻</div>
+            <div class="tool-tagline">AI 数据分析 + 商业洞察，自然语言查询数据库，零 SQL 也行</div>
           </div>
         </div>
-        <div class="card-tags"><span class="tag">鑷劧璇█</span><span class="tag">鏁版嵁搴?/span></div>
+        <div class="card-tags"><span class="tag tag-new">新上线</span><span class="tag tag-new">新上线</span></div>
         <div class="card-footer">
-          <span class="pricing freemium">鍏嶈垂鐗堝彲鐢?/span>
-          <a href="https://www.explo.co" target="_blank" class="visit-btn">绔嬪嵆浣跨敤 鈫?/a>
+          <span class="pricing freemium">免费版可用</span>
+          <a href="https://www.explo.co" target="_blank" class="visit-btn">立即使用 →</a>
         </div>
       </div>
 
-      <div class="tool-card" data-cat="data">
+      <div class="tool-card" data-cat="data" data-name="polymer">
         <div class="card-top">
-          <div class="tool-icon" style="background:linear-gradient(135deg,#6c5ce7,#a29bfe)">馃</div>
+          <div class="tool-icon" style="background:linear-gradient(135deg,#6c5ce7,#a29bfe)">🤖</div>
           <div class="card-info">
             <div class="tool-name">Polymer <span class="new-banner">NEW</span></div>
-            <div class="tool-tagline">AI 鏁版嵁鎺㈢储锛屽鍏ヤ换鎰忚〃鏍艰嚜鍔ㄥ垎鏋?鍑烘姤鍛婏紝鏃犱唬鐮?BI 鏂版槦</div>
+            <div class="tool-tagline">AI 数据探索，导入任意表格自动分析+出报告，无代码 BI 新星</div>
           </div>
         </div>
-        <div class="card-tags"><span class="tag">BI</span><span class="tag">鏃犱唬鐮?/span></div>
+        <div class="card-tags"><span class="tag tag-new">新上线</span><span class="tag tag-new">新上线</span></div>
         <div class="card-footer">
-          <span class="pricing freemium">鍏嶈垂鐗堝彲鐢?/span>
-          <a href="https://www.polymersearch.com" target="_blank" class="visit-btn">绔嬪嵆浣跨敤 鈫?/a>
+          <span class="pricing freemium">免费版可用</span>
+          <a href="https://www.polymersearch.com" target="_blank" class="visit-btn">立即使用 →</a>
         </div>
       </div>
 
-      <div class="tool-card" data-cat="data">
+      <div class="tool-card" data-cat="data" data-name="akkio">
         <div class="card-top">
-          <div class="tool-icon" style="background:linear-gradient(135deg,#6c5ce7,#a29bfe)">馃</div>
+          <div class="tool-icon" style="background:linear-gradient(135deg,#6c5ce7,#a29bfe)">🤖</div>
           <div class="card-info">
             <div class="tool-name">Akkio <span class="new-banner">NEW</span></div>
-            <div class="tool-tagline">AI 棰勬祴鍒嗘瀽锛屾棤闇€鏁版嵁绉戝鑳屾櫙锛屾嫋鎷藉嵆鍙仛棰勬祴妯″瀷</div>
+            <div class="tool-tagline">AI 预测分析，无需数据科学背景，拖拽即可做预测模型</div>
           </div>
         </div>
-        <div class="card-tags"><span class="tag">棰勬祴</span><span class="tag">鏃犱唬鐮?/span></div>
+        <div class="card-tags"><span class="tag tag-new">新上线</span><span class="tag tag-new">新上线</span></div>
         <div class="card-footer">
-          <span class="pricing freemium">Freemium</span>
-          <a href="https://www.akkio.com" target="_blank" class="visit-btn">绔嬪嵆浣跨敤 鈫?/a>
+          <span class="pricing paid">Freemium</span>
+          <a href="https://www.akkio.com" target="_blank" class="visit-btn">立即使用 →</a>
         </div>
       </div>
     </div>
   </section>
 
   <section class="section" data-section="productivity">
-    <div class="section-title">馃搧 AI 鍔炲叕</div>
-    <p class="section-desc">鏂囨。銆佽〃鏍笺€佹紨绀烘枃绋裤€佷細璁€斺€斿姙鍏叏娴佺▼ AI 鎻愭晥</p>
+    <div class="section-title">📁 AI 办公</div>
+    <p class="section-desc">文档、表格、演示文稿、会议——办公全流程 AI 提效</p>
     <div class="tool-grid">
-      <div class="tool-card" data-cat="productivity">
+      <div class="tool-card" data-cat="productivity" data-name="microsoft-copilot">
         <div class="card-top">
-          <div class="tool-icon" style="background:linear-gradient(135deg,#6c5ce7,#a29bfe)">馃</div>
+          <div class="tool-icon" style="background:linear-gradient(135deg,#6c5ce7,#a29bfe)">🤖</div>
           <div class="card-info">
             <div class="tool-name">Microsoft Copilot</div>
-            <div class="tool-tagline">寰蒋鍏ㄥ妗?AI 鍔╂墜锛學ord/Excel/PPT 鍏ㄧ▼ AI 杈呭姪</div>
+            <div class="tool-tagline">微软全家桶 AI 助手，Word/Excel/PPT 全程 AI 辅助</div>
           </div>
         </div>
-        <div class="card-tags"><span class="tag">寰蒋</span><span class="tag">鐑棬</span></div>
+        <div class="card-tags"><span class="tag">微软</span><span class="tag">热门</span></div>
         <div class="card-footer">
-          <span class="pricing freemium">Freemium</span>
-          <a href="https://copilot.microsoft.com" target="_blank" class="visit-btn">绔嬪嵆浣跨敤 鈫?/a>
+          <span class="pricing paid">Freemium</span>
+          <a href="https://copilot.microsoft.com" target="_blank" class="visit-btn">立即使用 →</a>
         </div>
       </div>
 
-      <div class="tool-card" data-cat="productivity">
+      <div class="tool-card" data-cat="productivity" data-name="gemini-workspace">
         <div class="card-top">
-          <div class="tool-icon" style="background:linear-gradient(135deg,#6c5ce7,#a29bfe)">馃</div>
+          <div class="tool-icon" style="background:linear-gradient(135deg,#6c5ce7,#a29bfe)">🤖</div>
           <div class="card-info">
             <div class="tool-name">Gemini Workspace</div>
-            <div class="tool-tagline">Google  Workspace AI 鍖栵紝Docs/Sheets/Slides 鍐呯疆 AI</div>
+            <div class="tool-tagline">Google  Workspace AI 化，Docs/Sheets/Slides 内置 AI</div>
           </div>
         </div>
-        <div class="card-tags"><span class="tag">璋锋瓕</span></div>
+        <div class="card-tags"><span class="tag">谷歌</span></div>
         <div class="card-footer">
-          <span class="pricing paid">浠樿垂</span>
-          <a href="https://workspace.google.com/gemini" target="_blank" class="visit-btn">绔嬪嵆浣跨敤 鈫?/a>
+          <span class="pricing paid">付费</span>
+          <a href="https://workspace.google.com/gemini" target="_blank" class="visit-btn">立即使用 →</a>
         </div>
       </div>
 
-      <div class="tool-card" data-cat="productivity">
+      <div class="tool-card" data-cat="productivity" data-name="gamma">
         <div class="card-top">
-          <div class="tool-icon" style="background:linear-gradient(135deg,#6c5ce7,#a29bfe)">馃</div>
+          <div class="tool-icon" style="background:linear-gradient(135deg,#6c5ce7,#a29bfe)">🤖</div>
           <div class="card-info">
             <div class="tool-name">Gamma</div>
-            <div class="tool-tagline">AI 涓€閿敓鎴?PPT/缃戦〉/鏂囨。锛屾瘮 PowerPoint 蹇?10 鍊?/div>
+            <div class="tool-tagline">AI 一键生成 PPT/网页/文档，比 PowerPoint 快 10 倍</div>
           </div>
         </div>
-        <div class="card-tags"><span class="tag">PPT</span><span class="tag">鐑棬</span></div>
+        <div class="card-tags"><span class="tag">PPT</span><span class="tag">热门</span></div>
         <div class="card-footer">
-          <span class="pricing freemium">Freemium</span>
-          <a href="https://gamma.app" target="_blank" class="visit-btn">绔嬪嵆浣跨敤 鈫?/a>
+          <span class="pricing paid">Freemium</span>
+          <a href="https://gamma.app" target="_blank" class="visit-btn">立即使用 →</a>
         </div>
       </div>
 
-      <div class="tool-card" data-cat="productivity">
+      <div class="tool-card" data-cat="productivity" data-name="granola">
         <div class="card-top">
-          <div class="tool-icon" style="background:linear-gradient(135deg,#6c5ce7,#a29bfe)">馃</div>
+          <div class="tool-icon" style="background:linear-gradient(135deg,#6c5ce7,#a29bfe)">🤖</div>
           <div class="card-info">
             <div class="tool-name">Granola</div>
-            <div class="tool-tagline">AI 浼氳璁板綍绁炲櫒锛岃嚜鍔ㄨ浆褰?鎻愮偧瑕佺偣锛孼oom/Teams 鍏ㄦ敮鎸?/div>
+            <div class="tool-tagline">AI 会议记录神器，自动转录+提炼要点，Zoom/Teams 全支持</div>
           </div>
         </div>
-        <div class="card-tags"><span class="tag">浼氳</span></div>
+        <div class="card-tags"><span class="tag">会议</span></div>
         <div class="card-footer">
-          <span class="pricing freemium">鍏嶈垂鐗堝彲鐢?/span>
-          <a href="https://granola.ai" target="_blank" class="visit-btn">绔嬪嵆浣跨敤 鈫?/a>
+          <span class="pricing freemium">免费版可用</span>
+          <a href="https://granola.ai" target="_blank" class="visit-btn">立即使用 →</a>
         </div>
       </div>
 
-      <div class="tool-card" data-cat="productivity">
+      <div class="tool-card" data-cat="productivity" data-name="reclaim-ai">
         <div class="card-top">
-          <div class="tool-icon" style="background:linear-gradient(135deg,#6c5ce7,#a29bfe)">馃</div>
+          <div class="tool-icon" style="background:linear-gradient(135deg,#6c5ce7,#a29bfe)">🤖</div>
           <div class="card-info">
             <div class="tool-name">Reclaim AI</div>
-            <div class="tool-tagline">AI 鏅鸿兘鏃ュ巻绠＄悊锛岃嚜鍔ㄥ畨鎺掍細璁?涓撴敞鏃堕棿锛屾不濂芥嫋寤剁棁</div>
+            <div class="tool-tagline">AI 智能日历管理，自动安排会议/专注时间，治好拖延症</div>
           </div>
         </div>
-        <div class="card-tags"><span class="tag">鏃ュ巻</span><span class="tag">鏃堕棿绠＄悊</span></div>
+        <div class="card-tags"><span class="tag">日历</span><span class="tag">时间管理</span></div>
         <div class="card-footer">
-          <span class="pricing freemium">鍏嶈垂鐗堝彲鐢?/span>
-          <a href="https://reclaim.ai" target="_blank" class="visit-btn">绔嬪嵆浣跨敤 鈫?/a>
+          <span class="pricing freemium">免费版可用</span>
+          <a href="https://reclaim.ai" target="_blank" class="visit-btn">立即使用 →</a>
         </div>
       </div>
 
-      <div class="tool-card" data-cat="productivity">
+      <div class="tool-card" data-cat="productivity" data-name="todoist">
         <div class="card-top">
-          <div class="tool-icon" style="background:linear-gradient(135deg,#6c5ce7,#a29bfe)">馃</div>
+          <div class="tool-icon" style="background:linear-gradient(135deg,#6c5ce7,#a29bfe)">🤖</div>
           <div class="card-info">
             <div class="tool-name">Todoist</div>
-            <div class="tool-tagline">AI 鏅鸿兘寰呭姙娓呭崟锛岃嚜鐒惰瑷€璇嗗埆锛岃法骞冲彴鍚屾</div>
+            <div class="tool-tagline">AI 智能待办清单，自然语言识别，跨平台同步</div>
           </div>
         </div>
-        <div class="card-tags"><span class="tag">寰呭姙</span></div>
+        <div class="card-tags"><span class="tag">待办</span></div>
         <div class="card-footer">
-          <span class="pricing freemium">Freemium</span>
-          <a href="https://todoist.com" target="_blank" class="visit-btn">绔嬪嵆浣跨敤 鈫?/a>
+          <span class="pricing paid">Freemium</span>
+          <a href="https://todoist.com" target="_blank" class="visit-btn">立即使用 →</a>
         </div>
       </div>
 
-      <div class="tool-card" data-cat="productivity">
+      <div class="tool-card" data-cat="productivity" data-name="mem">
         <div class="card-top">
-          <div class="tool-icon" style="background:linear-gradient(135deg,#6c5ce7,#a29bfe)">馃</div>
+          <div class="tool-icon" style="background:linear-gradient(135deg,#6c5ce7,#a29bfe)">🤖</div>
           <div class="card-info">
             <div class="tool-name">Mem</div>
-            <div class="tool-tagline">AI 鑷粍缁囩瑪璁帮紝鑷姩鍏宠仈+鏍囩+鎼滅储锛岀浜屽ぇ鑴戦閫?/div>
+            <div class="tool-tagline">AI 自组织笔记，自动关联+标签+搜索，第二大脑首选</div>
           </div>
         </div>
-        <div class="card-tags"><span class="tag">绗旇</span><span class="tag">鐭ヨ瘑绠＄悊</span></div>
+        <div class="card-tags"><span class="tag">笔记</span><span class="tag">知识管理</span></div>
         <div class="card-footer">
-          <span class="pricing paid">浠樿垂</span>
-          <a href="https://get.mem.ai" target="_blank" class="visit-btn">绔嬪嵆浣跨敤 鈫?/a>
+          <span class="pricing paid">付费</span>
+          <a href="https://get.mem.ai" target="_blank" class="visit-btn">立即使用 →</a>
         </div>
       </div>
 
-      <div class="tool-card" data-cat="productivity">
+      <div class="tool-card" data-cat="productivity" data-name="taskade">
         <div class="card-top">
-          <div class="tool-icon" style="background:linear-gradient(135deg,#6c5ce7,#a29bfe)">馃</div>
+          <div class="tool-icon" style="background:linear-gradient(135deg,#6c5ce7,#a29bfe)">🤖</div>
           <div class="card-info">
             <div class="tool-name">Taskade</div>
-            <div class="tool-tagline">AI 宸ヤ綔娴?椤圭洰绠＄悊锛屽洟闃熷崗浣?+ AI 鑷姩鍖栦竴鏉￠緳</div>
+            <div class="tool-tagline">AI 工作流+项目管理，团队协作 + AI 自动化一条龙</div>
           </div>
         </div>
-        <div class="card-tags"><span class="tag">椤圭洰绠＄悊</span></div>
+        <div class="card-tags"><span class="tag">项目管理</span></div>
         <div class="card-footer">
-          <span class="pricing freemium">Freemium</span>
-          <a href="https://www.taskade.com" target="_blank" class="visit-btn">绔嬪嵆浣跨敤 鈫?/a>
+          <span class="pricing paid">Freemium</span>
+          <a href="https://www.taskade.com" target="_blank" class="visit-btn">立即使用 →</a>
         </div>
       </div>
 
-      <div class="tool-card" data-cat="productivity">
+      <div class="tool-card" data-cat="productivity" data-name="fireflies">
         <div class="card-top">
-          <div class="tool-icon" style="background:linear-gradient(135deg,#6c5ce7,#a29bfe)">馃</div>
+          <div class="tool-icon" style="background:linear-gradient(135deg,#6c5ce7,#a29bfe)">🤖</div>
           <div class="card-info">
             <div class="tool-name">Fireflies</div>
-            <div class="tool-tagline">AI 浼氳璁板綍+鎼滅储+娲炲療锛孼oom/Teams/Google Meet 鍏ㄨ鐩?/div>
+            <div class="tool-tagline">AI 会议记录+搜索+洞察，Zoom/Teams/Google Meet 全覆盖</div>
           </div>
         </div>
-        <div class="card-tags"><span class="tag">浼氳</span></div>
+        <div class="card-tags"><span class="tag">会议</span></div>
         <div class="card-footer">
-          <span class="pricing freemium">Freemium</span>
-          <a href="https://fireflies.ai" target="_blank" class="visit-btn">绔嬪嵆浣跨敤 鈫?/a>
+          <span class="pricing paid">Freemium</span>
+          <a href="https://fireflies.ai" target="_blank" class="visit-btn">立即使用 →</a>
         </div>
       </div>
 
-      <div class="tool-card" data-cat="productivity">
+      <div class="tool-card" data-cat="productivity" data-name="notion">
         <div class="card-top">
-          <div class="tool-icon" style="background:linear-gradient(135deg,#6c5ce7,#a29bfe)">馃</div>
+          <div class="tool-icon" style="background:linear-gradient(135deg,#6c5ce7,#a29bfe)">🤖</div>
           <div class="card-info">
             <div class="tool-name">Notion</div>
-            <div class="tool-tagline">AI 绗旇+鏁版嵁搴?椤圭洰鍗忎綔涓€浣撳寲宸ヤ綔绌洪棿</div>
+            <div class="tool-tagline">AI 笔记+数据库+项目协作一体化工作空间</div>
           </div>
         </div>
-        <div class="card-tags"><span class="tag">绗旇</span></div>
+        <div class="card-tags"><span class="tag">笔记</span></div>
         <div class="card-footer">
-          <span class="pricing freemium">Freemium</span>
-          <a href="https://www.notion.so" target="_blank" class="visit-btn">绔嬪嵆浣跨敤 鈫?/a>
+          <span class="pricing paid">Freemium</span>
+          <a href="https://www.notion.so" target="_blank" class="visit-btn">立即使用 →</a>
         </div>
       </div>
 
-      <div class="tool-card" data-cat="productivity">
+      <div class="tool-card" data-cat="productivity" data-name="飞书">
         <div class="card-top">
-          <div class="tool-icon" style="background:linear-gradient(135deg,#6c5ce7,#a29bfe)">馃</div>
+          <div class="tool-icon" style="background:linear-gradient(135deg,#6c5ce7,#a29bfe)">🤖</div>
           <div class="card-info">
-            <div class="tool-name">椋炰功</div>
-            <div class="tool-tagline">瀛楄妭 AI 鍔炲叕濂椾欢锛屾枃妗?浼氳+鏃ュ巻+OKR锛屽浗鍐呭洟闃熼閫?/div>
+            <div class="tool-name">飞书</div>
+            <div class="tool-tagline">字节 AI 办公套件，文档+会议+日历+OKR，国内团队首选</div>
           </div>
         </div>
-        <div class="card-tags"><span class="tag">鍥戒骇</span></div>
+        <div class="card-tags"><span class="tag">国产</span></div>
         <div class="card-footer">
-          <span class="pricing freemium">鍏嶈垂鐗堝彲鐢?/span>
-          <a href="https://www.feishu.cn" target="_blank" class="visit-btn">绔嬪嵆浣跨敤 鈫?/a>
+          <span class="pricing freemium">免费版可用</span>
+          <a href="https://www.feishu.cn" target="_blank" class="visit-btn">立即使用 →</a>
         </div>
       </div>
 
-      <div class="tool-card" data-cat="productivity">
+      <div class="tool-card" data-cat="productivity" data-name="miro-ai">
         <div class="card-top">
-          <div class="tool-icon" style="background:linear-gradient(135deg,#6c5ce7,#a29bfe)">馃</div>
+          <div class="tool-icon" style="background:linear-gradient(135deg,#6c5ce7,#a29bfe)">🤖</div>
           <div class="card-info">
             <div class="tool-name">Miro AI <span class="new-banner">NEW</span></div>
-            <div class="tool-tagline">AI 鐧芥澘鍗忎綔锛岃嚜鍔ㄧ敓鎴愭祦绋嬪浘/鎬濈淮瀵煎浘/澶磋剳椋庢毚鏁寸悊</div>
+            <div class="tool-tagline">AI 白板协作，自动生成流程图/思维导图/头脑风暴整理</div>
           </div>
         </div>
-        <div class="card-tags"><span class="tag">鍗忎綔</span><span class="tag">鐧芥澘</span></div>
+        <div class="card-tags"><span class="tag tag-new">新上线</span><span class="tag tag-new">新上线</span></div>
         <div class="card-footer">
-          <span class="pricing freemium">Freemium</span>
-          <a href="https://miro.com/ai" target="_blank" class="visit-btn">绔嬪嵆浣跨敤 鈫?/a>
+          <span class="pricing paid">Freemium</span>
+          <a href="https://miro.com/ai" target="_blank" class="visit-btn">立即使用 →</a>
         </div>
       </div>
 
-      <div class="tool-card" data-cat="productivity">
+      <div class="tool-card" data-cat="productivity" data-name="otter.ai">
         <div class="card-top">
-          <div class="tool-icon" style="background:linear-gradient(135deg,#6c5ce7,#a29bfe)">馃</div>
+          <div class="tool-icon" style="background:linear-gradient(135deg,#6c5ce7,#a29bfe)">🤖</div>
           <div class="card-info">
             <div class="tool-name">Otter.ai <span class="new-banner">NEW</span></div>
-            <div class="tool-tagline">AI 浼氳璁板綍+瀹炴椂杞綍锛岃嚜鍔ㄧ敓鎴愭憳瑕佸拰琛屽姩椤癸紝鑱屽満浜烘晥鐜囩鍣?/div>
+            <div class="tool-tagline">AI 会议记录+实时转录，自动生成摘要和行动项，职场人效率神器</div>
           </div>
         </div>
-        <div class="card-tags"><span class="tag">浼氳</span><span class="tag">杞綍</span></div>
+        <div class="card-tags"><span class="tag tag-new">新上线</span><span class="tag tag-new">新上线</span></div>
         <div class="card-footer">
-          <span class="pricing freemium">Freemium</span>
-          <a href="https://otter.ai" target="_blank" class="visit-btn">绔嬪嵆浣跨敤 鈫?/a>
+          <span class="pricing paid">Freemium</span>
+          <a href="https://otter.ai" target="_blank" class="visit-btn">立即使用 →</a>
         </div>
       </div>
 
-      <div class="tool-card" data-cat="productivity">
+      <div class="tool-card" data-cat="productivity" data-name="clockwise">
         <div class="card-top">
-          <div class="tool-icon" style="background:linear-gradient(135deg,#6c5ce7,#a29bfe)">馃</div>
+          <div class="tool-icon" style="background:linear-gradient(135deg,#6c5ce7,#a29bfe)">🤖</div>
           <div class="card-info">
             <div class="tool-name">Clockwise <span class="new-banner">NEW</span></div>
-            <div class="tool-tagline">AI 鏃ュ巻鑷姩浼樺寲锛岃嚜鍔ㄨ皟鏁翠細璁椂闂达紝鑵惧嚭涓撴敞鏃堕棿</div>
+            <div class="tool-tagline">AI 日历自动优化，自动调整会议时间，腾出专注时间</div>
           </div>
         </div>
-        <div class="card-tags"><span class="tag">鏃ュ巻</span><span class="tag">鏃堕棿绠＄悊</span></div>
+        <div class="card-tags"><span class="tag tag-new">新上线</span><span class="tag tag-new">新上线</span></div>
         <div class="card-footer">
-          <span class="pricing freemium">鍏嶈垂鐗堝彲鐢?/span>
-          <a href="https://clockwise.com" target="_blank" class="visit-btn">绔嬪嵆浣跨敤 鈫?/a>
+          <span class="pricing freemium">免费版可用</span>
+          <a href="https://clockwise.com" target="_blank" class="visit-btn">立即使用 →</a>
         </div>
       </div>
 
-      <div class="tool-card" data-cat="productivity">
+      <div class="tool-card" data-cat="productivity" data-name="tldv">
         <div class="card-top">
-          <div class="tool-icon" style="background:linear-gradient(135deg,#6c5ce7,#a29bfe)">馃</div>
+          <div class="tool-icon" style="background:linear-gradient(135deg,#6c5ce7,#a29bfe)">🤖</div>
           <div class="card-info">
             <div class="tool-name">TLDV <span class="new-banner">NEW</span></div>
-            <div class="tool-tagline">AI 浼氳璁板綍绁炲櫒锛屼竴閿敓鎴愪細璁憳瑕?寰呭姙/鏃堕棿绾匡紝鏀寔 20+ 璇█</div>
+            <div class="tool-tagline">AI 会议记录神器，一键生成会议摘要/待办/时间线，支持 20+ 语言</div>
           </div>
         </div>
-        <div class="card-tags"><span class="tag">浼氳</span></div>
+        <div class="card-tags"><span class="tag tag-new">新上线</span></div>
         <div class="card-footer">
-          <span class="pricing freemium">Freemium</span>
-          <a href="https://tldv.io" target="_blank" class="visit-btn">绔嬪嵆浣跨敤 鈫?/a>
+          <span class="pricing paid">Freemium</span>
+          <a href="https://tldv.io" target="_blank" class="visit-btn">立即使用 →</a>
         </div>
       </div>
     </div>
   </section>
 
   <section class="section" data-section="search">
-    <div class="section-title">馃攳 AI 鎼滅储</div>
-    <p class="section-desc">鏂颁竴浠ｆ悳绱㈠紩鎿庯紝AI 鐩存帴缁欏嚭绛旀鑰岄潪閾炬帴鍒楄〃</p>
+    <div class="section-title">🔍 AI 搜索</div>
+    <p class="section-desc">新一代搜索引擎，AI 直接给出答案而非链接列表</p>
     <div class="tool-grid">
-      <div class="tool-card" data-cat="search">
+      <div class="tool-card" data-cat="search" data-name="perplexity-ai">
         <div class="card-top">
-          <div class="tool-icon" style="background:linear-gradient(135deg,#6c5ce7,#a29bfe)">馃</div>
+          <div class="tool-icon" style="background:linear-gradient(135deg,#6c5ce7,#a29bfe)">🤖</div>
           <div class="card-info">
             <div class="tool-name">Perplexity AI</div>
-            <div class="tool-tagline">AI 鎼滅储寮曟搸鍏堥┍锛岀粰鍑虹粨鏋勫寲绛旀 + 寮曠敤鏉ユ簮锛屾敮鎸佹枃浠朵笂浼犳繁搴﹀垎鏋?/div>
+            <div class="tool-tagline">AI 搜索引擎先驱，给出结构化答案 + 引用来源，支持文件上传深度分析</div>
           </div>
         </div>
-        <div class="card-tags"><span class="tag">鐑棬</span></div>
+        <div class="card-tags"><span class="tag">热门</span></div>
         <div class="card-footer">
-          <span class="pricing freemium">鍏嶈垂鐗堝彲鐢?/span>
-          <a href="https://www.perplexity.ai" target="_blank" class="visit-btn">绔嬪嵆浣跨敤 鈫?/a>
+          <span class="pricing freemium">免费版可用</span>
+          <a href="https://www.perplexity.ai" target="_blank" class="visit-btn">立即使用 →</a>
         </div>
       </div>
 
-      <div class="tool-card" data-cat="search">
+      <div class="tool-card" data-cat="search" data-name="you.com">
         <div class="card-top">
-          <div class="tool-icon" style="background:linear-gradient(135deg,#6c5ce7,#a29bfe)">馃</div>
+          <div class="tool-icon" style="background:linear-gradient(135deg,#6c5ce7,#a29bfe)">🤖</div>
           <div class="card-info">
             <div class="tool-name">You.com</div>
-            <div class="tool-tagline">AI 鎼滅储寮曟搸锛屽悓鏃舵敮鎸佽亰澶╂ā寮忥紝闅愮浼樺厛锛屾棤骞垮憡骞叉壈</div>
+            <div class="tool-tagline">AI 搜索引擎，同时支持聊天模式，隐私优先，无广告干扰</div>
           </div>
         </div>
-        <div class="card-tags"><span class="tag">闅愮</span></div>
+        <div class="card-tags"><span class="tag">隐私</span></div>
         <div class="card-footer">
-          <span class="pricing freemium">鍏嶈垂鐗堝彲鐢?/span>
-          <a href="https://you.com" target="_blank" class="visit-btn">绔嬪嵆浣跨敤 鈫?/a>
+          <span class="pricing freemium">免费版可用</span>
+          <a href="https://you.com" target="_blank" class="visit-btn">立即使用 →</a>
         </div>
       </div>
 
-      <div class="tool-card" data-cat="search">
+      <div class="tool-card" data-cat="search" data-name="consensus">
         <div class="card-top">
-          <div class="tool-icon" style="background:linear-gradient(135deg,#6c5ce7,#a29bfe)">馃</div>
+          <div class="tool-icon" style="background:linear-gradient(135deg,#6c5ce7,#a29bfe)">🤖</div>
           <div class="card-info">
             <div class="tool-name">Consensus</div>
-            <div class="tool-tagline">AI 瀛︽湳鎼滅储寮曟搸锛屾悳璁烘枃 + AI 鎬荤粨 + 鍙俊搴﹁瘎鍒嗭紝绉戠爺蹇呭</div>
+            <div class="tool-tagline">AI 学术搜索引擎，搜论文 + AI 总结 + 可信度评分，科研必备</div>
           </div>
         </div>
-        <div class="card-tags"><span class="tag">瀛︽湳</span></div>
+        <div class="card-tags"><span class="tag">学术</span></div>
         <div class="card-footer">
-          <span class="pricing freemium">Freemium</span>
-          <a href="https://consensus.app" target="_blank" class="visit-btn">绔嬪嵆浣跨敤 鈫?/a>
+          <span class="pricing paid">Freemium</span>
+          <a href="https://consensus.app" target="_blank" class="visit-btn">立即使用 →</a>
         </div>
       </div>
 
-      <div class="tool-card" data-cat="search">
+      <div class="tool-card" data-cat="search" data-name="devv">
         <div class="card-top">
-          <div class="tool-icon" style="background:linear-gradient(135deg,#6c5ce7,#a29bfe)">馃</div>
+          <div class="tool-icon" style="background:linear-gradient(135deg,#6c5ce7,#a29bfe)">🤖</div>
           <div class="card-info">
             <div class="tool-name">Devv</div>
-            <div class="tool-tagline">闈㈠悜绋嬪簭鍛樼殑 AI 鎼滅储寮曟搸锛屾妧鏈枃妗ｇ簿鍑嗘绱?/div>
+            <div class="tool-tagline">面向程序员的 AI 搜索引擎，技术文档精准检索</div>
           </div>
         </div>
-        <div class="card-tags"><span class="tag">鎶€鏈?/span></div>
+        <div class="card-tags"><span class="tag">技术</span></div>
         <div class="card-footer">
-          <span class="pricing paid">鍏嶈垂</span>
-          <a href="https://devv.ai" target="_blank" class="visit-btn">绔嬪嵆浣跨敤 鈫?/a>
+          <span class="pricing freemium">免费</span>
+          <a href="https://devv.ai" target="_blank" class="visit-btn">立即使用 →</a>
         </div>
       </div>
 
-      <div class="tool-card" data-cat="search">
+      <div class="tool-card" data-cat="search" data-name="phind">
         <div class="card-top">
-          <div class="tool-icon" style="background:linear-gradient(135deg,#6c5ce7,#a29bfe)">馃</div>
+          <div class="tool-icon" style="background:linear-gradient(135deg,#6c5ce7,#a29bfe)">🤖</div>
           <div class="card-info">
             <div class="tool-name">Phind</div>
-            <div class="tool-tagline">绋嬪簭鍛?AI 鎼滅储寮曟搸锛岀簿鍑嗕唬鐮佹悳绱?+ 瑙ｉ噴 + 绀轰緥</div>
+            <div class="tool-tagline">程序员 AI 搜索引擎，精准代码搜索 + 解释 + 示例</div>
           </div>
         </div>
-        <div class="card-tags"><span class="tag">缂栫▼</span></div>
+        <div class="card-tags"><span class="tag">编程</span></div>
         <div class="card-footer">
-          <span class="pricing paid">鍏嶈垂</span>
-          <a href="https://www.phind.com" target="_blank" class="visit-btn">绔嬪嵆浣跨敤 鈫?/a>
+          <span class="pricing freemium">免费</span>
+          <a href="https://www.phind.com" target="_blank" class="visit-btn">立即使用 →</a>
         </div>
       </div>
 
-      <div class="tool-card" data-cat="search">
+      <div class="tool-card" data-cat="search" data-name="komo">
         <div class="card-top">
-          <div class="tool-icon" style="background:linear-gradient(135deg,#6c5ce7,#a29bfe)">馃</div>
+          <div class="tool-icon" style="background:linear-gradient(135deg,#6c5ce7,#a29bfe)">🤖</div>
           <div class="card-info">
             <div class="tool-name">Komo</div>
-            <div class="tool-tagline">AI 鎼滅储寮曟搸锛岀畝娲佹棤骞垮憡锛屾敮鎸佸浘鐗?鏂囨湰/浠ｇ爜鎼滅储</div>
+            <div class="tool-tagline">AI 搜索引擎，简洁无广告，支持图片/文本/代码搜索</div>
           </div>
         </div>
-        <div class="card-tags"><span class="tag">绠€娲?/span></div>
+        <div class="card-tags"><span class="tag">简洁</span></div>
         <div class="card-footer">
-          <span class="pricing paid">鍏嶈垂</span>
-          <a href="https://komo.ai" target="_blank" class="visit-btn">绔嬪嵆浣跨敤 鈫?/a>
+          <span class="pricing freemium">免费</span>
+          <a href="https://komo.ai" target="_blank" class="visit-btn">立即使用 →</a>
         </div>
       </div>
 
-      <div class="tool-card" data-cat="search">
+      <div class="tool-card" data-cat="search" data-name="exa-ai">
         <div class="card-top">
-          <div class="tool-icon" style="background:linear-gradient(135deg,#6c5ce7,#a29bfe)">馃</div>
+          <div class="tool-icon" style="background:linear-gradient(135deg,#6c5ce7,#a29bfe)">🤖</div>
           <div class="card-info">
             <div class="tool-name">Exa AI <span class="new-banner">NEW</span></div>
-            <div class="tool-tagline">AI 璇箟鎼滅储寮曟搸锛岀悊瑙ｆ剰鍥捐€岄潪鍏抽敭璇嶏紝绮惧噯鎵剧綉椤?璁烘枃/浠ｇ爜</div>
+            <div class="tool-tagline">AI 语义搜索引擎，理解意图而非关键词，精准找网页/论文/代码</div>
           </div>
         </div>
-        <div class="card-tags"><span class="tag">璇箟鎼滅储</span><span class="tag">鐑棬</span></div>
+        <div class="card-tags"><span class="tag tag-new">新上线</span><span class="tag tag-new">新上线</span></div>
         <div class="card-footer">
-          <span class="pricing freemium">鍏嶈垂鐗堝彲鐢?/span>
-          <a href="https://exa.ai" target="_blank" class="visit-btn">绔嬪嵆浣跨敤 鈫?/a>
+          <span class="pricing freemium">免费版可用</span>
+          <a href="https://exa.ai" target="_blank" class="visit-btn">立即使用 →</a>
         </div>
       </div>
 
-      <div class="tool-card" data-cat="search">
+      <div class="tool-card" data-cat="search" data-name="andi">
         <div class="card-top">
-          <div class="tool-icon" style="background:linear-gradient(135deg,#6c5ce7,#a29bfe)">馃</div>
+          <div class="tool-icon" style="background:linear-gradient(135deg,#6c5ce7,#a29bfe)">🤖</div>
           <div class="card-info">
             <div class="tool-name">Andi <span class="new-banner">NEW</span></div>
-            <div class="tool-tagline">AI 瀵硅瘽寮忔悳绱㈠紩鎿庯紝鍍忚亰澶╀竴鏍锋悳绱紝骞磋交浜洪閫?/div>
+            <div class="tool-tagline">AI 对话式搜索引擎，像聊天一样搜索，年轻人首选</div>
           </div>
         </div>
-        <div class="card-tags"><span class="tag">瀵硅瘽寮?/span><span class="tag">鍏嶈垂</span></div>
+        <div class="card-tags"><span class="tag tag-new">新上线</span><span class="tag tag-new">新上线</span></div>
         <div class="card-footer">
-          <span class="pricing free">瀹屽叏鍏嶈垂</span>
-          <a href="https://andisearch.com" target="_blank" class="visit-btn">绔嬪嵆浣跨敤 鈫?/a>
+          <span class="pricing free">完全免费</span>
+          <a href="https://andisearch.com" target="_blank" class="visit-btn">立即使用 →</a>
         </div>
       </div>
 
-      <div class="tool-card" data-cat="search">
+      <div class="tool-card" data-cat="search" data-name="neeva-ai">
         <div class="card-top">
-          <div class="tool-icon" style="background:linear-gradient(135deg,#6c5ce7,#a29bfe)">馃</div>
+          <div class="tool-icon" style="background:linear-gradient(135deg,#6c5ce7,#a29bfe)">🤖</div>
           <div class="card-info">
             <div class="tool-name">Neeva AI <span class="new-banner">NEW</span></div>
-            <div class="tool-tagline">AI 鏃犲箍鍛婃悳绱㈠紩鎿庯紝鎼滅储缁撴灉璐ㄩ噺楂橈紝闅愮浼樺厛</div>
+            <div class="tool-tagline">AI 无广告搜索引擎，搜索结果质量高，隐私优先</div>
           </div>
         </div>
-        <div class="card-tags"><span class="tag">鏃犲箍鍛?/span><span class="tag">闅愮</span></div>
+        <div class="card-tags"><span class="tag tag-new">新上线</span><span class="tag tag-new">新上线</span></div>
         <div class="card-footer">
-          <span class="pricing freemium">Freemium</span>
-          <a href="https://neeva.com" target="_blank" class="visit-btn">绔嬪嵆浣跨敤 鈫?/a>
+          <span class="pricing paid">Freemium</span>
+          <a href="https://neeva.com" target="_blank" class="visit-btn">立即使用 →</a>
         </div>
       </div>
 
-      <div class="tool-card" data-cat="search">
+      <div class="tool-card" data-cat="search" data-name="brave-search-ai">
         <div class="card-top">
-          <div class="tool-icon" style="background:linear-gradient(135deg,#6c5ce7,#a29bfe)">馃</div>
+          <div class="tool-icon" style="background:linear-gradient(135deg,#6c5ce7,#a29bfe)">🤖</div>
           <div class="card-info">
             <div class="tool-name">Brave Search AI <span class="new-banner">NEW</span></div>
-            <div class="tool-tagline">Brave 娴忚鍣ㄥ唴缃?AI 鎼滅储锛岀瀵嗕紭鍏堬紝涓嶈拷韪笉鏀堕泦</div>
+            <div class="tool-tagline">Brave 浏览器内置 AI 搜索，私密优先，不追踪不收集</div>
           </div>
         </div>
-        <div class="card-tags"><span class="tag">闅愮</span><span class="tag">娴忚鍣?/span></div>
+        <div class="card-tags"><span class="tag tag-new">新上线</span><span class="tag tag-new">新上线</span></div>
         <div class="card-footer">
-          <span class="pricing paid">鍏嶈垂</span>
-          <a href="https://brave.com/search" target="_blank" class="visit-btn">绔嬪嵆浣跨敤 鈫?/a>
+          <span class="pricing freemium">免费</span>
+          <a href="https://brave.com/search" target="_blank" class="visit-btn">立即使用 →</a>
         </div>
       </div>
 
-      <div class="tool-card" data-cat="search">
+      <div class="tool-card" data-cat="search" data-name="-perplexity-pro">
         <div class="card-top">
-          <div class="tool-icon" style="background:linear-gradient(135deg,#6c5ce7,#a29bfe)">馃</div>
+          <div class="tool-icon" style="background:linear-gradient(135deg,#6c5ce7,#a29bfe)">🤖</div>
           <div class="card-info">
             <div class="tool-name"> perplexity pro</div>
-            <div class="tool-tagline">Perplexity 楂樼骇鐗堬紝鏃犻檺鏌ヨ+鏂囦欢涓婁紶+GPT-4o 璁块棶锛屾繁搴︾爺绌堕閫?/div>
+            <div class="tool-tagline">Perplexity 高级版，无限查询+文件上传+GPT-4o 访问，深度研究首选</div>
           </div>
         </div>
-        <div class="card-tags"><span class="tag">鐑棬</span><span class="tag">浠樿垂</span></div>
+        <div class="card-tags"><span class="tag">热门</span><span class="tag">付费</span></div>
         <div class="card-footer">
-          <span class="pricing paid">浠樿垂</span>
-          <a href="https://www.perplexity.ai/pro" target="_blank" class="visit-btn">绔嬪嵆浣跨敤 鈫?/a>
+          <span class="pricing paid">付费</span>
+          <a href="https://www.perplexity.ai/pro" target="_blank" class="visit-btn">立即使用 →</a>
         </div>
       </div>
     </div>
   </section>
 
   <section class="section" data-section="agent">
-    <div class="section-title">馃З Agent 鎻掍欢</div>
-    <p class="section-desc">AI Agent 妗嗘灦銆佹櫤鑳戒綋骞冲彴銆佸伐浣滄祦鑷姩鍖栤€斺€旇 AI 甯綘鑷姩瀹屾垚浠诲姟</p>
+    <div class="section-title">🧩 Agent 插件</div>
+    <p class="section-desc">AI Agent 框架、智能体平台、工作流自动化——让 AI 帮你自动完成任务</p>
     <div class="tool-grid">
-      <div class="tool-card" data-cat="agent">
+      <div class="tool-card" data-cat="agent" data-name="openclaw">
         <div class="card-top">
-          <div class="tool-icon" style="background:linear-gradient(135deg,#6c5ce7,#a29bfe)">馃</div>
+          <div class="tool-icon" style="background:linear-gradient(135deg,#6c5ce7,#a29bfe)">🤖</div>
           <div class="card-info">
             <div class="tool-name">OpenClaw</div>
-            <div class="tool-tagline">寮€婧?AI Agent 妗嗘灦锛岃嚜瀹氫箟 Skill锛屽骞冲彴鎺ュ叆锛屾湰鍦扮煡璇嗗簱锛屾墦閫犱笓灞?AI 鍔╂墜</div>
+            <div class="tool-tagline">开源 AI Agent 框架，自定义 Skill，多平台接入，本地知识库，打造专属 AI 助手</div>
           </div>
         </div>
-        <div class="card-tags"><span class="tag">鐑棬</span><span class="tag">寮€婧?/span></div>
+        <div class="card-tags"><span class="tag">热门</span><span class="tag">开源</span></div>
         <div class="card-footer">
-          <span class="pricing free">瀹屽叏鍏嶈垂</span>
-          <a href="https://openclaw.ai" target="_blank" class="visit-btn">绔嬪嵆浣跨敤 鈫?/a>
+          <span class="pricing free">完全免费</span>
+          <a href="https://openclaw.ai" target="_blank" class="visit-btn">立即使用 →</a>
         </div>
       </div>
 
-      <div class="tool-card" data-cat="agent">
+      <div class="tool-card" data-cat="agent" data-name="langchain">
         <div class="card-top">
-          <div class="tool-icon" style="background:linear-gradient(135deg,#6c5ce7,#a29bfe)">馃</div>
+          <div class="tool-icon" style="background:linear-gradient(135deg,#6c5ce7,#a29bfe)">🤖</div>
           <div class="card-info">
             <div class="tool-name">LangChain</div>
-            <div class="tool-tagline">鏈€娴佽鐨?LLM 搴旂敤寮€鍙戞鏋讹紝閾惧紡璋冪敤 + 璁板繂绠＄悊 + 宸ュ叿璋冪敤涓€绔欐悶瀹?/div>
+            <div class="tool-tagline">最流行的 LLM 应用开发框架，链式调用 + 记忆管理 + 工具调用一站搞定</div>
           </div>
         </div>
-        <div class="card-tags"><span class="tag">鐑棬</span><span class="tag">寮€鍙?/span></div>
+        <div class="card-tags"><span class="tag">热门</span><span class="tag">开发</span></div>
         <div class="card-footer">
-          <span class="pricing paid">寮€婧愬厤璐?/span>
-          <a href="https://langchain.com" target="_blank" class="visit-btn">绔嬪嵆浣跨敤 鈫?/a>
+          <span class="pricing freemium">开源免费</span>
+          <a href="https://langchain.com" target="_blank" class="visit-btn">立即使用 →</a>
         </div>
       </div>
 
-      <div class="tool-card" data-cat="agent">
+      <div class="tool-card" data-cat="agent" data-name="autogen">
         <div class="card-top">
-          <div class="tool-icon" style="background:linear-gradient(135deg,#6c5ce7,#a29bfe)">馃</div>
+          <div class="tool-icon" style="background:linear-gradient(135deg,#6c5ce7,#a29bfe)">🤖</div>
           <div class="card-info">
             <div class="tool-name">AutoGen</div>
-            <div class="tool-tagline">寰蒋澶?Agent 瀵硅瘽妗嗘灦锛孉gent 涔嬮棿浜掔浉鍗忎綔瑙ｅ喅闂</div>
+            <div class="tool-tagline">微软多 Agent 对话框架，Agent 之间互相协作解决问题</div>
           </div>
         </div>
-        <div class="card-tags"><span class="tag">寰蒋</span><span class="tag">澶欰gent</span></div>
+        <div class="card-tags"><span class="tag">微软</span><span class="tag">多Agent</span></div>
         <div class="card-footer">
-          <span class="pricing paid">寮€婧愬厤璐?/span>
-          <a href="https://microsoft.github.io/autogen" target="_blank" class="visit-btn">绔嬪嵆浣跨敤 鈫?/a>
+          <span class="pricing freemium">开源免费</span>
+          <a href="https://microsoft.github.io/autogen" target="_blank" class="visit-btn">立即使用 →</a>
         </div>
       </div>
 
-      <div class="tool-card" data-cat="agent">
+      <div class="tool-card" data-cat="agent" data-name="crewai">
         <div class="card-top">
-          <div class="tool-icon" style="background:linear-gradient(135deg,#6c5ce7,#a29bfe)">馃</div>
+          <div class="tool-icon" style="background:linear-gradient(135deg,#6c5ce7,#a29bfe)">🤖</div>
           <div class="card-info">
             <div class="tool-name">CrewAI</div>
-            <div class="tool-tagline">瑙掕壊鎵紨澶?Agent 鍥㈤槦鍗忎綔妗嗘灦锛孉gent 鍚勫徃鍏惰亴瀹屾垚浠诲姟</div>
+            <div class="tool-tagline">角色扮演多 Agent 团队协作框架，Agent 各司其职完成任务</div>
           </div>
         </div>
-        <div class="card-tags"><span class="tag">澶欰gent</span></div>
+        <div class="card-tags"><span class="tag">多Agent</span></div>
         <div class="card-footer">
-          <span class="pricing paid">寮€婧愬厤璐?/span>
-          <a href="https://www.crewai.com" target="_blank" class="visit-btn">绔嬪嵆浣跨敤 鈫?/a>
+          <span class="pricing freemium">开源免费</span>
+          <a href="https://www.crewai.com" target="_blank" class="visit-btn">立即使用 →</a>
         </div>
       </div>
 
-      <div class="tool-card" data-cat="agent">
+      <div class="tool-card" data-cat="agent" data-name="n8n">
         <div class="card-top">
-          <div class="tool-icon" style="background:linear-gradient(135deg,#6c5ce7,#a29bfe)">馃</div>
+          <div class="tool-icon" style="background:linear-gradient(135deg,#6c5ce7,#a29bfe)">🤖</div>
           <div class="card-info">
             <div class="tool-name">n8n</div>
-            <div class="tool-tagline">寮€婧愬伐浣滄祦鑷姩鍖栧钩鍙帮紝杩炴帴鏁扮櫨涓?App锛屾棤浠ｇ爜鎼缓鑷姩鍖栨祦绋?/div>
+            <div class="tool-tagline">开源工作流自动化平台，连接数百个 App，无代码搭建自动化流程</div>
           </div>
         </div>
-        <div class="card-tags"><span class="tag">鑷姩鍖?/span><span class="tag">鐑棬</span></div>
+        <div class="card-tags"><span class="tag">自动化</span><span class="tag">热门</span></div>
         <div class="card-footer">
-          <span class="pricing paid">寮€婧愬厤璐?/span>
-          <a href="https://n8n.io" target="_blank" class="visit-btn">绔嬪嵆浣跨敤 鈫?/a>
+          <span class="pricing freemium">开源免费</span>
+          <a href="https://n8n.io" target="_blank" class="visit-btn">立即使用 →</a>
         </div>
       </div>
 
-      <div class="tool-card" data-cat="agent">
+      <div class="tool-card" data-cat="agent" data-name="dify">
         <div class="card-top">
-          <div class="tool-icon" style="background:linear-gradient(135deg,#6c5ce7,#a29bfe)">馃</div>
+          <div class="tool-icon" style="background:linear-gradient(135deg,#6c5ce7,#a29bfe)">🤖</div>
           <div class="card-info">
             <div class="tool-name">Dify</div>
-            <div class="tool-tagline">寮€婧?LLM 搴旂敤寮€鍙戝钩鍙帮紝RAG + Agent + 宸ヤ綔娴佸彲瑙嗗寲缂栨帓</div>
+            <div class="tool-tagline">开源 LLM 应用开发平台，RAG + Agent + 工作流可视化编排</div>
           </div>
         </div>
-        <div class="card-tags"><span class="tag">鍥戒骇</span><span class="tag">寮€婧?/span></div>
+        <div class="card-tags"><span class="tag">国产</span><span class="tag">开源</span></div>
         <div class="card-footer">
-          <span class="pricing paid">寮€婧愬厤璐?/span>
-          <a href="https://dify.ai" target="_blank" class="visit-btn">绔嬪嵆浣跨敤 鈫?/a>
+          <span class="pricing freemium">开源免费</span>
+          <a href="https://dify.ai" target="_blank" class="visit-btn">立即使用 →</a>
         </div>
       </div>
 
-      <div class="tool-card" data-cat="agent">
+      <div class="tool-card" data-cat="agent" data-name="browser-use">
         <div class="card-top">
-          <div class="tool-icon" style="background:linear-gradient(135deg,#6c5ce7,#a29bfe)">馃</div>
+          <div class="tool-icon" style="background:linear-gradient(135deg,#6c5ce7,#a29bfe)">🤖</div>
           <div class="card-info">
             <div class="tool-name">Browser Use</div>
-            <div class="tool-tagline">璁?AI 鎿嶆帶娴忚鍣紝鑷姩瀹屾垚缃戦〉浠诲姟</div>
+            <div class="tool-tagline">让 AI 操控浏览器，自动完成网页任务</div>
           </div>
         </div>
-        <div class="card-tags"><span class="tag">娴忚鍣?/span></div>
+        <div class="card-tags"><span class="tag">浏览器</span></div>
         <div class="card-footer">
-          <span class="pricing paid">寮€婧愬厤璐?/span>
-          <a href="https://browser-use.com" target="_blank" class="visit-btn">绔嬪嵆浣跨敤 鈫?/a>
+          <span class="pricing freemium">开源免费</span>
+          <a href="https://browser-use.com" target="_blank" class="visit-btn">立即使用 →</a>
         </div>
       </div>
 
-      <div class="tool-card" data-cat="agent">
+      <div class="tool-card" data-cat="agent" data-name="manus-ai">
         <div class="card-top">
-          <div class="tool-icon" style="background:linear-gradient(135deg,#6c5ce7,#a29bfe)">馃</div>
+          <div class="tool-icon" style="background:linear-gradient(135deg,#6c5ce7,#a29bfe)">🤖</div>
           <div class="card-info">
             <div class="tool-name">Manus AI</div>
-            <div class="tool-tagline">AI 鑷富 Agent锛岃兘鐙珛瀹屾垚澶嶆潅浠诲姟閾撅紝琚獕涓?AI 鐗?AutoGPT</div>
+            <div class="tool-tagline">AI 自主 Agent，能独立完成复杂任务链，被誉为 AI 版 AutoGPT</div>
           </div>
         </div>
-        <div class="card-tags"><span class="tag">鐑棬</span></div>
+        <div class="card-tags"><span class="tag">热门</span></div>
         <div class="card-footer">
-          <span class="pricing paid">浠樿垂</span>
-          <a href="https://manus.ai" target="_blank" class="visit-btn">绔嬪嵆浣跨敤 鈫?/a>
+          <span class="pricing paid">付费</span>
+          <a href="https://manus.ai" target="_blank" class="visit-btn">立即使用 →</a>
         </div>
       </div>
 
-      <div class="tool-card" data-cat="agent">
+      <div class="tool-card" data-cat="agent" data-name="claude-code">
         <div class="card-top">
-          <div class="tool-icon" style="background:linear-gradient(135deg,#6c5ce7,#a29bfe)">馃</div>
+          <div class="tool-icon" style="background:linear-gradient(135deg,#6c5ce7,#a29bfe)">🤖</div>
           <div class="card-info">
             <div class="tool-name">Claude Code</div>
-            <div class="tool-tagline">Anthropic AI 缂栫▼ Agent锛岀粓绔噷鐨?AI 宸ョ▼甯?/div>
+            <div class="tool-tagline">Anthropic AI 编程 Agent，终端里的 AI 工程师</div>
           </div>
         </div>
-        <div class="card-tags"><span class="tag">Anthropic</span><span class="tag">缂栫▼</span></div>
+        <div class="card-tags"><span class="tag">Anthropic</span><span class="tag">编程</span></div>
         <div class="card-footer">
-          <span class="pricing paid">浠樿垂</span>
-          <a href="https://claude.ai/claude-code" target="_blank" class="visit-btn">绔嬪嵆浣跨敤 鈫?/a>
+          <span class="pricing paid">付费</span>
+          <a href="https://claude.ai/claude-code" target="_blank" class="visit-btn">立即使用 →</a>
         </div>
       </div>
 
-      <div class="tool-card" data-cat="agent">
+      <div class="tool-card" data-cat="agent" data-name="metagpt">
         <div class="card-top">
-          <div class="tool-icon" style="background:linear-gradient(135deg,#6c5ce7,#a29bfe)">馃</div>
+          <div class="tool-icon" style="background:linear-gradient(135deg,#6c5ce7,#a29bfe)">🤖</div>
           <div class="card-info">
             <div class="tool-name">MetaGPT <span class="new-banner">NEW</span></div>
-            <div class="tool-tagline">Meta 鍑哄搧澶?Agent 妗嗘灦锛岃嚜鍔ㄧ敓鎴愬畬鏁磋蒋浠堕」鐩紝闇€姹傗啋浠ｇ爜涓€鏉￠緳</div>
+            <div class="tool-tagline">Meta 出品多 Agent 框架，自动生成完整软件项目，需求→代码一条龙</div>
           </div>
         </div>
-        <div class="card-tags"><span class="tag">Meta</span><span class="tag">澶欰gent</span></div>
+        <div class="card-tags"><span class="tag tag-new">新上线</span><span class="tag tag-new">新上线</span></div>
         <div class="card-footer">
-          <span class="pricing paid">寮€婧愬厤璐?/span>
-          <a href="https://github.com/geekan/MetaGPT" target="_blank" class="visit-btn">绔嬪嵆浣跨敤 鈫?/a>
+          <span class="pricing freemium">开源免费</span>
+          <a href="https://github.com/geekan/MetaGPT" target="_blank" class="visit-btn">立即使用 →</a>
         </div>
       </div>
 
-      <div class="tool-card" data-cat="agent">
+      <div class="tool-card" data-cat="agent" data-name="phidata">
         <div class="card-top">
-          <div class="tool-icon" style="background:linear-gradient(135deg,#6c5ce7,#a29bfe)">馃</div>
+          <div class="tool-icon" style="background:linear-gradient(135deg,#6c5ce7,#a29bfe)">🤖</div>
           <div class="card-info">
             <div class="tool-name">Phidata <span class="new-banner">NEW</span></div>
-            <div class="tool-tagline">鏋勫缓 AI Agent 鐨勬渶绠€鏂瑰紡锛岃蹇?鐭ヨ瘑/宸ュ叿/浜鸿涓€绔欏紡鎼炲畾</div>
+            <div class="tool-tagline">构建 AI Agent 的最简方式，记忆/知识/工具/人设一站式搞定</div>
           </div>
         </div>
-        <div class="card-tags"><span class="tag">寮€婧?/span><span class="tag">绠€鍗曟槗鐢?/span></div>
+        <div class="card-tags"><span class="tag tag-new">新上线</span><span class="tag tag-new">新上线</span></div>
         <div class="card-footer">
-          <span class="pricing paid">寮€婧愬厤璐?/span>
-          <a href="https://docs.letta.com" target="_blank" class="visit-btn">绔嬪嵆浣跨敤 鈫?/a>
+          <span class="pricing freemium">开源免费</span>
+          <a href="https://docs.letta.com" target="_blank" class="visit-btn">立即使用 →</a>
         </div>
       </div>
 
-      <div class="tool-card" data-cat="agent">
+      <div class="tool-card" data-cat="agent" data-name="vanna-ai">
         <div class="card-top">
-          <div class="tool-icon" style="background:linear-gradient(135deg,#6c5ce7,#a29bfe)">馃</div>
+          <div class="tool-icon" style="background:linear-gradient(135deg,#6c5ce7,#a29bfe)">🤖</div>
           <div class="card-info">
             <div class="tool-name">Vanna AI <span class="new-banner">NEW</span></div>
-            <div class="tool-tagline">AI Agent 鑷姩鐢熸垚 SQL 鏌ヨ锛岃嚜鐒惰瑷€鎻愰棶鍗冲緱鏁版嵁搴撶瓟妗?/div>
+            <div class="tool-tagline">AI Agent 自动生成 SQL 查询，自然语言提问即得数据库答案</div>
           </div>
         </div>
-        <div class="card-tags"><span class="tag">SQL</span><span class="tag">鏁版嵁搴?/span></div>
+        <div class="card-tags"><span class="tag tag-new">新上线</span><span class="tag tag-new">新上线</span></div>
         <div class="card-footer">
-          <span class="pricing paid">寮€婧愬厤璐?/span>
-          <a href="https://vanna.ai" target="_blank" class="visit-btn">绔嬪嵆浣跨敤 鈫?/a>
+          <span class="pricing freemium">开源免费</span>
+          <a href="https://vanna.ai" target="_blank" class="visit-btn">立即使用 →</a>
         </div>
       </div>
 
-      <div class="tool-card" data-cat="agent">
+      <div class="tool-card" data-cat="agent" data-name="gumloop">
         <div class="card-top">
-          <div class="tool-icon" style="background:linear-gradient(135deg,#6c5ce7,#a29bfe)">馃</div>
+          <div class="tool-icon" style="background:linear-gradient(135deg,#6c5ce7,#a29bfe)">🤖</div>
           <div class="card-info">
             <div class="tool-name">Gumloop <span class="new-banner">NEW</span></div>
-            <div class="tool-tagline">鏃犱唬鐮?AI Agent 宸ヤ綔娴佸钩鍙帮紝鎷栨嫿鏋勫缓鑷姩鍖?Agent 娴佺▼</div>
+            <div class="tool-tagline">无代码 AI Agent 工作流平台，拖拽构建自动化 Agent 流程</div>
           </div>
         </div>
-        <div class="card-tags"><span class="tag">鏃犱唬鐮?/span><span class="tag">鑷姩鍖?/span></div>
+        <div class="card-tags"><span class="tag tag-new">新上线</span><span class="tag tag-new">新上线</span></div>
         <div class="card-footer">
-          <span class="pricing freemium">Freemium</span>
-          <a href="https://gumloop.com" target="_blank" class="visit-btn">绔嬪嵆浣跨敤 鈫?/a>
+          <span class="pricing paid">Freemium</span>
+          <a href="https://gumloop.com" target="_blank" class="visit-btn">立即使用 →</a>
         </div>
       </div>
 
-      <div class="tool-card" data-cat="agent">
+      <div class="tool-card" data-cat="agent" data-name="coze">
         <div class="card-top">
-          <div class="tool-icon" style="background:linear-gradient(135deg,#6c5ce7,#a29bfe)">馃</div>
+          <div class="tool-icon" style="background:linear-gradient(135deg,#6c5ce7,#a29bfe)">🤖</div>
           <div class="card-info">
             <div class="tool-name">Coze <span class="new-banner">NEW</span></div>
-            <div class="tool-tagline">瀛楄妭璺冲姩 AI Bot 鎼缓骞冲彴锛屾彃浠?鐭ヨ瘑搴?宸ヤ綔娴侊紝闆朵唬鐮佸仛 AI 鏈哄櫒浜?/div>
+            <div class="tool-tagline">字节跳动 AI Bot 搭建平台，插件+知识库+工作流，零代码做 AI 机器人</div>
           </div>
         </div>
-        <div class="card-tags"><span class="tag">瀛楄妭</span><span class="tag">鏃犱唬鐮?/span></div>
+        <div class="card-tags"><span class="tag tag-new">新上线</span><span class="tag tag-new">新上线</span></div>
         <div class="card-footer">
-          <span class="pricing freemium">鍏嶈垂鐗堝彲鐢?/span>
-          <a href="https://www.coze.com" target="_blank" class="visit-btn">绔嬪嵆浣跨敤 鈫?/a>
+          <span class="pricing freemium">免费版可用</span>
+          <a href="https://www.coze.com" target="_blank" class="visit-btn">立即使用 →</a>
         </div>
       </div>
 
-      <div class="tool-card" data-cat="agent">
+      <div class="tool-card" data-cat="agent" data-name="zapier-ai">
         <div class="card-top">
-          <div class="tool-icon" style="background:linear-gradient(135deg,#6c5ce7,#a29bfe)">馃</div>
+          <div class="tool-icon" style="background:linear-gradient(135deg,#6c5ce7,#a29bfe)">🤖</div>
           <div class="card-info">
             <div class="tool-name">Zapier AI <span class="new-banner">NEW</span></div>
-            <div class="tool-tagline">宸ヤ綔娴佽嚜鍔ㄥ寲 + AI锛岃繛鎺?5000+ App锛岃 AI 鑷姩鎵ц璺ㄥ钩鍙颁换鍔?/div>
+            <div class="tool-tagline">工作流自动化 + AI，连接 5000+ App，让 AI 自动执行跨平台任务</div>
           </div>
         </div>
-        <div class="card-tags"><span class="tag">鑷姩鍖?/span><span class="tag">鐑棬</span></div>
+        <div class="card-tags"><span class="tag tag-new">新上线</span><span class="tag tag-new">新上线</span></div>
         <div class="card-footer">
-          <span class="pricing freemium">Freemium</span>
-          <a href="https://zapier.com/ai" target="_blank" class="visit-btn">绔嬪嵆浣跨敤 鈫?/a>
+          <span class="pricing paid">Freemium</span>
+          <a href="https://zapier.com/ai" target="_blank" class="visit-btn">立即使用 →</a>
         </div>
       </div>
     </div>
   </section>
 
   <section class="section" data-section="skill">
-    <div class="section-title">馃 Skill 涓撳尯</div>
-    <p class="section-desc">AI Agent 涓撳睘鎶€鑳解€斺€旂數瀛愪功鎼滅储銆侀煶涔愪笅杞姐€佹硶寰嬫枃涔︹€?璁╀綘鐨?AI 鍔╂墜鍙樿韩涓撲笟杈句汉</p>
+    <div class="section-title">🧠 Skill 专区</div>
+    <p class="section-desc">AI Agent 专属技能——电子书搜索、音乐下载、法律文书… 让你的 AI 助手变身专业达人</p>
     <div class="tool-grid">
-      <div class="tool-card" data-cat="skill">
+      <div class="tool-card" data-cat="skill" data-name="ebook-finder">
         <div class="card-top">
-          <div class="tool-icon" style="background:linear-gradient(135deg,#6c5ce7,#a29bfe)">馃</div>
+          <div class="tool-icon" style="background:linear-gradient(135deg,#6c5ce7,#a29bfe)">🤖</div>
           <div class="card-info">
             <div class="tool-name">Ebook Finder</div>
-            <div class="tool-tagline">AI 鐢靛瓙涔︽悳绱笌涓嬭浇锛?+ 涔︽簮骞惰锛圸-Library / LibGen / PDF Drive鈥︼級锛岃嚜鍔ㄩ獙璇佷笅杞介摼鎺?/div>
+            <div class="tool-tagline">AI 电子书搜索与下载，7+ 书源并行（Z-Library / LibGen / PDF Drive…），自动验证下载链接</div>
           </div>
         </div>
-        <div class="card-tags"><span class="tag">鍏嶈垂</span><span class="tag">鏂颁笂</span></div>
+        <div class="card-tags"><span class="tag">免费</span><span class="tag">新上</span></div>
         <div class="card-footer">
-          <span class="pricing free">瀹屽叏鍏嶈垂</span>
-          <a href="https://github.com/winfy-88/ai-tools-hub" target="_blank" class="visit-btn">绔嬪嵆浣跨敤 鈫?/a>
+          <span class="pricing free">完全免费</span>
+          <a href="https://github.com/winfy-88/ai-tools-hub" target="_blank" class="visit-btn">立即使用 →</a>
         </div>
       </div>
 
-      <div class="tool-card" data-cat="skill">
+      <div class="tool-card" data-cat="skill" data-name="music-finder">
         <div class="card-top">
-          <div class="tool-icon" style="background:linear-gradient(135deg,#6c5ce7,#a29bfe)">馃</div>
+          <div class="tool-icon" style="background:linear-gradient(135deg,#6c5ce7,#a29bfe)">🤖</div>
           <div class="card-info">
             <div class="tool-name">Music Finder</div>
-            <div class="tool-tagline">AI 闊充箰鎼滅储涓庝笅杞斤紝鏀寔 FLAC / MP3 320kbps锛岄叿鎴?/ 姝屾洸娴?/ Internet Archive 澶氭簮</div>
+            <div class="tool-tagline">AI 音乐搜索与下载，支持 FLAC / MP3 320kbps，酷我 / 歌曲海 / Internet Archive 多源</div>
           </div>
         </div>
-        <div class="card-tags"><span class="tag">鍏嶈垂</span><span class="tag">鏂颁笂</span></div>
+        <div class="card-tags"><span class="tag">免费</span><span class="tag">新上</span></div>
         <div class="card-footer">
-          <span class="pricing free">瀹屽叏鍏嶈垂</span>
-          <a href="https://github.com/winfy-88/ai-tools-hub" target="_blank" class="visit-btn">绔嬪嵆浣跨敤 鈫?/a>
+          <span class="pricing free">完全免费</span>
+          <a href="https://github.com/winfy-88/ai-tools-hub" target="_blank" class="visit-btn">立即使用 →</a>
         </div>
       </div>
 
-      <div class="tool-card" data-cat="skill">
+      <div class="tool-card" data-cat="skill" data-name="legal-brief-drafter">
         <div class="card-top">
-          <div class="tool-icon" style="background:linear-gradient(135deg,#6c5ce7,#a29bfe)">馃</div>
+          <div class="tool-icon" style="background:linear-gradient(135deg,#6c5ce7,#a29bfe)">🤖</div>
           <div class="card-info">
             <div class="tool-name">Legal Brief Drafter <span class="new-banner">NEW</span></div>
-            <div class="tool-tagline">娉曞緥鏂囦功璧疯崏鎶€鑳斤紝鑷姩鐢熸垚浠ｇ悊璇?涓婅瘔鐘?绛旇京鐘?璐ㄨ瘉鎰忚绛?/div>
+            <div class="tool-tagline">法律文书起草技能，自动生成代理词/上诉状/答辩状/质证意见等</div>
           </div>
         </div>
-        <div class="card-tags"><span class="tag">娉曞緥</span><span class="tag">涓枃</span></div>
+        <div class="card-tags"><span class="tag tag-new">新上线</span><span class="tag tag-new">新上线</span></div>
         <div class="card-footer">
-          <span class="pricing free">瀹屽叏鍏嶈垂</span>
-          <a href="https://github.com/winfy-88/ai-tools-hub" target="_blank" class="visit-btn">绔嬪嵆浣跨敤 鈫?/a>
+          <span class="pricing free">完全免费</span>
+          <a href="https://github.com/winfy-88/ai-tools-hub" target="_blank" class="visit-btn">立即使用 →</a>
         </div>
       </div>
 
-      <div class="tool-card" data-cat="skill">
+      <div class="tool-card" data-cat="skill" data-name="movie-finder">
         <div class="card-top">
-          <div class="tool-icon" style="background:linear-gradient(135deg,#6c5ce7,#a29bfe)">馃</div>
+          <div class="tool-icon" style="background:linear-gradient(135deg,#6c5ce7,#a29bfe)">🤖</div>
           <div class="card-info">
             <div class="tool-name">Movie Finder <span class="new-banner">NEW</span></div>
-            <div class="tool-tagline">AI 鐢靛奖鎼滅储涓庝笅杞斤紝WEB-DL / BluRay / 4K 澶氭牸寮忥紝鏀寔纾佸姏閾炬帴</div>
+            <div class="tool-tagline">AI 电影搜索与下载，WEB-DL / BluRay / 4K 多格式，支持磁力链接</div>
           </div>
         </div>
-        <div class="card-tags"><span class="tag">鍏嶈垂</span><span class="tag">鏂颁笂</span></div>
+        <div class="card-tags"><span class="tag tag-new">新上线</span><span class="tag tag-new">新上线</span></div>
         <div class="card-footer">
-          <span class="pricing free">瀹屽叏鍏嶈垂</span>
-          <a href="https://github.com/winfy-88/ai-tools-hub" target="_blank" class="visit-btn">绔嬪嵆浣跨敤 鈫?/a>
+          <span class="pricing free">完全免费</span>
+          <a href="https://github.com/winfy-88/ai-tools-hub" target="_blank" class="visit-btn">立即使用 →</a>
         </div>
       </div>
 
-      <div class="tool-card" data-cat="skill">
+      <div class="tool-card" data-cat="skill" data-name="ebook-finder-pro">
         <div class="card-top">
-          <div class="tool-icon" style="background:linear-gradient(135deg,#6c5ce7,#a29bfe)">馃</div>
+          <div class="tool-icon" style="background:linear-gradient(135deg,#6c5ce7,#a29bfe)">🤖</div>
           <div class="card-info">
             <div class="tool-name">Ebook Finder Pro <span class="new-banner">NEW</span></div>
-            <div class="tool-tagline">鐢靛瓙涔︽悳绱㈠寮虹増锛屾柊澧炶眴鐡ｈ涔?Goodreads+Amazon Books 鑱斿姩鎼滅储</div>
+            <div class="tool-tagline">电子书搜索增强版，新增豆瓣读书+Goodreads+Amazon Books 联动搜索</div>
           </div>
         </div>
-        <div class="card-tags"><span class="tag">鍏嶈垂</span><span class="tag">澧炲己</span></div>
+        <div class="card-tags"><span class="tag tag-new">新上线</span><span class="tag tag-new">新上线</span></div>
         <div class="card-footer">
-          <span class="pricing free">瀹屽叏鍏嶈垂</span>
-          <a href="https://github.com/winfy-88/ai-tools-hub" target="_blank" class="visit-btn">绔嬪嵆浣跨敤 鈫?/a>
+          <span class="pricing free">完全免费</span>
+          <a href="https://github.com/winfy-88/ai-tools-hub" target="_blank" class="visit-btn">立即使用 →</a>
         </div>
       </div>
 
-      <div class="tool-card" data-cat="skill">
+      <div class="tool-card" data-cat="skill" data-name="中文法律分析">
         <div class="card-top">
-          <div class="tool-icon" style="background:linear-gradient(135deg,#6c5ce7,#a29bfe)">馃</div>
+          <div class="tool-icon" style="background:linear-gradient(135deg,#6c5ce7,#a29bfe)">🤖</div>
           <div class="card-info">
-            <div class="tool-name">涓枃娉曞緥鍒嗘瀽 <span class="new-banner">NEW</span></div>
-            <div class="tool-tagline">涓浗娉曞緥鍦烘櫙鍒嗘瀽鎶€鑳斤紝鍚堝悓绾犵悍/鍔冲姩绾犵悍/璐骇绾犵悍/瀹跺涵娉曚竴閿В鏋?/div>
+            <div class="tool-name">中文法律分析 <span class="new-banner">NEW</span></div>
+            <div class="tool-tagline">中国法律场景分析技能，合同纠纷/劳动纠纷/财产纠纷/家庭法一键解析</div>
           </div>
         </div>
-        <div class="card-tags"><span class="tag">娉曞緥</span><span class="tag">涓枃</span></div>
+        <div class="card-tags"><span class="tag tag-new">新上线</span><span class="tag tag-new">新上线</span></div>
         <div class="card-footer">
-          <span class="pricing free">瀹屽叏鍏嶈垂</span>
-          <a href="https://github.com/winfy-88/ai-tools-hub" target="_blank" class="visit-btn">绔嬪嵆浣跨敤 鈫?/a>
+          <span class="pricing free">完全免费</span>
+          <a href="https://github.com/winfy-88/ai-tools-hub" target="_blank" class="visit-btn">立即使用 →</a>
         </div>
       </div>
 
-      <div class="tool-card" data-cat="skill">
+      <div class="tool-card" data-cat="skill" data-name="法律文书写作">
         <div class="card-top">
-          <div class="tool-icon" style="background:linear-gradient(135deg,#6c5ce7,#a29bfe)">馃</div>
+          <div class="tool-icon" style="background:linear-gradient(135deg,#6c5ce7,#a29bfe)">🤖</div>
           <div class="card-info">
-            <div class="tool-name">娉曞緥鏂囦功鍐欎綔 <span class="new-banner">NEW</span></div>
-            <div class="tool-tagline">涓浗璐㈢◣娉曞緥鏂囦功璧疯崏锛岀◣鍔＄鍒掓姤鍛?娉曞緥鎰忚涔?鍚堝悓绋庡姟鏉℃涓€閿敓鎴?/div>
+            <div class="tool-name">法律文书写作 <span class="new-banner">NEW</span></div>
+            <div class="tool-tagline">中国财税法律文书起草，税务筹划报告/法律意见书/合同税务条款一键生成</div>
           </div>
         </div>
-        <div class="card-tags"><span class="tag">娉曞緥</span><span class="tag">璐㈢◣</span></div>
+        <div class="card-tags"><span class="tag tag-new">新上线</span><span class="tag tag-new">新上线</span></div>
         <div class="card-footer">
-          <span class="pricing free">瀹屽叏鍏嶈垂</span>
-          <a href="https://github.com/winfy-88/ai-tools-hub" target="_blank" class="visit-btn">绔嬪嵆浣跨敤 鈫?/a>
+          <span class="pricing free">完全免费</span>
+          <a href="https://github.com/winfy-88/ai-tools-hub" target="_blank" class="visit-btn">立即使用 →</a>
         </div>
       </div>
     </div>
   </section>
+
 </main>
+
 <footer>
-  <p>馃 <strong>AI Tools Hub</strong> 鈥?姣忓ぉ甯綘鍙戠幇鏈€濂界殑 AI 宸ュ叿</p>
-  <p style="margin-top:8px"><a href="#">鎻愪氦鏂板伐鍏?/a> 路 <a href="#">RSS 璁㈤槄</a> 路 <a href="#">鍏充簬鎴戜滑</a></p>
-  <p style="margin-top:8px;opacity:.5">漏 2025 AI Tools Hub. Made with 馃 by AI.</p>
+  <p>🤖 <strong>AI Tools Hub</strong> — 每天让你发现最好的 AI 工具</p>
+  <p style="margin-top:8px"><a href="#">提交新工具</a> · <a href="#">RSS 订阅</a> · <a href="#">关于我们</a></p>
+  <p style="margin-top:8px;opacity:.5">© 2025 AI Tools Hub. Made with 🤖 by AI.</p>
 </footer>
+
 <script>
   const $$ = s => document.querySelectorAll(s);
   const $ = s => document.querySelector(s);
@@ -2354,10 +2364,16 @@
       $$('.section[data-section]').forEach(s => {
         const cards = s.querySelectorAll('.tool-card');
         let visible = false;
-        cards.forEach(c => { const show = cat === 'all' || c.dataset.cat === cat; c.style.display = show ? '' : 'none'; if (show) visible = true; });
+        cards.forEach(c => {
+          const show = cat === 'all' || c.dataset.cat === cat;
+          c.style.display = show ? '' : 'none';
+          if (show) visible = true;
+        });
         s.style.display = visible ? '' : 'none';
       });
-      $$('.featured-card').forEach(c => c.style.display = (cat === 'all' || c.dataset.cat === cat) ? '' : 'none');
+      $$('.featured-card').forEach(c => {
+        c.style.display = (cat === 'all' || c.dataset.cat === cat) ? '' : 'none';
+      });
     }));
   }
   document.addEventListener('DOMContentLoaded', initCategoryFilter);
