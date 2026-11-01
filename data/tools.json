@@ -86,7 +86,8 @@
       { "name": "Claude Code", "tagline": "Anthropic 终端 AI 工程师，读懂整个代码库，一行指令改全项目", "tags": ["Anthropic", "终端"], "pricing": "付费", "link": "https://claude.ai/claude-code", "new": true },
       { "name": "v0 by Vercel", "tagline": "Vercel 出品，一句话生成 React 组件，AI 前端开发速度翻倍", "tags": ["前端", "Vercel"], "pricing": "免费版可用", "link": "https://v0.dev", "new": true },
       { "name": "Amazon CodeWhisperer", "tagline": "AWS 免费 AI 编程助手，内置安全扫描，企业安全合规首选", "tags": ["AWS", "免费"], "pricing": "完全免费", "link": "https://aws.amazon.com/codewhisperer", "new": true },
-      { "name": "Devin", "tagline": "Cognition 出品 AI 软件工程师，能独立完成开发任务的全栈 Agent", "tags": ["全栈", "Agent"], "pricing": "付费", "link": "https://www.cognition.ai", "new": true }
+      { "name": "Devin", "tagline": "Cognition 出品 AI 软件工程师，能独立完成开发任务的全栈 Agent", "tags": ["全栈", "Agent"], "pricing": "付费", "link": "https://www.cognition.ai", "new": true },
+      { "name": "agent-qa", "tagline": "自然语言测试 Web、Android 与 iOS，memidex 持久记忆与验证后自我改进。早期项目，Node.js 24+；FSL-1.1-ALv2 限制竞争性商业用途。", "tags": ["自动化测试", "memidex", "MCP"], "pricing": "许可内免费；模型与设备服务另计费", "link": "https://vostride.com", "new": false }
     ],
     "video": [
       { "name": "Runway ML", "tagline": "Gen-3 视频生成天花板，文字/图片转视频，视频编辑一整套", "tags": ["热门", "付费"], "pricing": "付费", "link": "https://runway.ml", "new": false },
